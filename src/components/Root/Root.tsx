@@ -53,7 +53,9 @@ function App(props: PropsWithChildren) {
         return;
       }
 
-      miniApp.expand();
+      if (viewport && !viewport.isExpanded) {
+        viewport.expand();
+      }
 
       document.body.classList.add("mobile-body");
       document.getElementById("wrap")?.classList.add("mobile-wrap");
