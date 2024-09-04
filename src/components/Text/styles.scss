@@ -1,0 +1,18 @@
+@use "./../../assets/styles/typography";
+@use "./../../assets/styles/mixins";
+
+.text {
+  /* .. */
+
+  &__title {
+    font-family: var(--als-bot-font-wide);
+
+    @include mixins.font(typography.$font-h3);
+  }
+
+  &__paragraph {
+    &_caption {
+      @include mixins.font(typography.$font-caption);
+    }
+  }
+}

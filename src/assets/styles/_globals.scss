@@ -1,6 +1,36 @@
+@use "typography";
+@use "mixins";
+
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --als-bot-font-regular: "ALS Hauss Next", Arial, Helvetica, sans-serif;
+  --als-bot-font-wide: "ALS Hauss Next Wide", Arial, Helvetica, sans-serif;
+}
+
+body,
+html {
+  font-family: var(--als-bot-font-regular);
+}
+
 body {
-  background: var(--tg-theme-secondary-bg-color, white);
-  font-family: "ALS Hauss Next";
+  @include mixins.font(typography.$font-body);
+
+  background: var(--tg-bg-color, white);
+  font-weight: 400;
+  height: 100%;
+  line-height: inherit;
+  margin: 0;
+  overflow: hidden;
+  color: #fff;
+}
+
+html {
+  font-size: 62.5%;
+  height: 100%;
+  text-size-adjust: 100%;
 }
 
 .mobile-body {
@@ -20,4 +50,26 @@ body {
 
 .mobile-content {
   height: calc(100% + 1px);
+}
+
+#wrap,
+#content,
+#content > div,
+main {
+  height: 100%;
+}
+
+.clearfix {
+  &::before,
+  &::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+.page {
+  border-radius: 2rem 2rem 0 0;
+  overflow-y: scroll;
+  overflow-x: hidden;
 }

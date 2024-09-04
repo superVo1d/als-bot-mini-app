@@ -1,0 +1,19 @@
+.menu {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  margin: 1.5rem;
+
+  &__container-top {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  &__item {
+    border: 1px solid rgba(255 255 255 / 30%);
+    padding: 1.5rem;
+    border-radius: 1rem;
+    min-height: 10rem;
+  }
+}

@@ -8,6 +8,20 @@ $font-path: "../fonts/ALS_Hauss Next";
 
 @font-face {
   font-family: "ALS Hauss Next";
+  src: url("#{$font-path}/ALS_Hauss Next_Light_1.01.otf");
+  font-style: normal;
+  font-weight: 200;
+}
+
+@font-face {
+  font-family: "ALS Hauss Next";
+  src: url("#{$font-path}/ALS_Hauss Next_Regular_1.01.otf");
+  font-style: normal;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "ALS Hauss Next Wide";
   src: url("#{$font-path}/ALS_Hauss Next_Wide Hairline_1.01.otf")
     format("opentype");
   font-weight: 100;
@@ -15,14 +29,14 @@ $font-path: "../fonts/ALS_Hauss Next";
 }
 
 @font-face {
-  font-family: "ALS Hauss Next";
+  font-family: "ALS Hauss Next Wide";
   src: url("#{$font-path}/ALS_Hauss Next_Wide Thin_1.01.otf") format("opentype");
   font-weight: 150;
   font-style: normal;
 }
 
 @font-face {
-  font-family: "ALS Hauss Next";
+  font-family: "ALS Hauss Next Wide";
   src: url("#{$font-path}/ALS_Hauss Next_Wide Light_1.01.otf")
     format("opentype");
   font-weight: 200;
@@ -30,7 +44,7 @@ $font-path: "../fonts/ALS_Hauss Next";
 }
 
 @font-face {
-  font-family: "ALS Hauss Next";
+  font-family: "ALS Hauss Next Wide";
   src: url("#{$font-path}/ALS_Hauss Next_Wide Regular_1.01.otf")
     format("opentype");
   font-weight: 400;
@@ -38,7 +52,7 @@ $font-path: "../fonts/ALS_Hauss Next";
 }
 
 @font-face {
-  font-family: "ALS Hauss Next";
+  font-family: "ALS Hauss Next Wide";
   src: url("#{$font-path}/ALS_Hauss Next_Wide Medium_1.01.otf")
     format("opentype");
   font-weight: 500;
@@ -46,14 +60,14 @@ $font-path: "../fonts/ALS_Hauss Next";
 }
 
 @font-face {
-  font-family: "ALS Hauss Next";
+  font-family: "ALS Hauss Next Wide";
   src: url("#{$font-path}/ALS_Hauss Next_Wide Bold_1.01.otf") format("opentype");
   font-weight: 700;
   font-style: normal;
 }
 
 @font-face {
-  font-family: "ALS Hauss Next";
+  font-family: "ALS Hauss Next Wide";
   src: url("#{$font-path}/ALS_Hauss Next_Wide Black_1.01.otf")
     format("opentype");
   font-weight: 900;

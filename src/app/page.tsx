@@ -1,47 +1,26 @@
 "use client";
 
-import { Section, Cell, Image, List, Link } from "@telegram-apps/telegram-ui";
+import { Onboarding } from "@/components/Onboarding";
+// import usePersistentState from "@/hooks/usePersistentState";
+import "./styles.scss";
+import { Facts } from "@/components/Facts";
+import { Menu } from "@/components/Menu";
+import { QuestPromo } from "@/components/QuestPromo";
+import { useState } from "react";
 
 export default function Home() {
+  const [showOnboarding, setShowOnboarding] = useState(true);
+
   return (
     <main>
-      <List>
-        <Section
-          header="Features"
-          footer="You can use these pages to learn more about features, provided by Telegram Mini Apps and other useful projects"
-        >
-          <Link href="/ton-connect">
-            <Cell
-              before={
-                <Image src="next.svg" style={{ backgroundColor: "#007AFF" }} />
-              }
-              subtitle="Connect your TON wallet"
-            >
-              TON Connect
-            </Cell>
-          </Link>
-        </Section>
-        <Section
-          header="Application Launch Data"
-          footer="These pages help developer to learn more about current launch information"
-        >
-          <Link href="/init-data">
-            <Cell subtitle="User data, chat information, technical data">
-              Init Data
-            </Cell>
-          </Link>
-          <Link href="/launch-params">
-            <Cell subtitle="Platform identifier, Mini Apps version, etc.">
-              Launch Parameters
-            </Cell>
-          </Link>
-          <Link href="/theme-params">
-            <Cell subtitle="Telegram application palette information">
-              Theme Parameters
-            </Cell>
-          </Link>
-        </Section>
-      </List>
+      {showOnboarding && (
+        <Onboarding onComplete={() => setShowOnboarding(false)} />
+      )}
+      <div className="main page clearfix">
+        <Facts />
+        <Menu />
+        <QuestPromo />
+      </div>
     </main>
   );
 }
