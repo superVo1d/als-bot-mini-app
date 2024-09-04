@@ -18,7 +18,6 @@ html {
 body {
   @include mixins.font(typography.$font-body);
 
-  background: var(--tg-bg-color, white);
   font-weight: 400;
   height: 100%;
   line-height: inherit;
