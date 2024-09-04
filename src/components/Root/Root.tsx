@@ -1,6 +1,6 @@
 "use client";
 
-import { type PropsWithChildren, useEffect, useMemo } from "react";
+import { type PropsWithChildren, useEffect, useMemo, useState } from "react";
 import {
   SDKProvider,
   useLaunchParams,
@@ -10,8 +10,9 @@ import {
   bindMiniAppCSSVars,
   bindThemeParamsCSSVars,
   bindViewportCSSVars,
+  useBackButton,
 } from "@telegram-apps/sdk-react";
-import { initSwipeBehavior } from "@telegram-apps/sdk";
+import { initSwipeBehavior, retrieveLaunchParams } from "@telegram-apps/sdk";
 import { TonConnectUIProvider } from "@tonconnect/ui-react";
 import { AppRoot } from "@telegram-apps/telegram-ui";
 
@@ -21,12 +22,16 @@ import { useTelegramMock } from "@/hooks/useTelegramMock";
 import { useDidMount } from "@/hooks/useDidMount";
 
 import "./styles.css";
+import { usePathname, useRouter } from "next/navigation";
 
 function App(props: PropsWithChildren) {
   const lp = useLaunchParams();
   const miniApp = useMiniApp();
   const themeParams = useThemeParams();
   const viewport = useViewport();
+  const bb = useBackButton();
+  const router = useRouter();
+  const pathname = usePathname();
 
   const [swipeBehavior] = initSwipeBehavior();
 
@@ -41,6 +46,17 @@ function App(props: PropsWithChildren) {
   useEffect(() => {
     return viewport && bindViewportCSSVars(viewport);
   }, [viewport]);
+
+  useEffect(() => {
+    if (pathname === "/") {
+      bb.hide();
+    } else {
+      bb.show();
+    }
+    if (bb) {
+      bb.on("click", () => router.back());
+    }
+  }, [bb, pathname]);
 
   useEffect(() => {
     if (viewport && !viewport.isExpanded) {
