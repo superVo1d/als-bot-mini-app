@@ -2,16 +2,30 @@
 @use "./../../assets/styles/mixins";
 
 .button {
+  $selector: &;
+
   @include mixins.font(typography.$font-h3);
 
+  background: transparent;
   border: none;
+  color: inherit;
+  text-align: center;
   cursor: pointer;
-  font-family: var(--als-bot-font-wide);
-  padding: 1.4rem;
-  border-radius: 1rem;
-  text-decoration: none;
   width: stretch;
   display: block;
+
+  &:not(#{$selector}_clear) {
+    font-family: var(--als-bot-font-wide);
+    padding: 1.4rem;
+    border-radius: 1rem;
+    text-decoration: none;
+  }
+
+  &_clear {
+    display: flex;
+    text-align: inherit;
+    text-decoration: none;
+  }
 
   &_primary {
     background: #fff;

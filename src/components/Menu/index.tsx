@@ -6,22 +6,22 @@ import { Button } from "../Button";
 export const Menu: FC = () => (
   <div className="menu">
     <div className="menu__container-top">
-      <div className="menu__item">
+      <Button className="menu__item" href="/afisha" style="clear">
         <Text title="Афиша" text="Главные собтия" textSize="caption" />
-      </div>
-      <div className="menu__item">
+      </Button>
+      <Button className="menu__item" style="clear">
         <Text
           title="Фан"
           text="Таролог, рунолог, хиромант"
           textSize="caption"
         />
-      </div>
-      <div className="menu__item">
+      </Button>
+      <Button className="menu__item" style="clear">
         <Text title="Хавчик" textSize="caption" />
-      </div>
-      <div className="menu__item">
+      </Button>
+      <Button className="menu__item" style="clear">
         <Text title="Бухлишко" textSize="caption" />
-      </div>
+      </Button>
     </div>
     <div className="menu__item">
       <Text title="Карта" />

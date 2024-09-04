@@ -20,7 +20,7 @@ export interface ButtonProps
   onClick?: (
     e: React.MouseEvent<HTMLButtonElement | HTMLAnchorElement>
   ) => void;
-  style?: "primary" | "secondary";
+  style?: "primary" | "secondary" | "clear";
 }
 
 export const Button: FC<ButtonProps> = ({

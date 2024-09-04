@@ -43,6 +43,10 @@ function App(props: PropsWithChildren) {
   }, [viewport]);
 
   useEffect(() => {
+    if (viewport && !viewport.isExpanded) {
+      viewport.expand();
+    }
+
     try {
       swipeBehavior.disableVerticalSwipe();
     } catch (e) {
@@ -53,15 +57,11 @@ function App(props: PropsWithChildren) {
         return;
       }
 
-      if (viewport && !viewport.isExpanded) {
-        viewport.expand();
-      }
-
       document.body.classList.add("mobile-body");
       document.getElementById("wrap")?.classList.add("mobile-wrap");
       document.getElementById("content")?.classList.add("mobile-content");
     }
-  }, [swipeBehavior]);
+  }, [viewport, swipeBehavior]);
 
   return (
     <AppRoot
