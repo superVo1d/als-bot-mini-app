@@ -36,6 +36,7 @@ export const Button: FC<ButtonProps> = ({
 
   const onClickLink = useCallback<MouseEventHandler<HTMLAnchorElement>>(
     (e) => {
+      hf.impactOccurred("light");
       propsOnClick?.(e);
 
       if (!href) {

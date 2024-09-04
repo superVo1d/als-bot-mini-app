@@ -3,6 +3,7 @@
   grid-template-columns: 1fr;
   gap: 1rem;
   margin: 0 1.5rem;
+  z-index: 1;
 
   &__container-top {
     display: grid;
