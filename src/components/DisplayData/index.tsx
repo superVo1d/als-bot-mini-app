@@ -3,7 +3,7 @@ import { Cell, Checkbox, Section } from "@telegram-apps/telegram-ui";
 import type { FC, ReactNode } from "react";
 
 import { RGB } from "@/components/RGB";
-import { Link } from "@/components/Link";
+import { Button } from "@/components/Button";
 
 import "./styles.css";
 
@@ -27,7 +27,7 @@ export const DisplayData: FC<DisplayDataProps> = ({ header, rows }) => (
         valueNode = <i>empty</i>;
       } else {
         if ("type" in item) {
-          valueNode = <Link href={item.value}>Open</Link>;
+          valueNode = <Button href={item.value}>Open</Button>;
         } else if (typeof item.value === "string") {
           valueNode = isRGB(item.value) ? (
             <RGB color={item.value} />
