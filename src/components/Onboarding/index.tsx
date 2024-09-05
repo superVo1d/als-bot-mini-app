@@ -9,7 +9,7 @@ export interface OnboardingProps {
 
 export const Onboarding: FC<OnboardingProps> = ({ onComplete }) => {
   return (
-    <div className="onboarding clearfix">
+    <div className="onboarding page clearfix">
       <Text
         className="onboarding__text"
         text="<p>Двадцать девятая тусав Студии Артемия Лебедева.</p><p>Где и что находится, как потусить на максимум, выпивка, хрючево.</p>"

@@ -11,7 +11,8 @@
     gap: 1rem;
   }
 
-  &__item {
+  &__item,
+  &__item.button {
     border: 1px solid rgba(255 255 255 / 30%);
     padding: 1.5rem;
     border-radius: 1rem;

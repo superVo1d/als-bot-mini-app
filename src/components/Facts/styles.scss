@@ -1,7 +1,15 @@
 .facts {
+  --swiper-pagination-color: #fff;
+  --swiper-pagination-opacity: 0.3;
+  --swiper-pagination-bottom: 0;
+
   display: flex;
   justify-content: center;
   margin: 1.5rem;
+
+  .swiper-wrapper {
+    padding-bottom: 2rem;
+  }
 
   img {
     flex-shrink: 0;

@@ -42,6 +42,8 @@
   &:before {
     content: "";
     display: block;
+    background-repeat: no-repeat;
+    background-position-x: center;
     background-image: url("data:image/svg+xml,%3Csvg width='664' height='546' viewBox='0 0 664 546' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg filter='url(%23filter0_f_166_1101)'%3E%3Cellipse cx='332' cy='273' rx='218' ry='159' fill='white'/%3E%3C/g%3E%3Cdefs%3E%3Cfilter id='filter0_f_166_1101' x='0' y='0' width='664' height='546' filterUnits='userSpaceOnUse' color-interpolation-filters='sRGB'%3E%3CfeFlood flood-opacity='0' result='BackgroundImageFix'/%3E%3CfeBlend mode='normal' in='SourceGraphic' in2='BackgroundImageFix' result='shape'/%3E%3CfeGaussianBlur stdDeviation='57' result='effect1_foregroundBlur_166_1101'/%3E%3C/filter%3E%3C/defs%3E%3C/svg%3E%0A");
     width: 66.4rem;
     height: 54.8rem;

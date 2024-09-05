@@ -9,17 +9,17 @@ export const Menu: FC = () => (
       <Button className="menu__item" href="/afisha" style="clear">
         <Text title="Афиша" text="Главные собтия" textSize="caption" />
       </Button>
-      <Button className="menu__item" style="clear">
+      <Button href="/ton-connect" className="menu__item" style="clear">
         <Text
           title="Фан"
           text="Таролог, рунолог, хиромант"
           textSize="caption"
         />
       </Button>
-      <Button className="menu__item" style="clear">
+      <Button href="/init-data" className="menu__item" style="clear">
         <Text title="Хавчик" textSize="caption" />
       </Button>
-      <Button className="menu__item" style="clear">
+      <Button href="/launch-params" className="menu__item" style="clear">
         <Text title="Бухлишко" textSize="caption" />
       </Button>
     </div>
