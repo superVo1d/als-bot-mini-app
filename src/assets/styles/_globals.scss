@@ -18,6 +18,8 @@ html {
 body {
   @include mixins.font(typography.$font-body);
 
+  -webkit-overflow-scrolling: auto;
+  background: var(--tg-theme-header-bg-color, transparent);
   font-weight: 400;
   height: 100%;
   line-height: inherit;
