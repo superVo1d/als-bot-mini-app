@@ -1,7 +1,9 @@
+"use client";
+
 import { Button } from "@/components/Button";
 import { useQRScanner } from "@telegram-apps/sdk-react";
 
-export function QRPage() {
+export default function QRPage() {
   const qrScanner = useQRScanner();
 
   const scanQR = () => {
