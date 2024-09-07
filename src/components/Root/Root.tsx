@@ -1,6 +1,6 @@
 "use client";
 
-import { type PropsWithChildren, useEffect, useMemo, useState } from "react";
+import { type PropsWithChildren, useEffect, useMemo } from "react";
 import {
   SDKProvider,
   useLaunchParams,
@@ -12,7 +12,7 @@ import {
   bindViewportCSSVars,
   useBackButton,
 } from "@telegram-apps/sdk-react";
-import { initSwipeBehavior, retrieveLaunchParams } from "@telegram-apps/sdk";
+import { initSwipeBehavior } from "@telegram-apps/sdk";
 import { TonConnectUIProvider } from "@tonconnect/ui-react";
 import { AppRoot } from "@telegram-apps/telegram-ui";
 
