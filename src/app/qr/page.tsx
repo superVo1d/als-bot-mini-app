@@ -10,9 +10,9 @@ export default function QRPage() {
     qrScanner
       .open({
         text: "Scan QR code",
-        capture({ data }) {
+        capture: ({ data }) => {
           // Capture QRs contanining Telegram user link.
-          return data?.startsWith("https://t.me");
+          return Boolean(data?.startsWith("https://t.me"));
         },
       })
       .then((qr) => {
