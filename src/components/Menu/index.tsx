@@ -23,9 +23,9 @@ export const Menu: FC = () => (
         <Text title="Бухлишко" textSize="caption" />
       </Button>
     </div>
-    <div className="menu__item">
+    <Button href="/qr" className="menu__item" style="clear">
       <Text title="Карта" />
-    </div>
+    </Button>
     <Button style="secondary">Вопросы и ответы</Button>
     <Button style="secondary">Удобства</Button>
   </div>
