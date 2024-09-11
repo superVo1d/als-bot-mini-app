@@ -51,7 +51,12 @@ const Map: FC = () => {
   return (
     <div className="page map">
       <div className="map__wrapper" onClick={() => setIsLarge(true)}>
-        <TransformWrapper ref={transformWrapperRef}>
+        <TransformWrapper
+          initialScale={1}
+          initialPositionX={1}
+          initialPositionY={1}
+          ref={transformWrapperRef}
+        >
           <TransformComponent>
             <div ref={mapRef}>
               <SeventhFloor
