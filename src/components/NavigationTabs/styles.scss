@@ -1,0 +1,58 @@
+@use "./../../assets/styles/typography";
+@use "./../../assets/styles/mixins";
+
+.navigation-tabs {
+  margin: 1rem 0;
+
+  ul,
+  li {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    scroll-margin: 1rem;
+  }
+
+  ul {
+    display: flex;
+    overflow: auto;
+    -ms-overflow-style: none; /* IE and Edge */
+    padding: 0 1rem;
+    scrollbar-width: none; /* Firefox */
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  &__button {
+    @include mixins.font(typography.$font-body);
+
+    font-weight: 700;
+    font-family: var(--als-bot-font-wide);
+    background: transparent;
+    border-radius: 1.5rem;
+    color: #fff;
+    border: 1px solid var(--color-tab);
+    padding: 1rem 1.2rem;
+
+    &_active {
+      background: var(--color-tab);
+    }
+
+    &_food {
+      --color-tab: #24c274;
+    }
+
+    &_drink {
+      --color-tab: #cb0df6;
+    }
+
+    &_fun {
+      --color-tab: #dd4404;
+    }
+
+    &_other {
+      --color-tab: #0103ff;
+    }
+  }
+}
