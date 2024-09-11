@@ -23,7 +23,7 @@ const Map: FC = () => {
   const transformWrapperRef = useRef<ReactZoomPanPinchRef | null>(null);
   const [selectedFloor, setSelectedFloor] = useState(0);
   const mapRef = useRef<HTMLDivElement | null>(null);
-  const [isLarge, setIsLarge] = useState<boolean>(false);
+  const [isLarge, setIsLarge] = useState<boolean>(true);
 
   useMapControl(transformWrapperRef, mapRef);
 
@@ -74,13 +74,6 @@ const Map: FC = () => {
   const style = useMemo(
     () => ({ width: width - 20, height: isLarge ? width : "auto" }),
     [width, isLarge]
-  );
-
-  useClickOutside(mapRef, () =>
-    setTimeout(() => {
-      setIsLarge(false);
-      transformWrapperRef.current?.resetTransform();
-    }, 100)
   );
 
   const floor =
