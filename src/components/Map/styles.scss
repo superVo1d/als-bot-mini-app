@@ -11,8 +11,14 @@
     overflow: hidden;
     flex-shrink: 0;
 
-    svg {
-      transition: height 0.8s cubic-bezier(0.075, 0.82, 0.165, 1);
-    }
+    // svg {
+    //   transition: height 0.8s cubic-bezier(0.075, 0.82, 0.165, 1);
+    // }
+  }
+
+  &__floor-tumbler {
+    position: fixed;
+    right: 2rem;
+    bottom: 4rem;
   }
 }

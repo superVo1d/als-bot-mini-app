@@ -1,7 +1,8 @@
 "use client";
 
-import React, { FC, useRef } from "react";
+import React, { FC, MouseEventHandler, useMemo, useRef, useState } from "react";
 
+import SixthFloor from "@/assets/media/6.svg";
 import SeventhFloor from "@/assets/media/7.svg";
 import { useWindowSize } from "@/hooks/useWindowSize";
 import { useMapControl } from "@/hooks/useMapControl";
@@ -14,11 +15,15 @@ import {
 import { NavigationTabs } from "@/components/NavigationTabs";
 import "./styles.scss";
 import { DisplayList } from "../DisplayList";
+import { Tumbler } from "../Tumbler";
+import { useClickOutside } from "@/hooks/useClickOutside";
 
 const Map: FC = () => {
   const { width } = useWindowSize();
   const transformWrapperRef = useRef<ReactZoomPanPinchRef | null>(null);
+  const [selectedFloor, setSelectedFloor] = useState(0);
   const mapRef = useRef<HTMLDivElement | null>(null);
+  const [isLarge, setIsLarge] = useState<boolean>(false);
 
   useMapControl(transformWrapperRef, mapRef);
 
@@ -45,9 +50,49 @@ const Map: FC = () => {
     },
   ];
 
+  const floors = [
+    {
+      name: "6 этаж",
+    },
+    {
+      name: "7 этаж",
+    },
+  ];
+
+  const changeFloor = (index: number) => {
+    setSelectedFloor((prev) => (prev + 1) % 2);
+    transformWrapperRef.current?.resetTransform();
+  };
+
+  const handleClickMap = (event: React.MouseEvent<HTMLElement>) => {
+    if (!isLarge) {
+      setIsLarge(true);
+      event.stopPropagation();
+    }
+  };
+
+  const style = useMemo(
+    () => ({ width: width - 20, height: isLarge ? width : "auto" }),
+    [width, isLarge]
+  );
+
+  useClickOutside(mapRef, () =>
+    setTimeout(() => {
+      setIsLarge(false);
+      transformWrapperRef.current?.resetTransform();
+    }, 100)
+  );
+
+  const floor =
+    selectedFloor === 1 ? (
+      <SeventhFloor style={style} />
+    ) : (
+      <SixthFloor style={style} />
+    );
+
   return (
     <div className="page map">
-      <div className="map__wrapper">
+      <div className="map__wrapper" onClick={handleClickMap}>
         <TransformWrapper
           initialScale={1}
           initialPositionX={1}
@@ -55,14 +100,18 @@ const Map: FC = () => {
           ref={transformWrapperRef}
         >
           <TransformComponent>
-            <div ref={mapRef}>
-              <SeventhFloor style={{ width: width - 20, height: "auto" }} />
-            </div>
+            <div ref={mapRef}>{floor}</div>
           </TransformComponent>
         </TransformWrapper>
       </div>
       <NavigationTabs />
       <DisplayList items={items} />
+      <Tumbler
+        className="map__floor-tumbler"
+        items={floors}
+        onClick={changeFloor}
+        activeIndex={selectedFloor}
+      />
     </div>
   );
 };

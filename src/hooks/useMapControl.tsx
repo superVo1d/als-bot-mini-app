@@ -12,7 +12,11 @@ export const useMapControl = (
 
     const targetId = target.id.split("__")[1];
     if (target.id && targetId && targetId !== "background") {
-      console.log(target.id);
+      const el = document.getElementById(target.id);
+
+      if (!el) return;
+
+      transformWrapperRef.current?.zoomToElement(el, 3);
     }
   };
 
