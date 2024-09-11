@@ -1,6 +1,6 @@
 "use client";
 
-import React, { FC, useEffect, useRef, useState } from "react";
+import React, { FC, useRef } from "react";
 
 import SeventhFloor from "@/assets/media/7.svg";
 import { useWindowSize } from "@/hooks/useWindowSize";
