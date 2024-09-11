@@ -13,17 +13,14 @@ import {
 } from "react-zoom-pan-pinch";
 import { NavigationTabs } from "@/components/NavigationTabs";
 import "./styles.scss";
-import { useClickOutside } from "@/hooks/useClickOutside";
 import { DisplayList } from "../DisplayList";
 
 const Map: FC = () => {
-  const { width, height } = useWindowSize();
+  const { width } = useWindowSize();
   const transformWrapperRef = useRef<ReactZoomPanPinchRef | null>(null);
   const mapRef = useRef<HTMLDivElement | null>(null);
-  const [isLarge, setIsLarge] = useState(false);
 
   useMapControl(transformWrapperRef, mapRef);
-  useClickOutside(mapRef, () => setIsLarge(false));
 
   const items = [
     {
@@ -50,7 +47,7 @@ const Map: FC = () => {
 
   return (
     <div className="page map">
-      <div className="map__wrapper" onClick={() => setIsLarge(true)}>
+      <div className="map__wrapper">
         <TransformWrapper
           initialScale={1}
           initialPositionX={1}
@@ -59,9 +56,7 @@ const Map: FC = () => {
         >
           <TransformComponent>
             <div ref={mapRef}>
-              <SeventhFloor
-                style={{ width: width - 20, height: isLarge ? width : "auto" }}
-              />
+              <SeventhFloor style={{ width: width - 20, height: "auto" }} />
             </div>
           </TransformComponent>
         </TransformWrapper>
