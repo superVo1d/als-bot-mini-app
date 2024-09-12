@@ -4,6 +4,8 @@
 * {
   box-sizing: border-box;
   overscroll-behavior: none;
+  user-select: none;
+  -webkit-user-select: none;
 }
 
 :root {
@@ -21,6 +23,7 @@ body {
   @include mixins.font(typography.$font-body);
 
   -webkit-overflow-scrolling: auto;
+  -webkit-font-smoothing: antialiased;
   background: var(--tg-theme-header-bg-color, transparent);
   font-weight: 400;
   height: 100%;

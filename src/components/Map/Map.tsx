@@ -78,9 +78,9 @@ const Map: FC = () => {
 
   const floor =
     selectedFloor === 1 ? (
-      <SeventhFloor style={style} />
+      <SeventhFloor width="1920" height="1000" style={style} />
     ) : (
-      <SixthFloor style={style} />
+      <SixthFloor width="1920" height="1000" style={style} />
     );
 
   return (
