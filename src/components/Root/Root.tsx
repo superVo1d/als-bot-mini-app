@@ -24,6 +24,7 @@ import { useDidMount } from "@/hooks/useDidMount";
 import "./styles.css";
 import { usePathname, useRouter } from "next/navigation";
 import { DataProvider } from "@/context/DataContext";
+import { LangProvider } from "@/context/LangContext";
 
 function App(props: PropsWithChildren) {
   const lp = useLaunchParams();
@@ -81,14 +82,16 @@ function App(props: PropsWithChildren) {
   }, [viewport, swipeBehavior]);
 
   return (
-    <DataProvider>
-      <AppRoot
-        appearance={miniApp.isDark ? "dark" : "light"}
-        platform={["macos", "ios"].includes(lp.platform) ? "ios" : "base"}
-      >
-        {props.children}
-      </AppRoot>
-    </DataProvider>
+    <LangProvider>
+      <DataProvider>
+        <AppRoot
+          appearance={miniApp.isDark ? "dark" : "light"}
+          platform={["macos", "ios"].includes(lp.platform) ? "ios" : "base"}
+        >
+          {props.children}
+        </AppRoot>
+      </DataProvider>
+    </LangProvider>
   );
 }
 

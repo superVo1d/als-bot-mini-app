@@ -1,9 +1,11 @@
 import { Button } from "@/components/Button";
-import { FC, useEffect, useRef, useState } from "react";
+import { FC, useEffect, useMemo, useRef, useState } from "react";
 import { classNames } from "@telegram-apps/sdk-react";
 
 import "./styles.scss";
 import { useSearchState } from "@/hooks/useSearchState";
+import { useLangContext } from "@/context/LangContext";
+import { useDataContext } from "@/context/DataContext";
 
 export interface INavigationTabs {
   onClick?: (index: number) => void;
@@ -13,6 +15,7 @@ const NavigationTabs: FC<INavigationTabs> = ({ onClick }) => {
   const tabsRef = useRef<HTMLLIElement[]>([]);
   const [activeTab, setActiveTab] = useState(0);
   const [{ category }, setParams] = useSearchState();
+  const { langData } = useLangContext();
 
   useEffect(() => {
     setParams({
@@ -27,24 +30,27 @@ const NavigationTabs: FC<INavigationTabs> = ({ onClick }) => {
     }
   }, [category]);
 
-  const tabs = [
-    {
-      name: "Хавчик",
-      path: "edanapitki",
-    },
-    {
-      name: "Бухлишко",
-      path: "alcohol",
-    },
-    {
-      name: "Фан",
-      path: "fun",
-    },
-    {
-      name: "Удобства",
-      path: "other",
-    },
-  ];
+  const tabs = useMemo(
+    () => [
+      {
+        name: langData["edanapitki"],
+        path: "edanapitki",
+      },
+      {
+        name: langData["alcohol"],
+        path: "alcohol",
+      },
+      {
+        name: langData["fun"],
+        path: "fun",
+      },
+      {
+        name: langData["udobstva"],
+        path: "other",
+      },
+    ],
+    [langData]
+  );
 
   const handleClickTab = (index: number) => {
     setActiveTab(index);

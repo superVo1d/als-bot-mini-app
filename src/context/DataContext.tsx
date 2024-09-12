@@ -68,7 +68,9 @@ export const DataProvider = ({ children }: { children: ReactNode }) => {
   const categories = useMemo(() => {
     if (!suppliers) return;
     return Array.from(
-      new Set(Object.values(suppliers).map((item) => item.category))
+      new Set(
+        Object.values(suppliers).map((item) => item.category && item.category)
+      )
     );
   }, [suppliers]);
 

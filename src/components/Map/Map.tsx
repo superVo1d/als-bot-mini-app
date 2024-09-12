@@ -18,6 +18,7 @@ import { DisplayList } from "../DisplayList";
 import { Tumbler } from "../Tumbler";
 import { useDataContext } from "@/context/DataContext";
 import { useSearchState } from "@/hooks/useSearchState";
+import { useLangContext } from "@/context/LangContext";
 
 const Map: FC = () => {
   const { width } = useWindowSize();
@@ -26,12 +27,12 @@ const Map: FC = () => {
   const mapRef = useRef<HTMLDivElement | null>(null);
   const [isLarge, setIsLarge] = useState<boolean>(true);
   const { suppliers, getSubcategories, getSuppliers } = useDataContext();
+  const { langData } = useLangContext();
 
   const [params, setParams] = useSearchState();
   const { category, subcategory, supplier } = params;
 
   const onMapSelect = (name: string) => {
-    console.log({ suppliers });
     if (!suppliers) return;
 
     const selectedSupplier = suppliers[name];
@@ -50,18 +51,27 @@ const Map: FC = () => {
   const subcategoriesItems = useMemo(() => {
     if (!category) return;
 
-    return getSubcategories(category)?.map((name) => ({
-      name,
-      path: name,
-    }));
+    if (!subcategory) {
+      return getSubcategories(category)?.map((name) => ({
+        name: langData[name],
+        path: name,
+      }));
+    }
+
+    if (!supplier) {
+      return getSuppliers(category)?.map((item) => ({
+        name: item.name,
+        path: item.key,
+      }));
+    }
   }, [category, subcategory, suppliers]);
 
   const floors = [
     {
-      name: "6 этаж",
+      name: langData["6"],
     },
     {
-      name: "7 этаж",
+      name: langData["7"],
     },
   ];
 
@@ -85,15 +95,7 @@ const Map: FC = () => {
     transformWrapperRef.current?.resetTransform();
   };
 
-  const handleClickListItem = (index: number) => {
-    if (!subcategoriesItems || !suppliers) {
-      return;
-    }
-
-    setParams({
-      subcategory: subcategoriesItems[index].path,
-    });
-  };
+  const handleClickListItem = (index: number) => {};
 
   const style = useMemo(
     () => ({ width: width - 20, height: isLarge ? width : "auto" }),

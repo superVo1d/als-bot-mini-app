@@ -12,7 +12,7 @@ export const Onboarding: FC<OnboardingProps> = ({ onComplete }) => {
     <div className="onboarding page clearfix">
       <Text
         className="onboarding__text"
-        text="<p>Двадцать девятая тусав Студии Артемия Лебедева.</p><p>Где и что находится, как потусить на максимум, выпивка, хрючево.</p>"
+        text="<p>Двадцать девятая туса в Студии Артемия Лебедева.</p><p>Где и что находится, как потусить на максимум, выпивка, хрючево.</p>"
       />
       <Button className="onboarding__button" onClick={onComplete}>
         Начать вечеринку
