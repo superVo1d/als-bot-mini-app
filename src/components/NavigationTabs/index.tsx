@@ -20,6 +20,8 @@ const NavigationTabs: FC<INavigationTabs> = ({ onClick }) => {
   useEffect(() => {
     setParams({
       category: tabs[activeTab].path,
+      subcategory: "",
+      supplier: "",
     });
   }, [activeTab]);
 

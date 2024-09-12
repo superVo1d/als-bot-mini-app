@@ -51,20 +51,11 @@ const Map: FC = () => {
   const subcategoriesItems = useMemo(() => {
     if (!category) return;
 
-    if (!subcategory) {
-      return getSubcategories(category)?.map((name) => ({
-        name: langData[name],
-        path: name,
-      }));
-    }
-
-    if (!supplier) {
-      return getSuppliers(category)?.map((item) => ({
-        name: item.name,
-        path: item.key,
-      }));
-    }
-  }, [category, subcategory, suppliers]);
+    return getSubcategories(category)?.map((name) => ({
+      name: langData[name],
+      path: name,
+    }));
+  }, [category, subcategory, suppliers, langData]);
 
   const floors = [
     {
@@ -88,10 +79,6 @@ const Map: FC = () => {
   };
 
   const handleClickTab = () => {
-    setParams({
-      subcategory: "",
-      supplier: "",
-    });
     transformWrapperRef.current?.resetTransform();
   };
 

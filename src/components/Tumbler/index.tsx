@@ -39,7 +39,9 @@ const Tumbler: FC<ITumbler> = ({
     pillowRef.current.style.width = `${buttonWidth}px`;
   };
 
-  useEffect(() => setTab(), [activeIndex]);
+  useEffect(() => {
+    setTab();
+  }, [activeIndex, items]);
 
   const handleClick = (index: number) => {
     if (onClick) onClick(index);
