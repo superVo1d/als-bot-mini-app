@@ -26,7 +26,7 @@ export const Facts: FC<FactsProps> = ({ className }) => {
   return (
     <div className={classNames(className, "facts")}>
       <div>
-        <img src="tema.png" />
+        <img src={`${process.env.NEXT_PUBLIC_BASE_URL}/tema.png`} />
       </div>
       <Swiper
         slidesPerView={1}

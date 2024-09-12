@@ -40,7 +40,9 @@ export const DataProvider = ({ children }: { children: ReactNode }) => {
   useEffect(() => {
     const loadSuppliers = async () => {
       try {
-        const response = await fetch("/suppliers.json");
+        const response = await fetch(
+          `${process.env.NEXT_PUBLIC_BASE_URL}/suppliers.json`
+        );
         const data: { [name: string]: ISupplier } = await response.json();
 
         const dataWithKeys: { [name: string]: ISupplierWithKey } = {};
