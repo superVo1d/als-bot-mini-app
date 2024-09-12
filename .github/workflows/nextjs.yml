@@ -55,6 +55,11 @@ jobs:
         with:
           node-version: "20"
           cache: ${{ steps.detect-package-manager.outputs.manager }}
+      - name: Create env file
+        run: |
+          touch .env
+          echo NEXT_PUBLIC_BASE_URL=${{secrets.NEXT_PUBLIC_BASE_URL}} >> .env
+          cat .env
       - name: Setup Pages
         uses: actions/configure-pages@v5
         with:
