@@ -1,9 +1,10 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect } from "react";
 import { ReactZoomPanPinchRef } from "react-zoom-pan-pinch";
 
 export const useMapControl = (
   transformWrapperRef: React.RefObject<ReactZoomPanPinchRef>,
-  mapRef: React.RefObject<HTMLDivElement>
+  mapRef: React.RefObject<HTMLDivElement>,
+  onClick?: (name: string) => void
 ) => {
   const handleClick = (e: MouseEvent) => {
     const target = e.target as HTMLElement;
@@ -17,6 +18,8 @@ export const useMapControl = (
       if (!el) return;
 
       transformWrapperRef.current?.zoomToElement(el, 3);
+
+      if (onClick) onClick(targetId);
     }
   };
 
@@ -24,5 +27,5 @@ export const useMapControl = (
     mapRef.current?.addEventListener("click", handleClick);
 
     return () => mapRef.current?.removeEventListener("click", handleClick);
-  }, [transformWrapperRef, mapRef]);
+  }, [transformWrapperRef, mapRef, onClick]);
 };

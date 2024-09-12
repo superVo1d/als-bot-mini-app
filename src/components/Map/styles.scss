@@ -11,9 +11,11 @@
     overflow: hidden;
     flex-shrink: 0;
 
-    // svg {
-    //   transition: height 0.8s cubic-bezier(0.075, 0.82, 0.165, 1);
-    // }
+    svg {
+      image-rendering: auto;
+      transform: translate3d(0, 0, 0);
+      will-change: transform;
+    }
   }
 
   &__floor-tumbler {

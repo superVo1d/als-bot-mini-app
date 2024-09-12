@@ -8,14 +8,17 @@ export interface IDisplayItems {
     name: string;
     path: string;
   }[];
+  onClick?: (index: number) => void;
 }
-const DisplayList: FC<IDisplayItems> = ({ items }) => {
+const DisplayList: FC<IDisplayItems> = ({ items, onClick }) => {
   return (
     <div className="display-list">
       <ul>
         {items.map((item, index) => (
           <li key={index}>
-            <Button style="secondary">{item.name}</Button>
+            <Button style="secondary" onClick={() => onClick && onClick(index)}>
+              {item.name}
+            </Button>
           </li>
         ))}
       </ul>

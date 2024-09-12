@@ -2,6 +2,9 @@
 @use "./../../assets/styles/mixins";
 
 .button {
+  appearance: none;
+  -webkit-appearance: none;
+
   $selector: &;
 
   @include mixins.font(typography.$font-h3);

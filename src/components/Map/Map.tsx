@@ -1,6 +1,6 @@
 "use client";
 
-import React, { FC, MouseEventHandler, useMemo, useRef, useState } from "react";
+import React, { FC, useMemo, useRef, useState } from "react";
 
 import SixthFloor from "@/assets/media/6.svg";
 import SeventhFloor from "@/assets/media/7.svg";
@@ -16,7 +16,8 @@ import { NavigationTabs } from "@/components/NavigationTabs";
 import "./styles.scss";
 import { DisplayList } from "../DisplayList";
 import { Tumbler } from "../Tumbler";
-import { useClickOutside } from "@/hooks/useClickOutside";
+import { useDataContext } from "@/context/DataContext";
+import { useSearchState } from "@/hooks/useSearchState";
 
 const Map: FC = () => {
   const { width } = useWindowSize();
@@ -24,31 +25,36 @@ const Map: FC = () => {
   const [selectedFloor, setSelectedFloor] = useState(0);
   const mapRef = useRef<HTMLDivElement | null>(null);
   const [isLarge, setIsLarge] = useState<boolean>(true);
+  const { suppliers, getSubcategories, getSuppliers } = useDataContext();
 
-  useMapControl(transformWrapperRef, mapRef);
+  const [params, setParams] = useSearchState();
+  const { category, subcategory, supplier } = params;
 
-  const items = [
-    {
-      name: "Закуски",
-      path: "#",
-    },
-    {
-      name: "Потяжелее",
-      path: "#",
-    },
-    {
-      name: "Безалкогольные напитки",
-      path: "#",
-    },
-    {
-      name: "Закуски",
-      path: "#",
-    },
-    {
-      name: "Разное",
-      path: "#",
-    },
-  ];
+  const onMapSelect = (name: string) => {
+    console.log({ suppliers });
+    if (!suppliers) return;
+
+    const selectedSupplier = suppliers[name];
+
+    if (!selectedSupplier) return;
+
+    setParams({
+      category: selectedSupplier.category,
+      subcategory: selectedSupplier.subcategory || "",
+      supplier: selectedSupplier.key,
+    });
+  };
+
+  useMapControl(transformWrapperRef, mapRef, onMapSelect);
+
+  const subcategoriesItems = useMemo(() => {
+    if (!category) return;
+
+    return getSubcategories(category)?.map((name) => ({
+      name,
+      path: name,
+    }));
+  }, [category, subcategory, suppliers]);
 
   const floors = [
     {
@@ -71,6 +77,24 @@ const Map: FC = () => {
     }
   };
 
+  const handleClickTab = () => {
+    setParams({
+      subcategory: "",
+      supplier: "",
+    });
+    transformWrapperRef.current?.resetTransform();
+  };
+
+  const handleClickListItem = (index: number) => {
+    if (!subcategoriesItems || !suppliers) {
+      return;
+    }
+
+    setParams({
+      subcategory: subcategoriesItems[index].path,
+    });
+  };
+
   const style = useMemo(
     () => ({ width: width - 20, height: isLarge ? width : "auto" }),
     [width, isLarge]
@@ -78,9 +102,9 @@ const Map: FC = () => {
 
   const floor =
     selectedFloor === 1 ? (
-      <SeventhFloor width="1920" height="1000" style={style} />
+      <SeventhFloor style={style} />
     ) : (
-      <SixthFloor width="1920" height="1000" style={style} />
+      <SixthFloor style={style} />
     );
 
   return (
@@ -97,8 +121,10 @@ const Map: FC = () => {
           </TransformComponent>
         </TransformWrapper>
       </div>
-      <NavigationTabs />
-      <DisplayList items={items} />
+      <NavigationTabs onClick={handleClickTab} />
+      {subcategoriesItems && (
+        <DisplayList items={subcategoriesItems} onClick={handleClickListItem} />
+      )}
       <Tumbler
         className="map__floor-tumbler"
         items={floors}

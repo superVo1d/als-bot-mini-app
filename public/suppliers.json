@@ -1,0 +1,594 @@
+{
+    "zhan-plov-kitchen": {
+        "name": "Жан-плов китчен",
+        "image": "https://artlebedev.ru/svalka/als-28-bot-suppliers-photo/zhan-plov-kitchen.png",
+        "description": "Шеф-повар Мансур Холматов готовит ташкентский плов, плов на баранине с изюмом, нутом, чили и чесноком, а еще казан-кебаб из нежного барашка, салат ачичук с базиликом и мини-лепешки. Есть от чего прийти в кулинарный восторг! ",
+        "social": "+7 925 760-50-30\ntiktok.com/@jeanplove  ",
+        "category": "edanapitki",
+        "subcategory": "potyazhelee"
+    },
+    "fermer-zufar": {
+        "name": "Фермер Зуфар",
+        "image": "https://artlebedev.ru/svalka/als-28-bot-suppliers-photo/fermer-zufar.png",
+        "description": "Зуфар работает в России с мыслями о шумном Рио-де-Жанейро и вкусном Гонконге. Если нужна лучшая баранина, достаточно обратиться к нему.",
+        "social": "@unforgettablefarm",
+        "category": "edanapitki",
+        "subcategory": "potyazhelee"
+    },
+    "syry-beloe-ozero": {
+        "name": "Сыры «Белое озеро»",
+        "image": "https://artlebedev.ru/svalka/als-28-bot-suppliers-photo/syry-beloe-ozero.png",
+        "description": "Молокозавод в Оренбурге производит отличные сыры и приглашает всех погрузиться в настоящий вкус.",
+        "social": "vk.com/sssruslan",
+        "category": "edanapitki",
+        "subcategory": "zakuski"
+    },
+    "ashkadarskij": {
+        "name": "Мясо и мед «Ашкадарский»",
+        "image": "https://artlebedev.ru/svalka/als-28-bot-suppliers-photo/mjaso-i-med-ashkadarskij.png",
+        "description": "В 42 км от ближайших поселений, в глубине леса, заслуженный пчеловод Мелеузовского района Ильнур Халитов добывает мед и на тех же полях содержит лошадей, делая пряные, копченые и прессованные заготовки по рецептам дедушек.",
+        "social": "@khalitoff",
+        "category": "edanapitki",
+        "subcategory": "zakuski"
+    },
+    "fitofit": {
+        "name": "Фитофит",
+        "image": "https://artlebedev.ru/svalka/als-28-bot-suppliers-photo/fitofit.png",
+        "description": "Производитель иван-чая, травяных чаев и цукатов из Вологодской области, чья продукция предназначена для ценителей вкуса и качества, знающих толк в русских традиционных напитках. Чаи изготавливаются на профессиональном оборудовании по классическим технологиям.",
+        "social": "+7 931 501-25-50 \nvolteaman.ru\nvk.com/fitofit",
+        "category": "edanapitki",
+        "subcategory": "bezalkogolniye_napitki"
+    },
+    "bibikol-detskoe": {
+        "name": "Бибиколь детское питание",
+        "image": "https://artlebedev.ru/svalka/als-28-bot-suppliers-photo/bibikol.png",
+        "description": "Появились в 2000 году как дистрибьюторы уникальной детской смеси «Нэнни» на новозеландском козьем молоке. Создали уникальную смесь для младенцев и прикормы в виде биби-каш и детского печенья, а также предложили новозеландское козье молоко всем взрослым и детям.\n",
+        "social": "8 800 200-888-0\nbibicall.ru \nt.me/bibicallru\nvk.com/bibicall \ndzen.ru/bibicall",
+        "category": "edanapitki",
+        "subcategory": "bezalkogolniye_napitki"
+    },
+    "kafe-sativa": {
+        "name": "Кафе «Сатива»",
+        "image": "https://artlebedev.ru/svalka/als-28-bot-suppliers-photo/kafe-sativa.png",
+        "description": "Продукты из технической (безнаркотической) конопли доказывают: еще никогда конопля не была такой вкусной и полезной.",
+        "social": "+7 911 501-09-11\nsativa.taplink.ws\ninstagram.com/cafe_sativa",
+        "category": "edanapitki",
+        "subcategory": "zakuski"
+    },
+    "mpk": {
+        "name": "Московская пивоваренная компания",
+        "image": "https://artlebedev.ru/svalka/als-28-bot-suppliers-photo/moskovskaja-pivovarennaja-kompanija.png",
+        "description": "Российский производитель и дистрибьютор пива и безалкогольных напитков, в ассортименте которого — собственные, импортные и произведенные по лицензии продукты. Наиболее известные российские марки компании — «Жигули барное», «Хамовники» и «Мотор», по лицензии варят «Пабст», «Шлитц», «Голландию» и многое другое.",
+        "social": "+7 495 788-54-33\nmosbrew.ru\nt.me/mosbrew\n",
+        "category": "alcohol",
+        "subcategory": "pivo"
+    },
+    "tstep-i-veter": {
+        "name": "Cтепь и ветер",
+        "image": "https://artlebedev.ru/svalka/als-28-bot-suppliers-photo/tstep-i-veter.png",
+        "description": "Торговая марка «Степь и ветер» зарегистрирована в 2017 году. Звучное имя возникло из-за месторасположения на границе Европы и Азии, где дуют сильные степные ветра и видно, как далеко летают пчелы.\n\nНачали выпускать миды еще в те времена, когда слово «мид» в России едва ли можно было услышать. За это время успели поэкспериментировать в самых разных направлениях, от бочковой выдержки до фруктово-ягодных смузи.\n\nНа 2023 год в портфеле компании более 100 сортов, 20 из которых — постоянные. Запустили безалкогольную линейку, «звезда» которой — конопляный чай с айвой. ",
+        "social": "+7 903 398-02-43\nstepiveter.ru\ninstagram.com/stepiveter/\nvk.com/stepiveter\nt.me/stepiveter\nyoutube.com/@stepiveter",
+        "category": "alcohol",
+        "subcategory": "pivo"
+    },
+    "glitter-tingz-bjuti": {
+        "name": "Глиттер тингз бьюти",
+        "image": "https://artlebedev.ru/svalka/als-28-bot-suppliers-photo/glitter-tingz-bjuti.png",
+        "description": "Крупный производитель глиттерной декоративной косметики, представленный в сети «Золотое яблоко».\nЗанимаются организацией бьюти- и глиттер-зон на мероприятиях, где каждый может сделать свой образ максимально блестящим. Визажисты добавляют к образам гостей яркие элементы: блестки, стразы, флеш-тату, цветные стрелки на глаза и пряди на волосы.\nКаждая деталь соответствует основной концепции, а само преображение занимает всего несколько минут.",
+        "social": "+7 903 519-31-55\n+7 916 800-13-39\nglitterthings.ru\n@Glitter_things_beauty_",
+        "category": "fun",
+        "subcategory": "zona_krasoty"
+    },
+    "lulu-med": {
+        "name": "Клиника косметологии «ЛуЛу мед»",
+        "image": "https://artlebedev.ru/svalka/als-28-bot-suppliers-photo/klinika-kosmetologii-lulu-med.png",
+        "description": "Клиника аппаратной и инъекционной косметологии в самом сердце Москвы. Высококвалифицированные врачи вежливо и грамотно подходят к решению проблем пациентов. Лечат акне с комплексным индивидуальным подходом, проводят ЛВ-терапию, контурную пластику, лазерную эпиляцию, плазмотерапию, занимаются аппаратной косметологией, гарантируя 100-процентный результат и хорошее настроение.",
+        "social": "+7 929 500-20-27\nlulumed@yandex.ru\nlulumed.ru\nInstagram.com/lulumed_\n\n",
+        "category": "fun",
+        "subcategory": "zona_krasoty"
+    },
+    "nadezhda-bessonova": {
+        "name": "Надежда Бессонова, таролог",
+        "image": "https://artlebedev.ru/svalka/als-28-bot-suppliers-photo/nadezhda-bessonova-tarolog.png",
+        "description": "Специалист по картам Таро. Дает ответы на вопросы. Помогает разобраться в жизненных хитросплетениях. Предлагает свежий взгляд на жизнь: свою и чужую. Имеет образование психолога.",
+        "social": "+7 910 344-43-26\ninstagram.com/prazibaba   ",
+        "category": "fun",
+        "subcategory": "tarologi"
+    },
+    "alena-runolog": {
+        "name": "Алена, рунолог",
+        "image": "https://artlebedev.ru/svalka/als-28-bot-suppliers-photo/alena-runolog.png",
+        "description": "Юрист-оккультист, 10 лет практикующий в области права и 12 лет занимающийся магией (из них более 9 лет — рунической). Применяет руны буквально во всех областях, считая, что они помогают открывать будущее и заглядывать в себя, чтобы найти ответы даже на самые сложные вопросы.",
+        "social": "+7 915 215-13-31\nt.me/prosto_magical\n",
+        "category": "fun",
+        "subcategory": "tarologi"
+    },
+    "nadezhda-maslova": {
+        "name": "Звукотерапевт Надежда Маслова",
+        "image": "https://artlebedev.ru/svalka/als-28-bot-suppliers-photo/zvukoterapevt-nadezhda-maslova.png",
+        "description": "С помощью звукотерапии погружает в мир мистических звуков и вибраций тибетских поющих чаш, гонга, перкусий. Сеансы вибро-акустического массажа обеспечивают невероятное расслабление, гармонию для тела и души. Каждая нота пронизывает все существо, принося истинное волшебство релаксации.",
+        "social": "t.me/maslovoo\nvk.com/maslovoo\ninstagram.com/d_j_u_l_e_t_t",
+        "category": "fun",
+        "subcategory": "other"
+    },
+    "mahani": {
+        "name": "Ма.хани",
+        "image": "https://artlebedev.ru/svalka/als-28-bot-suppliers-photo/mahani.png",
+        "description": "Интернет-кондитерская, специализирующаяся на приготовлении медовиков всевозможных вкусов. В ассортименте — девять видов медовиков, в том числе шоколадный, медовик с узбекским лимоном, а самое главное — ПП-медовик без сахара и глютена. В своих тортах используют только натуральные продукты, а каждый корж раскатывают вручную, что делает десерты невероятно нежными, а вкус — тем самым из детства.",
+        "social": "+7 906 755-13-99\nma-honey.ru\ninstagram.com/ma.honey.cakes\n",
+        "category": "edanapitki",
+        "subcategory": "sladkoye"
+    },
+    "veronika-tatu-master": {
+        "name": "Вероника, тату-мастер",
+        "image": "https://artlebedev.ru/svalka/als-28-bot-suppliers-photo/veronika-tatu-master.png",
+        "description": "Татуировки мастера Ники — это «фулл эйч-ди» в мире «Сони эриксонов» из нулевых.\n",
+        "social": "+7 916 144-48-11\n@erte_tattoos",
+        "category": "fun",
+        "subcategory": "zona_krasoty"
+    },
+    "sajlentsio": {
+        "name": "Алкогольный бар «Сайленцио»",
+        "image": "https://artlebedev.ru/svalka/als-28-bot-suppliers-photo/alkogolnyj-bar-sajlentsio.png",
+        "description": "Первая абсентерия в России. Обеспечивают самый большой выбор абсента и рассказывают все о его культуре. В коктейльной карте есть напитки на любой вкус: современная подача классики, авторские коктейли и уникальная линейка напитков с добавлением парфюмерных дистиллятов. Ценителей джина здесь ждет коллекция из 50 самых лучших и редких позиций со всего мира.",
+        "social": "+7 495 145-88-58\ninstagram.com/silencio.bar",
+        "category": "alcohol",
+        "subcategory": "kokteli"
+    },
+    "bibikol-ne-detskoe": {
+        "name": "Бибиколь не детское питание",
+        "image": "https://artlebedev.ru/svalka/als-28-bot-suppliers-photo/bibikol.png",
+        "description": "Появились в 2000 году как дистрибьютор уникальной детской смеси «Нэнни» на новозеландском козьем молоке. Создали уникальную смесь для младенцев и прикормы в виде биби-каш и детского печенья, а также предложили новозеландское козье молоко всем взрослым и детям .\n",
+        "social": "+7 800 200-888-0\nbibicall.ru\nt.me/bibicallru\nvk.com/bibicall\ndzen.ru/bibicall",
+        "category": "alcohol",
+        "subcategory": "kokteli"
+    },
+    "brio-ajs": {
+        "name": "Брио айс",
+        "image": "https://artlebedev.ru/svalka/als-28-bot-suppliers-photo/brio-ajs.png",
+        "description": "Развивают новый формат десертов в России на основе французской булочки бриошь. Производят оборудование и ингредиенты. Увеличивают средний чек и прибыль кофеен, кормят людей, продают франшизы.",
+        "social": "+7 499 647 53 64\nbrioice.ru\ninstagram.com/brio.ice",
+        "category": "edanapitki",
+        "subcategory": "sladkoye"
+    },
+    "vorgol": {
+        "name": "Природная вода «Воргол»",
+        "image": "https://artlebedev.ru/svalka/als-28-bot-suppliers-photo/prirodnaja-voda-vorgol.png",
+        "description": "Природная вода первозданной чистоты из артезианского источника глубиной 102 м, расположенного в живописном экологически чистом районе Липецкой области вблизи реки Воргол. Выпускается в пэт-бутылках, стекле и таре для кулеров. С недавних пор официально сотрудничают с футбольными клубами «Спартак», «Торпедо», «Химки» и др.",
+        "social": "+7 495 989-15-12\n+7 499 905-30-55\nvorgolmsk.ru\nvk.com/vodavorgol\ninstagram.com/vodavorgol",
+        "category": "edanapitki",
+        "subcategory": "bezalkogolniye_napitki"
+    },
+    "schelkunchik": {
+        "name": "Щелкунчик",
+        "image": "https://artlebedev.ru/svalka/als-28-bot-suppliers-photo/schelkunchik.png",
+        "description": "Сеть израильских магазинов Ави Каца обжаривает и глазирует орехи, соединяет  форматы аутентичного рынка и современного магазина, а также работает с франшизами. ",
+        "social": "+7 925 075-94-07",
+        "category": "edanapitki",
+        "subcategory": "zakuski"
+    },
+    "brju-baj-krju": {
+        "name": "Брю бай крю",
+        "image": "https://artlebedev.ru/svalka/als-28-bot-suppliers-photo/brju-baj-krju.png",
+        "description": "С удовольствием варят современное крафтовое и любимое всеми классическое пиво. \nРегулярно расширяют ассортимент самых интересных сортов пива по рецептам и технологиям из разных уголков мира. Приглашают клиентов отправиться в путешествие в мир вкусного пива и ярких открытий.",
+        "social": "+7 960 721-88-94\n+7 926 381-91-99\nbrewbycrew.ru\nvk.com/brew_by_crew\nt.me/BrewByCrew\ninstagram.com/brewbycrew\nuntappd.com/BrewByCrew",
+        "category": "alcohol",
+        "subcategory": "pivo"
+    },
+    "vinodelnja-zhakov": {
+        "name": "Винодельня «Жаков»",
+        "image": "https://artlebedev.ru/svalka/als-28-bot-suppliers-photo/vinodelnja-zhakov.png",
+        "description": "Новая винодельня с семейной историей. Строитель и айтишник делают вино своими силами без внешних инвестиций. \nШесть вин из «саперави», напитки из винограда «восторг», коты на этикетках — этим ребятам есть чем удивить рецепторы и вкусоароматическую память.",
+        "social": "zhakovwine.ru\nt.me/zhakovwinery\ninstagram.com/zhakovwinery/",
+        "category": "alcohol",
+        "subcategory": "vino"
+    },
+    "alenabet": {
+        "name": "АлёнаБьёт",
+        "image": "https://artlebedev.ru/svalka/als-28-bot-suppliers-photo/alenabet.png",
+        "description": "Тату-мастер Алена работает в разных стилях, предпочтительные — лайнворк, минимализм, графика, Япония (особенно околореализм).\n\n",
+        "social": "+7 951 746-36-54\ninstagram.com/alenchikayt\ninstagram.com/alyonabyot\nvk.com/alyonabyot",
+        "category": "fun",
+        "subcategory": "zona_krasoty"
+    },
+    "elena-ushakova": {
+        "name": "Елена Ушакова, специалист по МАК-картам",
+        "image": "https://artlebedev.ru/svalka/als-28-bot-suppliers-photo/elena-ushakova-spetsialist-po-mak-kartam.png",
+        "description": "Елена Ушакова — трансперсональный психолог, сказкотерапевт, шаманствующий практик и камневед. \nВ своей работе использует различные инструменты, один из любимых — МАК-карты. Они позволяют людям понять свои желания и определить, что нужно делать для их осуществления, лучшить свое самочувствие, настроение, услышать себя и свои чувства, а также найти нужный вариант развития событий. Помогает новичкам наводящими вопросами, раскрывает сундучки мыслей и помогает увидеть всю картину объективно.",
+        "social": "t.me/koralina_2015\ninstagram.com/koralina_2015",
+        "category": "fun",
+        "subcategory": "tarologi"
+    },
+    "nejrobotiks": {
+        "name": "Нейроботикс",
+        "image": "https://artlebedev.ru/svalka/als-28-bot-suppliers-photo/nejrobotiks.png",
+        "description": "Делают нейроинтерфейсы для нейрокоррекции, реабилитации, улучшения стрессоустойчивости, ассистивного использования и для развлечений, а также производят исследовательское оборудование, реабилитационные экзоскелеты и роботов с портретным сходством.",
+        "social": "+7 495 742-50-86\nneuroplay.ru\nneurobotics.ru\ninstagram.com/neurobotics.ru\nvk.com/runeurobotics\nt.me/neurobotics\n",
+        "category": "fun",
+        "subcategory": "other"
+    },
+    "vsevolod-latunov": {
+        "name": "Всеволод Латунов, иллюзионист",
+        "image": "https://artlebedev.ru/svalka/als-28-bot-suppliers-photo/vsevolod-latunov-illjuzionist.png",
+        "description": "Выступает на частных мероприятиях и иллюзионных шоу. Использует элементы камеди-магии, превращает воду в вино, импровизирует и шутит, а не просто показывает фокусы. \n",
+        "social": "+7 916 666-67-13\nvlatunov.ru\ninstagram.com/vlatunov\nvk.com/vlatunov\n",
+        "category": "fun",
+        "subcategory": "other"
+    },
+    "zero-pojnt": {
+        "name": "Зеро пойнт",
+        "image": "https://artlebedev.ru/svalka/als-28-bot-suppliers-photo/zero-pojnt.png",
+        "description": "Первая в РФ безалкогольная крафтовая пивоварня. Основана в 2020 году Сергеем Кирясовым, который отказался от алкоголя и начал поиски вкусного безалкогольного пива. Перепробовал все, что было доступно, и понял, что выбора практически нет. Так зародилась миссия — варить вкусное безалкогольное пиво, чтобы у людей был выбор. Линейка «Зеро пойнт» состоит из 10 сортов, включая молочный стаут, айпиэй, саур-эли и лагеры.",
+        "social": "+7 977 872-08-77\n+7 977 862-48-66",
+        "category": "edanapitki",
+        "subcategory": "bezalkogolniye_napitki"
+    },
+    "bar-lju": {
+        "name": "Бар «Лью»",
+        "image": "https://artlebedev.ru/svalka/als-28-bot-suppliers-photo/bar-lju.png",
+        "description": "Основа для напитков «Лью» — это универсальный помощник, который отлично работает в различных условиях и имеет широкий спектр применения.\nДля приготовления напитка достаточно лишь добавить «Лью» в кувшин или бокал, засыпать льдом и залить содовой.",
+        "social": "cordial.ru\ninstagram.com/cordial_ru\nt.me/cordial_lbu",
+        "category": "edanapitki",
+        "subcategory": "bezalkogolniye_napitki"
+    },
+    "prostye-pravila": {
+        "name": "Простые правила",
+        "image": "https://artlebedev.ru/svalka/als-28-bot-suppliers-photo/prostye-pravila.png",
+        "description": "Делают настольные игры, способные перенести в детство даже самого серьезного взрослого. Напоминают, что в каждом из нас живет ребенок, который не боится быть собой и от всей души веселиться. Простые правила — насыщенные эмоции!",
+        "social": "info@prostyepravila.ru\nprostyepravila.ru\nvk.com/ds_prostyepravila\nt.me/prostyepravila\ninstagram.com/prostyepravila",
+        "category": "fun",
+        "subcategory": "igry"
+    },
+    "anastasija-belova": {
+        "name": "Анастасия Белова, мастер мехенди",
+        "image": "https://artlebedev.ru/svalka/als-28-bot-suppliers-photo/anastasija-belova-master-mehendi.png",
+        "description": "Украшает людей временными рисунками хной — мехенди, а также обучает этому искусству. Организует мехенди-зоны и мастер-классы на мероприятиях.",
+        "social": "+7 926 841-71-44\npro-mehendi.ru\nvk.com/anastasiya_belova_art\n",
+        "category": "fun",
+        "subcategory": "zona_krasoty"
+    },
+    "aleksandra": {
+        "name": "Александра, художник-шаржист",
+        "image": "https://artlebedev.ru/svalka/als-28-bot-suppliers-photo/aleksandra-hudozhnik-sharzhist.png",
+        "description": "Создает добродушные шаржи и портреты на заказ по фото уже больше восьми лет. В рамках проекта «Атражение, лаборатория замечательных лиц» рисует людей «вживую» — на мероприятиях, вечеринках и праздниках.\n",
+        "social": " +7 968 880-26-50\nalexatmeneeva@mail.ru\nvk.com/atrazhenie",
+        "category": "fun",
+        "subcategory": "other"
+    },
+    "lazerkat": {
+        "name": "Лазеркат",
+        "image": "https://artlebedev.ru/svalka/als-28-bot-suppliers-photo/lazerkat.png",
+        "description": "Поставляет лазерные, маркирующие и фрезерные ЧПУ-станки. Оказывает круглосуточный сервис. Имеет собственный отдел разработок. Предлагает оригинальные комплектующие. ",
+        "social": " +7 800 777-17-87\nlasercut.ru\nvk.com/lasercut_ru\nt.me/lasercutl\n",
+        "category": "fun",
+        "subcategory": "other"
+    },
+    "kinki-pati": {
+        "name": "Кинки-пати",
+        "image": "https://artlebedev.ru/svalka/als-28-bot-suppliers-photo/kinki-pati.png",
+        "description": "Создают пространство свободы и удовольствия, где люди исследуют свою сексуальность и самовыражаются. Проводят кинки-пати с 2016 года и объединяют уже более 40 тысяч человек. Соблюдают дресс-код, строго следуют правилам культуры активного согласия, обеспечивают полную безопасность и конфиденциальность. Вечеринки проходят в самых разнообразных форматах и собирают по 200–700 человек.\n\nУже провели более 400 мероприятий, направленных на образование и развитие культуры секса в стране: вечеринки, фестивали, мастер-классы, курсы, эфиры, маркеты, лектории, онлайн-вечеринки и иммерсивные шоу.\n",
+        "social": "+7 495 223-41-36\nkinky-party.com\nt.me/kinkyrussia",
+        "category": "fun",
+        "subcategory": "other"
+    },
+    "dabl-dabl": {
+        "name": "Дабл дабл",
+        "image": "https://artlebedev.ru/svalka/als-28-bot-suppliers-photo/dabl-dabl.png",
+        "description": "Конфеты, которые устроят дискотеку для вкусовых рецепторов.",
+        "social": "+7 499 385-84-99\ndoubledouble.ru",
+        "category": "edanapitki",
+        "subcategory": "sladkoye"
+    },
+    "blinberi": {
+        "name": "Блинбери",
+        "image": "https://artlebedev.ru/svalka/als-28-bot-suppliers-photo/blinberi.png",
+        "description": "Международная сеть блинных формата «фаст-кежуал». На данный момент сеть насчитывает более 100 заведений в 20 городах России, а также в ОАЭ и Азербайджане.\n\nВ основе меню — целое блюдо в блине. Пепперони, лазанья, вишневый штрудель и тирамису превращаются во вкуснеейшие начинки для блинчиков.",
+        "social": "франшиза.блинбери.рф\ninstagram.com/blinberry\nvk.com/blinberryrf\nt.me/blinbery",
+        "category": "edanapitki",
+        "subcategory": "potyazhelee"
+    },
+    "rash-popkorn": {
+        "name": "Раш попкорн",
+        "image": "https://artlebedev.ru/svalka/als-28-bot-suppliers-photo/rash-popkorn.png",
+        "description": "Производят карамельные десерты на основе попкорна по уникальной рецептуре. Используют натуральные ингредиенты и обеспечивают нетривиальный вкус.",
+        "social": "+7 925 062-06-62\nrushpopcorn.ru\ninstagram.com/rushcorn\nt.me/rushpopcorn",
+        "category": "edanapitki",
+        "subcategory": "zakuski"
+    },
+    "nindzja-guds": {
+        "name": "Ниндзя гудс",
+        "image": "https://artlebedev.ru/svalka/als-28-bot-suppliers-photo/nindzja-guds.png",
+        "description": "Предлагают съедобные цветы и зелень.",
+        "social": "+7 995 882-19-54\nstart.goods.ninja\nt.me/ninjagoods",
+        "category": "edanapitki",
+        "subcategory": "zakuski"
+    },
+    "leto-v-banke": {
+        "name": "Лето в банке",
+        "image": "https://artlebedev.ru/svalka/als-28-bot-suppliers-photo/leto-v-banke.png",
+        "description": "Производят натуральные лимонады по собственной технологии на отечественном оборудовании. Обеспечивают отличное качество и оптимальный срок хранения. \n\n",
+        "social": "+7 985 540-03-53\n+7 495 374-60-69\nalla.salomatina@whitewaters.pro\nвайтвотерс.рф",
+        "category": "edanapitki",
+        "subcategory": "bezalkogolniye_napitki"
+    },
+    "juh": {
+        "name": "ЙУХ (Йорик Убил Хамлета)",
+        "image": "https://artlebedev.ru/svalka/als-28-bot-suppliers-photo/juh-jorik-ubil-hamleta.png",
+        "description": "Флексибл-бар с трукост-ценами до 17:00, джин-баром и тематическими вечеринками по выходным. Прославились хуйгласс-коктейлем, текилой по-йуховски, сочноймощной кухней и возмущенной аудиторией. ",
+        "social": "t.me/xyuvsem",
+        "category": "alcohol",
+        "subcategory": "kokteli"
+    },
+    "takamaka": {
+        "name": "Такамака",
+        "image": "https://artlebedev.ru/svalka/als-28-bot-suppliers-photo/takamaka.png",
+        "description": "Изысканный ром, созданный в райском уголке земли.\nСемейное производство с данью уважения к истории и корням с применением самых современных технологий.",
+        "social": "+7 999 655-40-48\n+7 916 873-92-96",
+        "category": "alcohol",
+        "subcategory": "nastoyki"
+    },
+    "drinksam": {
+        "name": "Дринксам",
+        "image": "https://artlebedev.ru/svalka/als-28-bot-suppliers-photo/drinksam.png",
+        "description": "Первый и единственный безалкогольный алкоголь в России.",
+        "social": "instagram.com/drinksome_co\nvk.com/drinksomecool\nt.me/world_of_drinksome",
+        "category": "edanapitki",
+        "subcategory": "bezalkogolniye_napitki"
+    },
+    "fejsrum": {
+        "name": "Фейсрум",
+        "image": "https://artlebedev.ru/svalka/als-28-bot-suppliers-photo/fejsrum.png",
+        "description": "Сеть студий ухода за лицом, где люди восстанавливают естественную красоту и уверенность в себе с помощью комплексного ухода за кожей лица и тела.\nПредлагают экспертный подход к уходу, предоставляют услуги сертифицированных косметологов, которые помогают клиентам регулярно заботиться о себе и подбирают индивидуальную программу ухода в зависимости от запроса.",
+        "social": "msk.face-room.ru\ninstagram.com/face.room.msk/\nt.me/faceroom_studios",
+        "category": "fun",
+        "subcategory": "zona_krasoty"
+    },
+    "jamajka": {
+        "name": "Ямайка",
+        "image": "https://artlebedev.ru/svalka/als-28-bot-suppliers-photo/jamajka.png",
+        "description": "Уже 15 лет шьют отличные футболки и печатают на них принты. Принимают заказы как на одну футболку (для себя или в подарок), так и на большой тираж для проекта. Принты наносят шелкографией, цифровыми методами, а теперь еще и вышивкой.",
+        "social": "+7 495 646-05-75\ni-maika.ru\nvk.com/imaika\nt.me/imaikacorp",
+        "category": "fun",
+        "subcategory": "other"
+    },
+    "fotobudka": {
+        "name": "Фотобудка «Сейчас вылетит птичка»",
+        "image": "https://artlebedev.ru/svalka/als-28-bot-suppliers-photo/fotobudka-sejchas-vyletit-ptichka.png",
+        "description": "",
+        "social": "",
+        "category": "fun",
+        "subcategory": "other"
+    },
+    "tatu-printer": {
+        "name": "Тату-принтер",
+        "image": "https://artlebedev.ru/svalka/als-28-bot-suppliers-photo/tatu-printer.png",
+        "description": "",
+        "social": "",
+        "category": "fun",
+        "subcategory": "zona_krasoty"
+    },
+    "flipbuki": {
+        "name": "Флипбуки",
+        "image": "https://artlebedev.ru/svalka/als-28-bot-suppliers-photo/flipbuki.png",
+        "description": "",
+        "social": "",
+        "category": "fun",
+        "subcategory": "other"
+    },
+    "dagfud": {
+        "name": "Дагфуд",
+        "image": "https://artlebedev.ru/svalka/als-28-bot-suppliers-photo/dagfud.png",
+        "description": "Привозят лучшие продукты из горного Дагестана: отборное мясо, лучшие сыры и самые вкусные полуфабрикаты. Работают с фермерскими хозяйствами уже много лет, выбирают самое качественное и полезное и привозят до двери клиента из самых высокогорных точек Дагестана.",
+        "social": "+7 925 860-80-10\ndagfoodinfo@gmail.com\ndagfood.ru\n@dagfood",
+        "category": "edanapitki",
+        "subcategory": "potyazhelee"
+    },
+    "igra-go": {
+        "name": "Игра го",
+        "image": "https://artlebedev.ru/svalka/als-28-bot-suppliers-photo/igra-go.png",
+        "description": "Обучают восточной игре го, которую мало кто преподает в России. Го развивает память, концентрацию, внимательность и другие важные для повседневной жизни качества. Это необычное хобби, объединяющее замечательных людей. Предлагают пробный онлайн-урок бесплатно.",
+        "social": "viktorgo.ru\ngostrategia",
+        "category": "fun",
+        "subcategory": "igry"
+    },
+    "studija-3d": {
+        "name": "Студия 3D",
+        "image": "https://artlebedev.ru/svalka/als-28-bot-suppliers-photo/studija-3d.png",
+        "description": "Предлагают мультиплатформенный онлайн-сервис 3D-печати с интегрированной системой автоматического оформления заказа. Производят уникальное оборудование и материалы. Изготавливают изделия на 3D-принтерах. Уже помогли более 5000 клиентам реализовать их неповторимые задумки.",
+        "social": "+7 495 532-43-47\n3dprint@studia3d.com\nstudia3d.com\n",
+        "category": "fun",
+        "subcategory": "other"
+    },
+    "kristina-hiromant": {
+        "name": "Кристина, хиромант",
+        "image": "https://artlebedev.ru/svalka/als-28-bot-suppliers-photo/kristina-hiromant.png",
+        "description": "Хиромант, таролог, основатель бренда «Кристина_жии», свечной и травяной маг. Имеет глубинные знания о магии и законах Вселенной, более 6 лет консультирует и поддерживает людей. Специализируется на построении гармоничных и счастливых отношений, снимает блоки, расширяет финансовые потоки, помогает найти себя и любимое дело. На консультациях не занимается демагогией и не рассуждает о великом. Говорит четко и понятно, проникая в самую суть. \n\nС помощью красной ручки и профессиональных знаний показывает, как прибавить себе полезных качеств для получения желаемого результата.",
+        "social": "+7 916 071-87-96\nkristina-zhii.tilda.ws\ninstagram.com/kristina_zhii\nt.me/kristina_zhii\n",
+        "category": "fun",
+        "subcategory": "tarologi"
+    },
+    "pjan-se": {
+        "name": "Пян-се",
+        "image": "https://artlebedev.ru/svalka/als-28-bot-suppliers-photo/pjan-se.png",
+        "description": "Предлагают попробовать национальное корейское блюдо пян-се — большие паровые булочки с капустно-мясной начинкой и специями.\n\n",
+        "social": "",
+        "category": "edanapitki",
+        "subcategory": "potyazhelee"
+    },
+    "chaplins": {
+        "name": "Чаплинс пицца",
+        "image": "https://artlebedev.ru/svalka/als-28-bot-suppliers-photo/chaplins-pitstsa.png",
+        "description": "Делают отличную пиццу и авторские парбейки. Называются в честь основателя Константина Чаплина. \nНаходятся в столице Золотого кольца — Ярославле. Открыты к сотрудничеству и развитию.",
+        "social": "+7 485 250-06-60\nchaplinspizza.ru\nchaplinspro.ru\nvk.com/chaplinspizza\n",
+        "category": "edanapitki",
+        "subcategory": "potyazhelee"
+    },
+    "grigorij-nevarko": {
+        "name": "Григорий Неварко, фокусы с картами",
+        "image": "https://artlebedev.ru/svalka/als-28-bot-suppliers-photo/grigorij-nevarko-fokusy-s-kartami.png",
+        "description": "Показывает различные фокусы с картами и не только.\nКолода карт скрывает за собой огромный мир. В ней 52 карты, из-за чего количество вариантов раскладок примерно равно 8 с 62 нулями. Это настолько огромное число, что скорее всего при перетасовке колоды получится комбинация, которую не получал еще никто за всю историю человечества. А ведь это только математика!\nГригорий превращает математику в настоящую магию и погружает в нее всех желающих. ",
+        "social": "gnevarko@mail.ru\nvk.com/l2exgre",
+        "category": "fun",
+        "subcategory": "other"
+    },
+    "bar-javka": {
+        "name": "Бар «Явка»",
+        "image": "https://artlebedev.ru/svalka/als-28-bot-suppliers-photo/bar-javka.png",
+        "description": "В популярной стилистике паба предлагают местный специалитет: настойки собственного производства на местных ягодах и травах. Концепция кухни основана на местном продукте: от мяса, рыбы и птицы до иван-чая и коктейлей на натуральных предмиксах. Проводят комедийные шоу, музыкальные концерты, тематические вечеринки.",
+        "social": "+7 920 659-52-25\nvk.com/yavkabar",
+        "category": "alcohol",
+        "subcategory": "kokteli"
+    },
+    "vjatich": {
+        "name": "Вятич",
+        "image": "https://artlebedev.ru/svalka/als-28-bot-suppliers-photo/vjatich.png",
+        "description": "Одна из старейших независимых пивоварен России, которая была основана в 1903 году потомственным баварским пивоваром Карлом Отто Шнейдером. Его принципы действуют на производстве и по сей день: местная вода, традиционная рецептура, природное сырье.",
+        "social": "vyatich.ru\nvk.com/vyatich_beer",
+        "category": "alcohol",
+        "subcategory": "pivo"
+    },
+    "tatjana-zueva": {
+        "name": "Татьяна Зуева, таролог",
+        "image": "https://artlebedev.ru/svalka/als-28-bot-suppliers-photo/tatjana-zueva-tarolog.png",
+        "description": "Мощный таролог для амбициозных женщин. В своей практике успешно соединяет карты Таро и уникальный инструмент самопознания — Матрицу судьбы. Использует авторскую Таро-матрицу, которая помогает увеличивать доход, набирать правильных людей в бизнес-команды, находить свое предназначение, налаживать отношения в семье.\n\n",
+        "social": "instagram.com/zueva_tanya\nt.me/zueva_tanya",
+        "category": "fun",
+        "subcategory": "tarologi"
+    },
+    "tsvetomuzyka": {
+        "name": "Выставка «Цветомузыка СССР»",
+        "image": "https://artlebedev.ru/svalka/als-28-bot-suppliers-photo/vystavka-tsvetomuzyka-sssr.png",
+        "description": "Попап-музей цветомузыки СССР хранит единственную и самую полную коллекцию цветомузыкальных устройств советской эпохи, которая насчитывает более 80 различных моделей, произведенных предприятиями со всего Советского Союза — от Ташкента до Иркутска. Удивительные приборы, не имеющие аналогов в мире, дарят теплую ламповую атмосферу.",
+        "social": "+7 916 406-43-05\ndiscomuseum.ru\ninstagram.com/ussrcolormusic\n      ",
+        "category": "fun",
+        "subcategory": "other"
+    },
+    "vokacho": {
+        "name": "Мастерская шоколада «Вокачо»",
+        "image": "https://artlebedev.ru/svalka/als-28-bot-suppliers-photo/masterskaja-shokolada-vokacho.png",
+        "description": "Делают крафтовый шоколад из какао-бобов высочайшего качества и производят конфеты ручной работы по собственным рецептам. Раз в сезон выпускают новую коллекцию с очередным необычным названием («Черничные ночи», «Лаймовое безумие» и т. п.).",
+        "social": "+7 937 807-73-35\nwokacho.ru\ninstagram.com/wokacho\nt.me/wokacho",
+        "category": "edanapitki",
+        "subcategory": "sladkoye"
+    },
+    "ippolit": {
+        "name": "Ипполит",
+        "image": "https://artlebedev.ru/svalka/als-28-bot-suppliers-photo/ippolit.png",
+        "description": "Рюмочные «Ипполит» и «Наденька», а также шашлычная «Федя, дичь!» — три петербургских заведения, покоривших город не только настойками собственного производства (два десятка вкусов!), но и любимой едой.\nПредлагают не ностальгировать по прошлому, а интеллигентно выпивать и закусывать.\nСочетают демократичные цены и качественный уровень исполнения блюд, знакомых каждому. Селедка под шубой, оливье, салат столичный, жареная картошка с сосисками, чебуреки, жареные пирожки — малая часть того, что ждет посетителей.",
+        "social": "instagram.com/ippolit.spb\ninstagram.com/fedya.spb\ninstagram.com/nadenka_spb",
+        "category": "alcohol",
+        "subcategory": "nastoyki"
+    },
+    "guli-buli": {
+        "name": "Гули Були",
+        "image": "https://artlebedev.ru/svalka/als-28-bot-suppliers-photo/guli-buli.png",
+        "description": "Слоеный чайный напиток с желейными кубиками собственного приготовления на основе натуральных фруктово-ягодных пюре, альтернативного молока и четырех видов концентрированных чаев.\n— «Манговая Ольга»: пюре манго, кусочки манго, кокосовое желе, миндальное молоко, чай «эрл грей»;\n— «Кокосовый Николай»: кокосовый крем, карамель, кокосовое желе, кокосовое молоко, чай «эрл грей»;\n— «Александр — клубника нахал фрукт»: пюре из клубники, кусочки клубники, клубничное желе, ванильное молоко, наглый фрукт;\n— «Таня космос»: пюре манго, кусочки манго и кусочки клубники, клубничное желе, кокосовое молоко, анчан и наглый фрукт.",
+        "social": "instagram.com/guli_buli86\nvk.com/guli_buli86",
+        "category": "edanapitki",
+        "subcategory": "bezalkogolniye_napitki"
+    },
+    "shato-pino": {
+        "name": "Шато Пино",
+        "image": "https://artlebedev.ru/svalka/als-28-bot-suppliers-photo/shato-pino.png",
+        "description": "Винодельческое хозяйство Шато Пино расположено в южной части города Новороссийска, на живописных склонах горы Колдун, в селе Федотовка.\nСклоны с различной экспозицией, а также перепад высот от 180 до 270 метров над уровнем моря позволяют производить вина разных стилей одинаково высокого качества из различных сортов винограда: от более южных, таких как шираз, до более «прохладных» — группы пино и рислинг.\nТут контролируют урожайность, собирают виноград вручную и используют современные методы агротехники.\nРельеф местности позволил встроить здание винодельни в склон горы. Перепад высот между верхней площадкой приема винограда и нижней точкой — цехом розлива готовой продукции составляет 15 метров, что позволяет перемещать виноград и вино благодаря закону гравитации.",
+        "social": "chateau-pinot.ru\ninstagram.com/chateau_pinot_winery\nt.me/chateaupinot",
+        "category": "alcohol",
+        "subcategory": "vino"
+    },
+    "bi-dzhin": {
+        "name": "Би джин",
+        "image": "https://artlebedev.ru/svalka/als-28-bot-suppliers-photo/bi-dzhin.png",
+        "description": "«Би джин» — настоящий джин, созданный на основе уникальных дикорастущих ботаникалов из четырех разных регионов России.\n\nНазвание «Би джин» происходит от английского bee («пчела»), это насекомое, знающее толк в растениях. Идея проекта — показать безграничные возможности, которые дает флора российских регионов, при создании современного джина.\nВпечатляющая коллекция ботаникалов — одно из двух слагаемых, которые делают «Би джин» настоящим событием. Второе — классическая технология производства: «Би джин» создан по всем правилам приготовления настоящего джина.",
+        "social": "",
+        "category": "alcohol",
+        "subcategory": "kokteli"
+    },
+    "vodka-finist": {
+        "name": "Водка «Финист»",
+        "image": "https://artlebedev.ru/svalka/als-28-bot-suppliers-photo/vodka-finist.png",
+        "description": "Премиальная водка крафт. Отличается от остальных сортов живым натуральным вкусом, сформированным исходным зерном. Легкая и мягкая, великолепно пьется даже без охлаждения. Выпускают продукцию малыми партиями. Сохраняют вкус, не добавляя сахар. \n\nСпирт для каждого купажа имеет уникальный природный вкус. За счет безугольной обработки он получается мягким и гармоничным — с шелковистой текстурой и «прозрачным выдохом». \n\n\n\n",
+        "social": "+7 926 157-30-02\nfinist-craft.com\ninstagram.com/finist_vodka\nvk.com/finist_vodka\n",
+        "category": "alcohol",
+        "subcategory": "vodka_sake"
+    },
+    "barrister": {
+        "name": "Барристер",
+        "image": "https://artlebedev.ru/svalka/als-28-bot-suppliers-photo/barrister.png",
+        "description": "Знают главный секрет отличного джина: он заключается в раздельной дистилляции ароматных спиртов. Предвосхищают ожидания и организуют территорию творчества. \n",
+        "social": "barrister-gin.ru\nmonopolshop.com\nt.me/s/ladoga_drinks",
+        "category": "alcohol",
+        "subcategory": "kokteli"
+    },
+    "tsarskaja": {
+        "name": "Царская",
+        "image": "https://artlebedev.ru/svalka/als-28-bot-suppliers-photo/tsarskaja.png",
+        "description": "Производят водку по рецептам, воссозданным по архивам времен Петра Великого. В процессе используют чистейшую воду из Ладожского озера, которая сохраняет свои природные свойства благодаря современным технологиям. За основу берут спирт класса люкс из пшеницы отборных сортов. Придают оттенки вкуса с помощью настоя липового цвета и липового меда. Для розлива используют косметическое стекло. В дизайне задействуют элементы российской геральдики. \n\n\n",
+        "social": "+7 812 336-96-69\nladogaspb.ru\nmonopolshop.com",
+        "category": "alcohol",
+        "subcategory": "vodka_sake"
+    },
+    "hukaplejs": {
+        "name": "ХукаПлейс",
+        "image": "https://artlebedev.ru/svalka/als-28-bot-suppliers-photo/hukaplejs.png",
+        "description": "Родоначальники кальянной индустрии в России. Самая крупная франшизная сеть кальянных заведений в мире. Более двухсот заведений в двадцати одной стране мира. ",
+        "social": "hookahplace.ru\ninstagram.com/hookahplaceofficial\nt.me/hookahplacetv",
+        "category": "fun",
+        "subcategory": "kalyany"
+    },
+    "vejn": {
+        "name": "Вейн",
+        "image": "https://artlebedev.ru/svalka/als-28-bot-suppliers-photo/vejn.png",
+        "description": "Десять лет изготавливают самогонные аппараты из медицинской стали на современном оборудовании. С их помощью получается отличный «домашний» алкоголь. \n\n",
+        "social": "wein.ru\nvk.com/wein_club",
+        "category": "alcohol",
+        "subcategory": "vodka_sake"
+    },
+    "1851": {
+        "name": "1851",
+        "image": "https://artlebedev.ru/svalka/als-28-bot-suppliers-photo/1851.png",
+        "description": "1851 — музыкальный псевдоним Андрея Филонова, московского диджея, арт-директора пространства «Яуза», человека тонкого вкуса и уникального чутья на таланты и тренды, апологета дискозвука.",
+        "social": "",
+        "category": "artist",
+        "subcategory": null
+    },
+    "antoha_mc": {
+        "name": "Антоха МС",
+        "image": "https://artlebedev.ru/svalka/als-28-bot-suppliers-photo/antoha-ms.png",
+        "description": "Российский хип-хоп-исполнитель",
+        "social": "",
+        "category": "artist",
+        "subcategory": null
+    },
+    "radio_kunst": {
+        "name": "Radio Kunst ",
+        "image": "https://artlebedev.ru/svalka/als-28-bot-suppliers-photo/radio-kunst.png",
+        "description": "Музыкальное трио Сергея Ефременко, Владимира Китляра (ака РадиоБоб) и его дочери Дарьи Китляр.",
+        "social": "",
+        "category": "artist",
+        "subcategory": null
+    },
+    "tima_akimov": {
+        "name": "Тима Акимов",
+        "image": "https://artlebedev.ru/svalka/als-28-bot-suppliers-photo/tima-akimov.png",
+        "description": "Молодой артист «ВК Рекордс».",
+        "social": "",
+        "category": "artist",
+        "subcategory": null
+    },
+    "kostja_sidorkov": {
+        "name": "Костя Сидорков",
+        "image": "https://artlebedev.ru/svalka/als-28-bot-suppliers-photo/kostja-sidorkov.png",
+        "description": "Супер-пупер-топ-диджей, филантроп, в «Форбсах».",
+        "social": "",
+        "category": "artist",
+        "subcategory": null
+    },
+    "mashkov": {
+        "name": "Машков",
+        "image": "https://artlebedev.ru/svalka/als-28-bot-suppliers-photo/mashkov.png",
+        "description": "Диджей, основатель промо-команды «Система 108» и клуба «Радуга».",
+        "social": "",
+        "category": "artist",
+        "subcategory": null
+    }
+}

@@ -3,19 +3,38 @@ import { FC, useEffect, useRef, useState } from "react";
 import { classNames } from "@telegram-apps/sdk-react";
 
 import "./styles.scss";
+import { useSearchState } from "@/hooks/useSearchState";
 
-const NavigationTabs: FC = () => {
+export interface INavigationTabs {
+  onClick?: (index: number) => void;
+}
+
+const NavigationTabs: FC<INavigationTabs> = ({ onClick }) => {
   const tabsRef = useRef<HTMLLIElement[]>([]);
   const [activeTab, setActiveTab] = useState(0);
+  const [{ category }, setParams] = useSearchState();
+
+  useEffect(() => {
+    setParams({
+      category: tabs[activeTab].path,
+    });
+  }, [activeTab]);
+
+  useEffect(() => {
+    if (category !== tabs[activeTab].path) {
+      const newTabIndex = tabs.findIndex((item) => item.path === category);
+      setActiveTab(newTabIndex === -1 ? 0 : newTabIndex);
+    }
+  }, [category]);
 
   const tabs = [
     {
       name: "Хавчик",
-      path: "food",
+      path: "edanapitki",
     },
     {
       name: "Бухлишко",
-      path: "drink",
+      path: "alcohol",
     },
     {
       name: "Фан",
@@ -26,6 +45,12 @@ const NavigationTabs: FC = () => {
       path: "other",
     },
   ];
+
+  const handleClickTab = (index: number) => {
+    setActiveTab(index);
+
+    if (onClick) onClick(index);
+  };
 
   useEffect(() => {
     tabsRef.current[activeTab]?.scrollIntoView({
@@ -46,7 +71,7 @@ const NavigationTabs: FC = () => {
               }}
             >
               <Button
-                onClick={() => setActiveTab(index)}
+                onClick={() => handleClickTab(index)}
                 className={classNames(
                   "navigation-tabs__button",
                   `navigation-tabs__button_${item.path}`,

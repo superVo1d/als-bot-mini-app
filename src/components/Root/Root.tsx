@@ -23,6 +23,7 @@ import { useDidMount } from "@/hooks/useDidMount";
 
 import "./styles.css";
 import { usePathname, useRouter } from "next/navigation";
+import { DataProvider } from "@/context/DataContext";
 
 function App(props: PropsWithChildren) {
   const lp = useLaunchParams();
@@ -80,12 +81,14 @@ function App(props: PropsWithChildren) {
   }, [viewport, swipeBehavior]);
 
   return (
-    <AppRoot
-      appearance={miniApp.isDark ? "dark" : "light"}
-      platform={["macos", "ios"].includes(lp.platform) ? "ios" : "base"}
-    >
-      {props.children}
-    </AppRoot>
+    <DataProvider>
+      <AppRoot
+        appearance={miniApp.isDark ? "dark" : "light"}
+        platform={["macos", "ios"].includes(lp.platform) ? "ios" : "base"}
+      >
+        {props.children}
+      </AppRoot>
+    </DataProvider>
   );
 }
 
