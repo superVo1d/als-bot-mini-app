@@ -26,8 +26,6 @@ import { usePathname, useRouter } from "next/navigation";
 import { DataProvider } from "@/context/DataContext";
 import { LangProvider } from "@/context/LangContext";
 
-let previousPathname: string | null = null;
-
 function App(props: PropsWithChildren) {
   const lp = useLaunchParams();
   const miniApp = useMiniApp();
@@ -52,21 +50,14 @@ function App(props: PropsWithChildren) {
   }, [viewport]);
 
   useEffect(() => {
-    if (pathname === previousPathname) {
-      return;
-    }
-
     if (pathname === "/") {
       bb.hide();
     } else {
       bb.show();
     }
     if (bb) {
-      bb.on("click", () => router.push(previousPathname || "/"));
-      console.log(previousPathname || "/");
+      bb.on("click", () => router.back());
     }
-
-    previousPathname = pathname;
   }, [bb, pathname]);
 
   useEffect(() => {

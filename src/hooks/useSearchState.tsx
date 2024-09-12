@@ -45,7 +45,7 @@ export const useSearchState = (initialParams: IParams = {}) => {
         }
       });
 
-      router.push(pathname + "?" + params.toString());
+      router.replace(pathname + "?" + params.toString());
 
       setParamsState(updatedParams);
     },
