@@ -25,9 +25,6 @@ export const Facts: FC<FactsProps> = ({ className }) => {
 
   return (
     <div className={classNames(className, "facts")}>
-      <div>
-        <img src={`${process.env.NEXT_PUBLIC_BASE_URL}/tema.png`} />
-      </div>
       <Swiper
         slidesPerView={1}
         modules={[Autoplay, Pagination]}
@@ -37,7 +34,6 @@ export const Facts: FC<FactsProps> = ({ className }) => {
         onSwiper={(swiper) => {
           swiperRef.current = swiper;
         }}
-        onSlideChange={() => console.log("slide change")}
       >
         <SwiperSlide>
           <Text
