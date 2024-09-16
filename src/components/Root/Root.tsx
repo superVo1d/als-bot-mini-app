@@ -11,6 +11,7 @@ import {
   bindThemeParamsCSSVars,
   bindViewportCSSVars,
   useBackButton,
+  useSwipeBehavior,
 } from "@telegram-apps/sdk-react";
 import { initSwipeBehavior } from "@telegram-apps/sdk";
 import { TonConnectUIProvider } from "@tonconnect/ui-react";
@@ -27,22 +28,21 @@ import { DataProvider } from "@/context/DataContext";
 import { LangProvider } from "@/context/LangContext";
 
 function App(props: PropsWithChildren) {
-  const lp = useLaunchParams();
-  const miniApp = useMiniApp();
-  const themeParams = useThemeParams();
-  const viewport = useViewport();
-  const bb = useBackButton();
+  const lp = useLaunchParams(true);
+  const miniApp = useMiniApp(true);
+  const themeParams = useThemeParams(true);
+  const viewport = useViewport(true);
+  const bb = useBackButton(true);
   const router = useRouter();
   const pathname = usePathname();
-
-  const [swipeBehavior] = initSwipeBehavior();
+  const swipeBehavior = useSwipeBehavior(true);
 
   useEffect(() => {
-    return bindMiniAppCSSVars(miniApp, themeParams);
+    return miniApp && themeParams && bindMiniAppCSSVars(miniApp, themeParams);
   }, [miniApp, themeParams]);
 
   useEffect(() => {
-    return bindThemeParamsCSSVars(themeParams);
+    return themeParams && bindThemeParamsCSSVars(themeParams);
   }, [themeParams]);
 
   useEffect(() => {
@@ -51,9 +51,9 @@ function App(props: PropsWithChildren) {
 
   useEffect(() => {
     if (pathname === "/") {
-      bb.hide();
+      bb?.hide();
     } else {
-      bb.show();
+      bb?.show();
     }
     if (bb) {
       bb.on("click", () => router.back());
@@ -66,12 +66,15 @@ function App(props: PropsWithChildren) {
     }
 
     try {
-      swipeBehavior.disableVerticalSwipe();
+      swipeBehavior?.disableVerticalSwipe();
     } catch (e) {
       console.log("Can`t disableVerticalSwipe natively.");
 
       // Some versions of Telegram don't need the classes above.
-      if (["macos", "tdesktop", "weba", "web", "webk"].includes(lp.platform)) {
+      if (
+        lp &&
+        ["macos", "tdesktop", "weba", "web", "webk"].includes(lp.platform)
+      ) {
         return;
       }
 
@@ -85,8 +88,10 @@ function App(props: PropsWithChildren) {
     <LangProvider>
       <DataProvider>
         <AppRoot
-          appearance={miniApp.isDark ? "dark" : "light"}
-          platform={["macos", "ios"].includes(lp.platform) ? "ios" : "base"}
+          appearance={miniApp?.isDark ? "dark" : "light"}
+          platform={
+            lp && ["macos", "ios"].includes(lp.platform) ? "ios" : "base"
+          }
         >
           {props.children}
         </AppRoot>

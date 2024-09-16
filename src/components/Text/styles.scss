@@ -9,12 +9,20 @@
 
     @include mixins.font(typography.$font-h3);
 
+    & + #{$selector}__paragraph {
+      margin-top: 0.2rem;
+    }
+
     &_h2 {
       @include mixins.font(typography.$font-h2);
     }
 
-    & + #{$selector}__paragraph {
-      margin-top: 0.2rem;
+    &_h3 {
+      @include mixins.font(typography.$font-h3);
+
+      & + #{$selector}__paragraph_caption {
+        margin-top: 1rem;
+      }
     }
   }
 

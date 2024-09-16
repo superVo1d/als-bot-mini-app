@@ -1,13 +1,14 @@
 import { classNames } from "@telegram-apps/sdk";
-import { FC } from "react";
+import { Children, FC, ReactNode } from "react";
 import "./styles.scss";
 
 export interface TextProps {
   text?: string;
   textSize?: "caption";
-  titleSize?: "h2";
+  titleSize?: "h2" | "h3";
   title?: string;
   className?: string;
+  children?: ReactNode;
 }
 
 export const Text: FC<TextProps> = ({
@@ -16,6 +17,7 @@ export const Text: FC<TextProps> = ({
   title,
   titleSize,
   className,
+  children,
 }) => {
   return (
     <div className={classNames(className, "text")}>
@@ -34,6 +36,7 @@ export const Text: FC<TextProps> = ({
           dangerouslySetInnerHTML={{ __html: text }}
         />
       )}
+      {children}
     </div>
   );
 };
