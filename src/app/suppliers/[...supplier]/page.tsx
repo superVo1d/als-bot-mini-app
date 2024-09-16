@@ -79,7 +79,7 @@ export default function CategoryPage() {
   return (
     <div
       className={classNames("suppliers__content", {
-        supplier__content_card: isSupplierShowing,
+        suppliers__content_card: isSupplierShowing,
       })}
     >
       <div className="suppliers__breadcrumbs">
