@@ -38,8 +38,6 @@ export default function CategoryPageLayout({
     [currentCategory, currentSubcategory, currentSupplier]
   );
 
-  console.log(toMapHref);
-
   return (
     <>
       <div

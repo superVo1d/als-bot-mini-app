@@ -3,5 +3,5 @@
   "plugins": ["@typescript-eslint"],
   "rules": {
     // Add custom rules here
-  },
+  }
 }
