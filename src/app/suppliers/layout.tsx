@@ -49,7 +49,7 @@ export default function CategoryPageLayout({
         {children}
         <div className="suppliers__background">
           {backgroundVideoName && (
-            <video autoPlay loop muted>
+            <video autoPlay loop muted playsInline>
               <source
                 src={`${process.env.NEXT_PUBLIC_BASE_URL}${backgroundVideoName}`}
                 type="video/mp4"
