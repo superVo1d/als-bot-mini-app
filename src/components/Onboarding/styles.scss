@@ -1,8 +1,12 @@
 .onboarding {
   background: #0f0e1a;
   height: 100%;
+  position: relative;
+  z-index: 1;
 
   &__text {
+    font-family: var(--als-bot-font-wide);
+    font-weight: 700;
     text-align: center;
     width: 320px;
     max-width: 100%;
@@ -12,11 +16,43 @@
   }
 
   &__button {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
     margin: 1.5rem;
     margin-bottom: 3.8rem;
+    margin-top: 0;
+  }
+
+  &__content {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    z-index: 2;
+  }
+
+  &__offset_top {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+
+    > svg {
+      position: relative;
+      top: 4rem;
+    }
+  }
+
+  &__background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+
+    video {
+      height: auto;
+      mix-blend-mode: lighten;
+      width: 100%;
+    }
   }
 }
