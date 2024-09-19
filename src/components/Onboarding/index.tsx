@@ -25,7 +25,13 @@ export const Onboarding: FC<OnboardingProps> = ({ onComplete }) => {
         </Button>
       </div>
       <div className="onboarding__background">
-        <video autoPlay loop muted playsInline>
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          poster={`${process.env.NEXT_PUBLIC_BASE_URL}/welcome.png`}
+        >
           <source
             src={`${process.env.NEXT_PUBLIC_BASE_URL}/welcome.mp4`}
             type="video/mp4"

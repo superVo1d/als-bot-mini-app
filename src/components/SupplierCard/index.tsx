@@ -11,9 +11,10 @@ import { classNames } from "@telegram-apps/sdk";
 
 export interface ISupplierCard {
   supplier: ISupplierWithKey;
+  className?: string;
 }
 
-const SupplierCard: FC<ISupplierCard> = ({ supplier }) => {
+const SupplierCard: FC<ISupplierCard> = ({ supplier, className }) => {
   const { name, image, description, social } = supplier;
 
   const getHref = useCallback(
@@ -57,7 +58,7 @@ const SupplierCard: FC<ISupplierCard> = ({ supplier }) => {
   );
 
   return (
-    <div className="supplier-card">
+    <div className={classNames(className, "supplier-card")}>
       <div className="supplier-card__image">
         <img loading="lazy" src={image} alt={name} />
       </div>

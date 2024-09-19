@@ -26,7 +26,9 @@ export const Menu: FC = () => (
     <Button href="/map" className="menu__item" style="clear">
       <Text title="Карта" />
     </Button>
-    <Button style="secondary">Вопросы и ответы</Button>
+    <Button href="/faq" style="secondary">
+      Вопросы и ответы
+    </Button>
     <Button style="secondary">Удобства</Button>
   </div>
 );

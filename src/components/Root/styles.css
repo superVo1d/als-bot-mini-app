@@ -8,3 +8,20 @@
   align-items: center;
   justify-content: center;
 }
+
+.back-home {
+  position: fixed;
+  bottom: 3rem;
+  right: 1.5rem;
+  z-index: 2;
+  align-content: center;
+  border-radius: 2.8rem;
+  overflow: unset !important;
+  height: 5.6rem;
+  width: fit-content !important;
+
+  svg {
+    height: 100%;
+    width: 100%;
+  }
+}

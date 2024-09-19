@@ -115,19 +115,10 @@
 
   &__home-button {
     align-content: center;
-    display: flex;
     border-radius: 2.8rem;
     overflow: unset !important;
     height: 5.6rem;
     width: fit-content !important;
-
-    &:first-child:not(:last-child) {
-      border-radius: 2.8rem !important;
-    }
-
-    &:last-child {
-      margin-left: auto;
-    }
 
     > span {
       color: #f40000;

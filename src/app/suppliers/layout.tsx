@@ -6,7 +6,6 @@ import { ReactNode, useMemo } from "react";
 import "./styles.scss";
 import { classNames } from "@telegram-apps/sdk";
 import { Button } from "@/components/Button";
-import HomeIcon from "@/assets/media/home.svg";
 
 export default function CategoryPageLayout({
   children,
@@ -19,13 +18,13 @@ export default function CategoryPageLayout({
   const backgroundVideoName = useMemo(() => {
     switch (currentCategory) {
       case "edanapitki": {
-        return "/food.mp4";
+        return "food";
       }
       case "alcohol": {
-        return "/drink.mp4";
+        return "drink";
       }
       case "fun": {
-        return "/fun.mp4";
+        return "fun";
       }
       default:
         break;
@@ -49,9 +48,15 @@ export default function CategoryPageLayout({
         {children}
         <div className="suppliers__background">
           {backgroundVideoName && (
-            <video autoPlay loop muted playsInline>
+            <video
+              autoPlay
+              loop
+              muted
+              playsInline
+              poster={`${process.env.NEXT_PUBLIC_BASE_URL}/${backgroundVideoName}.png`}
+            >
               <source
-                src={`${process.env.NEXT_PUBLIC_BASE_URL}${backgroundVideoName}`}
+                src={`${process.env.NEXT_PUBLIC_BASE_URL}/${backgroundVideoName}.mp4`}
                 type="video/mp4"
               />
             </video>
@@ -65,9 +70,6 @@ export default function CategoryPageLayout({
               />
             </Button>
           )}
-          <Button className="suppliers__home-button" href="/">
-            <HomeIcon />
-          </Button>
         </div>
       </div>
     </>

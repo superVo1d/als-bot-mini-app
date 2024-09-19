@@ -73,3 +73,11 @@ $font-path: "../fonts/ALS_Hauss Next";
   font-weight: 900;
   font-style: normal;
 }
+
+@font-face {
+  font-family: "ALS Hauss Next Expanded";
+  src: url("#{$font-path}/ALS_Hauss Next_Expanded Black_1.01.otf")
+    format("opentype");
+  font-weight: 900;
+  font-style: normal;
+}

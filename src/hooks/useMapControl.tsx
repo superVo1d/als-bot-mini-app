@@ -6,6 +6,16 @@ export const useMapControl = (
   mapRef: React.RefObject<HTMLDivElement>,
   onClick?: (name: string) => void
 ) => {
+  const zoomToTarget = (name: string, floor = 6) => {
+    const el = document.getElementById(`${floor}_svg__${name}`);
+
+    if (!el) return false;
+
+    transformWrapperRef.current?.zoomToElement(el, 3);
+
+    return true;
+  };
+
   const handleClick = (e: MouseEvent) => {
     const target = e.target as HTMLElement;
 
@@ -28,4 +38,6 @@ export const useMapControl = (
 
     return () => mapRef.current?.removeEventListener("click", handleClick);
   }, [transformWrapperRef, mapRef, onClick]);
+
+  return { zoomToTarget };
 };

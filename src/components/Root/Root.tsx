@@ -1,6 +1,12 @@
 "use client";
 
-import { type PropsWithChildren, useEffect, useMemo } from "react";
+import {
+  createContext,
+  type PropsWithChildren,
+  useEffect,
+  useMemo,
+  useState,
+} from "react";
 import {
   SDKProvider,
   useLaunchParams,
@@ -13,7 +19,6 @@ import {
   useBackButton,
   useSwipeBehavior,
 } from "@telegram-apps/sdk-react";
-import { initSwipeBehavior } from "@telegram-apps/sdk";
 import { TonConnectUIProvider } from "@tonconnect/ui-react";
 import { AppRoot } from "@telegram-apps/telegram-ui";
 
@@ -26,6 +31,9 @@ import "./styles.css";
 import { usePathname, useRouter } from "next/navigation";
 import { DataProvider } from "@/context/DataContext";
 import { LangProvider } from "@/context/LangContext";
+import { AuthProvider, useAuth } from "@/context/AuthContext";
+import { Button } from "../Button";
+import HomeIcon from "@/assets/media/home.svg";
 
 function App(props: PropsWithChildren) {
   const lp = useLaunchParams(true);
@@ -36,6 +44,15 @@ function App(props: PropsWithChildren) {
   const router = useRouter();
   const pathname = usePathname();
   const swipeBehavior = useSwipeBehavior(true);
+  const [showBackButton, setShowBackButton] = useState(false);
+
+  const { auth, getData } = useAuth();
+
+  useEffect(() => {
+    if (lp?.initDataRaw) {
+      auth(lp.initDataRaw).then(() => getData());
+    }
+  }, [lp]);
 
   useEffect(() => {
     return miniApp && themeParams && bindMiniAppCSSVars(miniApp, themeParams);
@@ -50,10 +67,16 @@ function App(props: PropsWithChildren) {
   }, [viewport]);
 
   useEffect(() => {
+    if (pathname === "/map") {
+      setShowBackButton(false);
+      return;
+    }
     if (pathname === "/") {
       bb?.hide();
+      setShowBackButton(false);
     } else {
       bb?.show();
+      setShowBackButton(true);
     }
     if (bb) {
       bb.on("click", () => router.back());
@@ -94,6 +117,11 @@ function App(props: PropsWithChildren) {
           }
         >
           {props.children}
+          {showBackButton && (
+            <Button className="back-home" href="/">
+              <HomeIcon />
+            </Button>
+          )}
         </AppRoot>
       </DataProvider>
     </LangProvider>
@@ -122,7 +150,9 @@ function RootInner({ children }: PropsWithChildren) {
   return (
     <TonConnectUIProvider manifestUrl={manifestUrl}>
       <SDKProvider acceptCustomStyles debug={debug}>
-        <App>{children}</App>
+        <AuthProvider>
+          <App>{children}</App>
+        </AuthProvider>
       </SDKProvider>
     </TonConnectUIProvider>
   );

@@ -10,7 +10,8 @@
   margin-bottom: 3.8rem;
   margin-top: 3rem;
 
-  &__content {
+  &__content.button {
+    display: block;
     position: relative;
     text-align: center;
     z-index: 1;

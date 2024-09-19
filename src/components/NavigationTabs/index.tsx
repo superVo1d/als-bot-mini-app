@@ -5,25 +5,16 @@ import { classNames } from "@telegram-apps/sdk-react";
 import "./styles.scss";
 import { useSearchState } from "@/hooks/useSearchState";
 import { useLangContext } from "@/context/LangContext";
-import { useDataContext } from "@/context/DataContext";
 
 export interface INavigationTabs {
-  onClick?: (index: number) => void;
+  onClick?: (index: string) => void;
 }
 
 const NavigationTabs: FC<INavigationTabs> = ({ onClick }) => {
   const tabsRef = useRef<HTMLLIElement[]>([]);
   const [activeTab, setActiveTab] = useState(0);
-  const [{ category }, setParams] = useSearchState();
+  const [{ category }] = useSearchState();
   const { langData } = useLangContext();
-
-  useEffect(() => {
-    setParams({
-      category: tabs[activeTab].path,
-      subcategory: "",
-      supplier: "",
-    });
-  }, [activeTab]);
 
   useEffect(() => {
     if (category !== tabs[activeTab].path) {
@@ -57,7 +48,7 @@ const NavigationTabs: FC<INavigationTabs> = ({ onClick }) => {
   const handleClickTab = (index: number) => {
     setActiveTab(index);
 
-    if (onClick) onClick(index);
+    if (onClick) onClick(tabs[index].path);
   };
 
   useEffect(() => {

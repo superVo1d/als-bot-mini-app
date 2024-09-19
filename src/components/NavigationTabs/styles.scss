@@ -2,7 +2,7 @@
 @use "./../../assets/styles/mixins";
 
 .navigation-tabs {
-  margin: 1rem 0;
+  margin: 1.5rem 0;
 
   ul,
   li {
@@ -27,8 +27,8 @@
   &__button {
     @include mixins.font(typography.$font-body);
 
-    font-weight: 700;
-    font-family: var(--als-bot-font-wide);
+    font-weight: 900;
+    font-family: var(--als-bot-font-exapnded);
     background: transparent;
     border-radius: 1.5rem;
     color: #fff;
@@ -40,19 +40,19 @@
     }
 
     &_edanapitki {
-      --color-tab: #24c274;
+      --color-tab: #ff7900;
     }
 
     &_alcohol {
-      --color-tab: #cb0df6;
+      --color-tab: #007aff;
     }
 
     &_fun {
-      --color-tab: #dd4404;
+      --color-tab: #cb0df6;
     }
 
     &_other {
-      --color-tab: #0103ff;
+      --color-tab: #7ac3ff;
     }
   }
 }
