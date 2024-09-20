@@ -10,6 +10,7 @@
 }
 
 .back-home {
+  outline: 2px solid #f40000;
   position: fixed;
   bottom: 3rem;
   right: 1.5rem;

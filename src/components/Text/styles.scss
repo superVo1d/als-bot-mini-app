@@ -7,7 +7,7 @@
   &__title {
     font-family: var(--als-bot-font-wide);
 
-    @include mixins.font(typography.$font-h3);
+    @include mixins.font(typography.$font-h4);
 
     & + #{$selector}__paragraph {
       margin-top: 0.2rem;
@@ -19,6 +19,10 @@
 
     &_h3 {
       @include mixins.font(typography.$font-h3);
+    }
+
+    &_h4 {
+      @include mixins.font(typography.$font-h4);
 
       & + #{$selector}__paragraph_caption {
         margin-top: 1rem;

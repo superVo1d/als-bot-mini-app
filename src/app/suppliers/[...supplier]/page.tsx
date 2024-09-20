@@ -123,7 +123,7 @@ export default function CategoryPage() {
                   href={currentSubcategory + "/" + supplier.key}
                   style="clear"
                 >
-                  <Text title={supplier.name} titleSize="h2" />
+                  <Text title={supplier.name} titleSize="h4" />
                 </Button>
               </li>
             ))}

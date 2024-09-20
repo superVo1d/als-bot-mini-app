@@ -1,0 +1,44 @@
+.quest-paywall {
+  background: #0f0e1a;
+  height: 100%;
+  position: relative;
+  z-index: 1;
+  padding: 2rem;
+
+  &__content {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    z-index: 2;
+  }
+
+  &__text {
+    margin-top: 1.7rem;
+    > div {
+      font-weight: 400 !important;
+    }
+  }
+
+  &__input-caption {
+    font-size: 1.5rem;
+    opacity: 0.4rem;
+    margin-top: 1.7rem;
+    text-align: center;
+    opacity: 0.4;
+
+    > div {
+      font-weight: 600;
+    }
+  }
+
+  &__buttons-wrapper {
+    flex-grow: 1;
+    display: flex;
+    gap: 1rem;
+    flex-direction: column;
+    justify-content: flex-end;
+    margin-bottom: 11.5rem;
+  }
+}

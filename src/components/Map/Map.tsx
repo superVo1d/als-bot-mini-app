@@ -50,6 +50,14 @@ const Map: FC = () => {
     });
   };
 
+  useEffect(() => {
+    if (!category) {
+      setParams({
+        category: "edanapitki",
+      });
+    }
+  }, []);
+
   const { zoomToTarget } = useMapControl(
     transformWrapperRef,
     mapRef,
@@ -210,7 +218,7 @@ const Map: FC = () => {
           className="map__back-button"
           style="clear"
         >
-          <Text title={backButtonLabel} titleSize="h3" />
+          <Text title={backButtonLabel} titleSize="h4" />
         </Button>
       )}
       {isSubcategoriesShowing && currentSubcategories && (

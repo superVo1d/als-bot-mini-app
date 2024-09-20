@@ -1,0 +1,55 @@
+.input {
+  margin: 1.8rem 0;
+
+  &__input {
+    border-radius: 1rem;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.3);
+    text-align: center;
+    height: 10.3rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    > div {
+      display: flex;
+      gap: 0.8rem;
+    }
+  }
+
+  &_error {
+    color: #f00;
+  }
+
+  input {
+    all: unset;
+    font-family: var(--als-bot-font-wide);
+    font-weight: 900;
+    -webkit-appearance: none;
+    appearance: none;
+    background: transparent;
+    border: none;
+    font-size: 5.8rem;
+    width: 5.8rem;
+    height: 5.8rem;
+    text-align: center;
+    vertical-align: center;
+
+    &::placeholder {
+      color: #fff;
+      opacity: 0.4;
+      position: relative;
+      top: -0.5rem;
+    }
+  }
+
+  &__text {
+    text-align: center;
+    margin: 1rem 0;
+
+    > div {
+      font-weight: 400;
+    }
+  }
+}

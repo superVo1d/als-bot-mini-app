@@ -66,7 +66,7 @@ const SupplierCard: FC<ISupplierCard> = ({ supplier, className }) => {
         <Text
           title={name}
           text={description}
-          titleSize="h3"
+          titleSize="h4"
           textSize="caption"
         />
       </div>

@@ -8,7 +8,7 @@
 
   $selector: &;
 
-  @include mixins.font(typography.$font-h3);
+  @include mixins.font(typography.$font-h4);
 
   background: transparent;
   border: none;

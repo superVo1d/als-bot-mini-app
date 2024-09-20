@@ -1,3 +1,63 @@
 .quest {
-  /* .. */
+  background: #1e1e1e;
+  height: 100%;
+  padding: 2rem;
+
+  &__buttons-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 11.5rem;
+  }
+
+  &__button {
+    background: rgba(255, 255, 255, 0.3);
+    color: #fff;
+    pointer-events: none;
+    text-align: left;
+
+    span.cross {
+      display: inline-block;
+      position: relative;
+
+      &::after {
+        content: "";
+        display: block;
+        height: 0.2rem;
+        width: 100%;
+        background: #f00;
+        top: 50%;
+        left: 50%;
+        position: absolute;
+        transform: translate3d(-50%, -50%, 0) rotate(345deg);
+      }
+    }
+
+    &.completed {
+      background: #2aff91;
+      color: #000;
+
+      > div {
+        display: flex;
+        gap: 0.5rem;
+        justify-content: space-between;
+
+        &::after {
+          content: "";
+          display: block;
+          background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="25" height="18" viewBox="0 0 25 18" fill="none"><path d="M2 8.875L8.41789 15.2929C8.80842 15.6834 9.44158 15.6834 9.83211 15.2929L23.125 2" stroke="%231E1E1E" stroke-width="3" stroke-linecap="round"/></svg>')
+            no-repeat center;
+          height: 2rem;
+          width: 2.5rem;
+          background-size: contain;
+        }
+      }
+    }
+  }
+
+  &__bottom-buttons-wrapper {
+    position: fixed;
+    left: 2rem;
+    bottom: 3rem;
+  }
 }

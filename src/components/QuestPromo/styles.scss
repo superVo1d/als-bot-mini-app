@@ -51,7 +51,7 @@
   }
 
   &__counter {
-    @include mixins.font(typography.$font-h3);
+    @include mixins.font(typography.$font-h4);
 
     border-radius: 1rem;
     background: #f50f0f;
