@@ -50,6 +50,7 @@ function App(props: PropsWithChildren) {
 
   useEffect(() => {
     if (lp?.initDataRaw) {
+      console.log(lp);
       auth(lp.initDataRaw).then(() => getData());
     }
   }, [lp]);

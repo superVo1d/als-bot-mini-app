@@ -32,26 +32,24 @@ export function useTelegramMock(): void {
 
     if (shouldMock) {
       const initDataRaw = new URLSearchParams([
+        ["query_id", "AAEWJzgGAAAAABYnOAa985k9"],
         [
           "user",
           JSON.stringify({
-            id: 99281932,
-            first_name: "Andrew",
-            last_name: "Rogue",
-            username: "rogue",
-            language_code: "en",
+            id: 104343318,
+            first_name: "0xgrisha",
+            last_name: "",
+            username: "supervoid",
+            language_code: "ru",
             is_premium: true,
             allows_write_to_pm: true,
           }),
         ],
+        ["auth_date", "1726650382"],
         [
           "hash",
-          "89d6079ad6762351f38c6dbbc41bb53048019256a9443988af7a48bcad16ba31",
+          "fa5fd3e59989370d1757d2bcb765c79537b1416358bedd210c9da8c568ef3007",
         ],
-        ["auth_date", "1716922846"],
-        ["start_param", "debug"],
-        ["chat_type", "sender"],
-        ["chat_instance", "8428209589180549439"],
       ]).toString();
 
       mockTelegramEnv({
