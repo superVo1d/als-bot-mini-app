@@ -86,7 +86,9 @@ const Input: FC<IInput> = ({
           <input
             key={index}
             id={`${name}-${index}`}
-            type="text"
+            type="number"
+            pattern="\\d*"
+            inputMode="decimal"
             onFocus={handleFocus}
             value={pin[index]}
             onClick={(e) => e.stopPropagation()}

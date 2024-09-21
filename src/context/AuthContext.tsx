@@ -19,6 +19,8 @@ interface AuthContextType {
   level: number;
   prizes: IPrizeItem[];
   nextLevelProgress: number[];
+  isOnboardingCompleted: boolean;
+  completeOnboarding: () => void;
 }
 
 export interface IQuestDataItem {
@@ -119,6 +121,8 @@ export const AuthProvider: FC<{ children: ReactNode }> = ({ children }) => {
     "als_29_quest",
     null
   );
+  const [isOnboardingCompleted, setOnboardingCompleted] =
+    useState<boolean>(false);
 
   useEffect(() => {
     const savedToken = localStorage.getItem("token");
@@ -210,6 +214,8 @@ export const AuthProvider: FC<{ children: ReactNode }> = ({ children }) => {
         level,
         prizes,
         nextLevelProgress,
+        isOnboardingCompleted,
+        completeOnboarding: () => setOnboardingCompleted(true),
       }}
     >
       {children}

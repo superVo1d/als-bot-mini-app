@@ -22,11 +22,12 @@ import { useLangContext } from "@/context/LangContext";
 import { SupplierCard } from "../SupplierCard";
 import { Button } from "../Button";
 import { Text } from "../Text";
+import { servicesCategory, servicesList } from "@/helpers/servicesCategories";
 
 const Map: FC = () => {
   const { width } = useWindowSize();
   const transformWrapperRef = useRef<ReactZoomPanPinchRef | null>(null);
-  const [selectedFloor, setSelectedFloor] = useState(6);
+
   const mapRef = useRef<HTMLDivElement | null>(null);
   const [isLarge, setIsLarge] = useState<boolean>(true);
   const { suppliers, categories, getSubcategories, getSuppliers } =
@@ -34,7 +35,17 @@ const Map: FC = () => {
   const { langData } = useLangContext();
 
   const [params, setParams] = useSearchState();
-  const { category, subcategory, supplier } = params;
+  const { category, subcategory, supplier, level } = params;
+  const [selectedFloor, setSelectedFloor] = useState(6);
+
+  useEffect(() => {
+    if (level) {
+      setSelectedFloor(parseInt(level));
+      setParams({
+        level: undefined,
+      });
+    }
+  }, [level]);
 
   const onMapSelect = (name: string) => {
     if (!suppliers) return;
@@ -74,6 +85,13 @@ const Map: FC = () => {
   }, [category, subcategory, suppliers, langData]);
 
   const currentSuppliers = useMemo(() => {
+    if (category === servicesCategory) {
+      return servicesList.map((name) => ({
+        name: langData[name],
+        path: name,
+      }));
+    }
+
     if (!subcategory) return;
 
     return getSuppliers(subcategory)?.map(({ name, key }) => ({
@@ -110,7 +128,7 @@ const Map: FC = () => {
   };
 
   const handleClickCategory = (name: string) => {
-    if (!categories || !categories.includes(name)) return;
+    if (!categories) return;
 
     setParams({
       category: name,
@@ -132,6 +150,10 @@ const Map: FC = () => {
     const selectedSupplier = currentSuppliers?.[index];
 
     if (!currentSuppliers || !selectedSupplier) return;
+
+    if (supplier === selectedSupplier.path) {
+      zoomToTarget(supplier, selectedFloor);
+    }
 
     setParams({
       supplier: selectedSupplier.path,
@@ -170,12 +192,14 @@ const Map: FC = () => {
   );
 
   const isSuppliersShowing = useMemo(
-    () => currentSubcategories && currentSuppliers && !currentSupplier,
+    () =>
+      (currentSubcategories && currentSuppliers && !currentSupplier) ||
+      category === servicesCategory,
     [currentSubcategories, currentSupplier]
   );
 
   const isBackButtonShowing = useMemo(
-    () => currentSuppliers || currentSupplier,
+    () => subcategory && (currentSuppliers || currentSupplier),
     [currentSupplier, currentSuppliers]
   );
 
@@ -212,8 +236,8 @@ const Map: FC = () => {
         path: "fun",
       },
       {
-        name: langData["udobstva"],
-        path: "other",
+        name: langData["services"],
+        path: "services",
       },
     ],
     [langData]

@@ -8,18 +8,12 @@ import { useAuth } from "@/context/AuthContext";
 import { Coupon } from "../Coupon";
 
 export interface IQuestPaywall {
-  onComplete: () => void;
+  onClose: () => void;
 }
 
-export const QuestPaywall: FC<IQuestPaywall> = ({ onComplete }) => {
+export const QuestPaywall: FC<IQuestPaywall> = ({ onClose }) => {
   const [stage, setStage] = useState(0);
-  const { prizes } = useAuth();
-
-  useEffect(() => {
-    return () => {
-      if (stage === 0) onComplete();
-    };
-  }, []);
+  const { prizes, completeOnboarding } = useAuth();
 
   return (
     <div className="quest-paywall page clearfix">
@@ -35,7 +29,10 @@ export const QuestPaywall: FC<IQuestPaywall> = ({ onComplete }) => {
               <Input
                 name="quest-paywall"
                 length={2}
-                setValue={() => setStage(1)}
+                setValue={() => {
+                  setStage(1);
+                  completeOnboarding();
+                }}
               />
               <Text
                 className="quest-paywall__input-caption"
@@ -61,7 +58,7 @@ export const QuestPaywall: FC<IQuestPaywall> = ({ onComplete }) => {
               />
             </div>
             <div className="quest-paywall__buttons-wrapper">
-              <Button onClick={onComplete}>
+              <Button onClick={onClose}>
                 <Text text="Ещё задания" />
               </Button>
             </div>

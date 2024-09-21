@@ -29,6 +29,8 @@ export const Menu: FC = () => (
     <Button href="/faq" style="secondary">
       Вопросы и ответы
     </Button>
-    <Button style="secondary">Удобства</Button>
+    <Button href="/services" style="secondary">
+      Удобства
+    </Button>
   </div>
 );

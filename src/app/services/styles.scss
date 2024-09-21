@@ -1,3 +1,14 @@
 .services {
-  /* .. */
+  background: #2f2f2f;
+  padding: 2.5rem;
+
+  &__text {
+    margin-bottom: 2.4rem;
+  }
+
+  &__buttons-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
 }

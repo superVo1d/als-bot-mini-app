@@ -1,4 +1,15 @@
 .faq {
   background: #2f2f2f;
+  height: 100%;
   padding: 1.7rem 2.5rem;
+  padding-bottom: 11.5rem;
+
+  &__title {
+    margin-bottom: 3rem;
+  }
+
+  &__button {
+    margin-top: 1.8rem;
+    margin-bottom: 2.8rem;
+  }
 }
