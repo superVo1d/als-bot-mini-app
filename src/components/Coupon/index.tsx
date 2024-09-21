@@ -6,6 +6,7 @@ import { Text } from "../Text";
 
 import "./styles.scss";
 import { IPrizeItem } from "@/context/AuthContext";
+import { usePopup } from "@telegram-apps/sdk-react";
 
 export interface ICoupon {
   isActive: boolean;
@@ -15,6 +16,7 @@ export interface ICoupon {
 const Coupon: FC<ICoupon> = ({ isActive = true, prize }) => {
   const { name, code } = prize;
   const [flipped, setFlipped] = useState(false);
+  const popup = usePopup(true);
 
   const handleClick = () => {
     setFlipped(!flipped);
@@ -22,7 +24,13 @@ const Coupon: FC<ICoupon> = ({ isActive = true, prize }) => {
 
   const handleCopyCode = () => {
     navigator.clipboard.writeText(code);
-    alert("Coupon code copied!");
+    if (popup) {
+      popup.open({
+        message: "Промокод скопирован",
+      });
+    } else {
+      alert("Промокод скопирован");
+    }
   };
 
   const image = useMemo(() => {
