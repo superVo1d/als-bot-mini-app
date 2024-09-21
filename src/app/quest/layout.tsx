@@ -19,7 +19,7 @@ export default function CategoryPageLayout({
   const { isOnboardingCompleted } = useAuth();
   const [index, setIndex] = useState<number>(pathname === "/quest" ? 0 : 1);
   const [isQuestPaywallShowing, setIsQuestPaywallShowing] = useState<boolean>(
-    isOnboardingCompleted
+    !isOnboardingCompleted
   );
 
   const items = [

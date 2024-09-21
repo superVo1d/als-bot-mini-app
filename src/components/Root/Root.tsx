@@ -67,12 +67,16 @@ function App(props: PropsWithChildren) {
   }, [viewport]);
 
   useEffect(() => {
-    if (pathname === "/" || pathname === "/map") {
+    if (pathname === "/") {
       bb?.hide();
+      setShowBackButton(false);
+    } else if (pathname === "/map") {
       setShowBackButton(false);
     } else {
       bb?.show();
-      setShowBackButton(true);
+      if (pathname !== "/map") {
+        setShowBackButton(true);
+      }
     }
     if (bb) {
       bb.on("click", () => router.back());

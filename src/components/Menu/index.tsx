@@ -15,12 +15,15 @@ export const Menu: FC = () => (
           text="Таролог, рунолог, хиромант"
           textSize="caption"
         />
+        <img src={`${process.env.NEXT_PUBLIC_BASE_URL}/fun.png`} alt="" />
       </Button>
       <Button className="menu__item" href="/suppliers/edanapitki" style="clear">
         <Text title="Хавчик" textSize="caption" />
+        <img src={`${process.env.NEXT_PUBLIC_BASE_URL}/food.png`} alt="" />
       </Button>
       <Button className="menu__item" href="/suppliers/alcohol" style="clear">
         <Text title="Бухлишко" textSize="caption" />
+        <img src={`${process.env.NEXT_PUBLIC_BASE_URL}/drink.png`} alt="" />
       </Button>
     </div>
     <Button href="/map" className="menu__item" style="clear">
