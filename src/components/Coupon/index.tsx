@@ -16,7 +16,6 @@ export interface ICoupon {
 const Coupon: FC<ICoupon> = ({ isActive = true, prize }) => {
   const { name, code } = prize;
   const [flipped, setFlipped] = useState(false);
-  const popup = usePopup(true);
 
   const handleClick = () => {
     setFlipped(!flipped);
@@ -24,13 +23,7 @@ const Coupon: FC<ICoupon> = ({ isActive = true, prize }) => {
 
   const handleCopyCode = () => {
     navigator.clipboard.writeText(code);
-    if (popup) {
-      popup.open({
-        message: "Промокод скопирован",
-      });
-    } else {
-      alert("Промокод скопирован");
-    }
+    alert("Промокод скопирован!");
   };
 
   const image = useMemo(() => {
