@@ -1,22 +1,56 @@
 "use client";
 
 import { Text } from "@/components/Text";
-import { useAuth } from "@/context/AuthContext";
+import { totalQuestLevels, useAuth } from "@/context/AuthContext";
 
 import "./styles.scss";
 import { Coupon } from "@/components/Coupon";
+import { useEffect, useMemo, useRef, useState } from "react";
+import { NavigationTabs } from "@/components/NavigationTabs";
 
 export default function PrizesPage() {
-  const { questsData, completeQuest } = useAuth();
+  const { prizes, level } = useAuth();
+  const [activeLevel, setActiveLevel] = useState(0);
+
+  const tabs = useMemo(
+    () =>
+      new Array(totalQuestLevels + 1).fill(null).map((_, index) => ({
+        name: `${index} уровень`,
+        path: index.toString(),
+      })),
+    []
+  );
+
+  const groupedPrizes = useMemo(() => {
+    return new Array(totalQuestLevels + 1)
+      .fill(null)
+      .map((_, level) =>
+        prizes.filter((prize) => prize.requiredLevel === level)
+      );
+  }, [prizes]);
 
   return (
     <div className="page prizes">
       <Text
+        className="prizes__text"
         title="Залутай скидку или мерч выполняя задания на&nbsp;вечеринке"
         titleSize="h3"
       />
-      <div className="prizes__list">
-        <Coupon isActive name="magazinus-3" code="DISCOUNT" />
+      <NavigationTabs
+        activeTabIndex={activeLevel}
+        items={tabs}
+        onClick={(index) => setActiveLevel(parseInt(index))}
+      />
+      <div className="prizes__list-wrapper">
+        <div className="prizes__list">
+          {groupedPrizes[activeLevel].map((prize, index) => (
+            <Coupon
+              isActive={level >= prize.requiredLevel}
+              prize={prize}
+              key={index}
+            />
+          ))}
+        </div>
       </div>
     </div>
   );

@@ -1,18 +1,19 @@
 import { classNames } from "@telegram-apps/sdk";
 import { FC, useMemo, useState } from "react";
 import MagazinusPromo3 from "@/assets/media/magazinus-3.png";
+import NarayonePromo10 from "@/assets/media/narayone-10.png";
 import { Text } from "../Text";
 
 import "./styles.scss";
-import Image from "next/image";
+import { IPrizeItem } from "@/context/AuthContext";
 
 export interface ICoupon {
   isActive: boolean;
-  name: string;
-  code: string;
+  prize: IPrizeItem;
 }
 
-const Coupon: FC<ICoupon> = ({ name, code }) => {
+const Coupon: FC<ICoupon> = ({ isActive = true, prize }) => {
+  const { name, code } = prize;
   const [flipped, setFlipped] = useState(false);
 
   const handleClick = () => {
@@ -28,12 +29,17 @@ const Coupon: FC<ICoupon> = ({ name, code }) => {
     switch (name) {
       case "magazinus-3":
         return MagazinusPromo3;
+      case "narayone-10":
+        return NarayonePromo10;
     }
   }, [name]);
 
   return (
     <div
-      className={classNames("coupon", { coupon_flipped: flipped })}
+      className={classNames("coupon", {
+        coupon_active: isActive,
+        coupon_flipped: flipped,
+      })}
       onClick={handleClick}
     >
       <div

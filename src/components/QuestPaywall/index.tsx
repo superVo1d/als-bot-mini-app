@@ -4,6 +4,8 @@ import { Button } from "@/components/Button";
 
 import "./styles.scss";
 import { Input } from "../Input";
+import { useAuth } from "@/context/AuthContext";
+import { Coupon } from "../Coupon";
 
 export interface IQuestPaywall {
   onComplete: () => void;
@@ -11,6 +13,7 @@ export interface IQuestPaywall {
 
 export const QuestPaywall: FC<IQuestPaywall> = ({ onComplete }) => {
   const [stage, setStage] = useState(0);
+  const { prizes } = useAuth();
 
   return (
     <div className="quest-paywall page clearfix">
@@ -42,6 +45,9 @@ export const QuestPaywall: FC<IQuestPaywall> = ({ onComplete }) => {
                 title="Круто! Ты уже заработал скидку в&nbsp;Магазинус"
                 titleSize="h3"
               />
+
+              <Coupon prize={prizes[0]} isActive />
+
               <Text
                 className="quest-paywall__text"
                 text="Чтобы получить больше ништяков выполняй остальные задания на&nbsp;нашей вечеринке"
@@ -51,9 +57,6 @@ export const QuestPaywall: FC<IQuestPaywall> = ({ onComplete }) => {
             <div className="quest-paywall__buttons-wrapper">
               <Button onClick={onComplete}>
                 <Text text="Ещё задания" />
-              </Button>
-              <Button href="/">
-                <Text text="На главную" />
               </Button>
             </div>
           </>

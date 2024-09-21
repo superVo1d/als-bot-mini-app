@@ -197,6 +197,33 @@ const Map: FC = () => {
     }
   };
 
+  const tabs = useMemo(
+    () => [
+      {
+        name: langData["edanapitki"],
+        path: "edanapitki",
+      },
+      {
+        name: langData["alcohol"],
+        path: "alcohol",
+      },
+      {
+        name: langData["fun"],
+        path: "fun",
+      },
+      {
+        name: langData["udobstva"],
+        path: "other",
+      },
+    ],
+    [langData]
+  );
+
+  const categoryTabIndex = useMemo(() => {
+    const newTabIndex = tabs.findIndex((item) => item.path === category);
+    return newTabIndex === -1 ? 0 : newTabIndex;
+  }, [category]);
+
   return (
     <div className="page map">
       <div className="map__wrapper" onClick={handleClickMap}>
@@ -211,7 +238,11 @@ const Map: FC = () => {
           </TransformComponent>
         </TransformWrapper>
       </div>
-      <NavigationTabs onClick={handleClickCategory} />
+      <NavigationTabs
+        onClick={handleClickCategory}
+        items={tabs}
+        activeTabIndex={categoryTabIndex}
+      />
       {isBackButtonShowing && (
         <Button
           onClick={handleClickBack}

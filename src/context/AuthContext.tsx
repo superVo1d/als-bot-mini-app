@@ -16,6 +16,9 @@ interface AuthContextType {
   questsData: IQuestData | null;
   completeQuest: (questId: number, code: string) => void;
   questProgress?: number;
+  level: number;
+  prizes: IPrizeItem[];
+  nextLevelProgress: number[];
 }
 
 export interface IQuestDataItem {
@@ -83,6 +86,27 @@ const questData: IQuestDataItem[] = [
   },
 ];
 
+export interface IPrizeItem {
+  name: string;
+  code: string;
+  requiredLevel: number;
+}
+
+const prizes: IPrizeItem[] = [
+  {
+    name: "magazinus-3",
+    code: "magazinus-3",
+    requiredLevel: 0,
+  },
+  {
+    name: "narayone-10",
+    code: "narayone-10",
+    requiredLevel: 1,
+  },
+];
+
+export const totalQuestLevels = 4;
+
 export interface ICompletedQuestItem {
   quest_id: number;
 }
@@ -142,9 +166,51 @@ export const AuthProvider: FC<{ children: ReactNode }> = ({ children }) => {
     [questsData]
   );
 
+  const level = useMemo(() => {
+    if (!questProgress) return 0;
+
+    if (questProgress >= 13) {
+      return 4;
+    } else if (questProgress > 8) {
+      return 3;
+    } else if (questProgress > 4) {
+      return 2;
+    } else if (questProgress > 1) {
+      return 1;
+    }
+
+    return 0;
+  }, [questProgress]);
+
+  const nextLevelProgress = useMemo(() => {
+    if (!questProgress) return [0, 0];
+
+    switch (level) {
+      case 0:
+        return [questProgress - 1, 1];
+      case 1:
+        return [questProgress - 1 - 1, 4];
+      case 2:
+        return [questProgress - 1 - 1 - 4, 4];
+      case 3:
+        return [questProgress - 1 - 1 - 4 - 4, 4];
+      case 4:
+        return [questProgress - 1 - 1 - 4 - 4 - 4, 1];
+    }
+  }, [questProgress, level]);
+
   return (
     <AuthContext.Provider
-      value={{ auth, getData, questsData, completeQuest, questProgress }}
+      value={{
+        auth,
+        getData,
+        questsData,
+        completeQuest,
+        questProgress,
+        level,
+        prizes,
+        nextLevelProgress,
+      }}
     >
       {children}
     </AuthContext.Provider>

@@ -2,23 +2,20 @@
 
 import { Text } from "@/components/Text";
 import { useAuth } from "@/context/AuthContext";
-import { classNames, string } from "@telegram-apps/sdk";
+import { classNames } from "@telegram-apps/sdk";
 import { Button } from "@/components/Button";
 
 import "./styles.scss";
 import { Input } from "@/components/Input";
 import { useState } from "react";
-import usePersistentState from "@/hooks/usePersistentState";
-import { QuestPaywall } from "@/components/QuestPaywall";
 import { authService } from "@/services/auth";
+import { PrizesShowcase } from "@/components/PrizesShowcase";
 
 export default function QuestPage() {
   const { questsData, completeQuest } = useAuth();
   const [code, setCode] = useState<string>();
   const [error, setError] = useState<boolean>(false);
   const [errorText, setErrorText] = useState<string | undefined>();
-  const [isQuestPaywallShowing, setIsQuestPaywallShowing] =
-    usePersistentState<boolean>("als-quest-paywall", true);
 
   const onSetCode = (value: string) => {
     if (value.length === 4) {
@@ -52,16 +49,13 @@ export default function QuestPage() {
     }
   };
 
-  if (isQuestPaywallShowing) {
-    return <QuestPaywall onComplete={() => setIsQuestPaywallShowing(false)} />;
-  }
-
   return (
     <div className="page quest">
       <Text
         title="Залутай скидку или мерч выполняя задания на&nbsp;вечеринке"
         titleSize="h3"
       />
+      <PrizesShowcase />
       <Input
         value={code}
         name="quest"

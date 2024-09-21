@@ -1,5 +1,5 @@
 .quest-paywall {
-  background: #0f0e1a;
+  background: #1e1e1e;
   height: 100%;
   position: relative;
   z-index: 1;
@@ -16,9 +16,6 @@
 
   &__text {
     margin-top: 1.7rem;
-    > div {
-      font-weight: 400 !important;
-    }
   }
 
   &__input-caption {
@@ -38,7 +35,8 @@
     display: flex;
     gap: 1rem;
     flex-direction: column;
-    justify-content: flex-end;
-    margin-bottom: 11.5rem;
+    justify-content: flex-start;
+    margin-bottom: auto;
+    margin-top: 3rem;
   }
 }

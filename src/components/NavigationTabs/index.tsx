@@ -6,49 +6,26 @@ import "./styles.scss";
 import { useSearchState } from "@/hooks/useSearchState";
 import { useLangContext } from "@/context/LangContext";
 
-export interface INavigationTabs {
-  onClick?: (index: string) => void;
+export interface INavigationItem {
+  name: string;
+  path: string;
 }
 
-const NavigationTabs: FC<INavigationTabs> = ({ onClick }) => {
+export interface INavigationTabs {
+  onClick?: (index: string) => void;
+  items: INavigationItem[];
+  activeTabIndex: number;
+}
+
+const NavigationTabs: FC<INavigationTabs> = ({
+  onClick,
+  items,
+  activeTabIndex: activeTab = 0,
+}) => {
   const tabsRef = useRef<HTMLLIElement[]>([]);
-  const [activeTab, setActiveTab] = useState(0);
-  const [{ category }] = useSearchState();
-  const { langData } = useLangContext();
-
-  useEffect(() => {
-    if (category !== tabs[activeTab].path) {
-      const newTabIndex = tabs.findIndex((item) => item.path === category);
-      setActiveTab(newTabIndex === -1 ? 0 : newTabIndex);
-    }
-  }, [category]);
-
-  const tabs = useMemo(
-    () => [
-      {
-        name: langData["edanapitki"],
-        path: "edanapitki",
-      },
-      {
-        name: langData["alcohol"],
-        path: "alcohol",
-      },
-      {
-        name: langData["fun"],
-        path: "fun",
-      },
-      {
-        name: langData["udobstva"],
-        path: "other",
-      },
-    ],
-    [langData]
-  );
 
   const handleClickTab = (index: number) => {
-    setActiveTab(index);
-
-    if (onClick) onClick(tabs[index].path);
+    if (onClick) onClick(items[index].path);
   };
 
   useEffect(() => {
@@ -61,7 +38,7 @@ const NavigationTabs: FC<INavigationTabs> = ({ onClick }) => {
   return (
     <div className="navigation-tabs">
       <ul>
-        {tabs.map((item, index) => {
+        {items.map((item, index) => {
           return (
             <li
               key={index}

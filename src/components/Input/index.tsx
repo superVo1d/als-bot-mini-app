@@ -94,6 +94,7 @@ const Input: FC<IInput> = ({
             onKeyDown={(e) => handleKeyDown(e, index)}
             maxLength={1}
             placeholder="&#8226;"
+            autoComplete="false"
           />
         ))}
       </div>

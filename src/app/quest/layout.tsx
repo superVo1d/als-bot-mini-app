@@ -1,10 +1,12 @@
 "use client";
 
-import { useParams, usePathname, useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { ReactNode, useEffect, useState } from "react";
 
 import "./styles.scss";
 import { Tumbler } from "@/components/Tumbler";
+import usePersistentState from "@/hooks/usePersistentState";
+import { QuestPaywall } from "@/components/QuestPaywall";
 
 export default function CategoryPageLayout({
   children,
@@ -14,6 +16,8 @@ export default function CategoryPageLayout({
   const pathname = usePathname();
   const router = useRouter();
   const [index, setIndex] = useState<number>(pathname === "/quest" ? 0 : 1);
+  const [isQuestPaywallShowing, setIsQuestPaywallShowing] =
+    usePersistentState<boolean>("als-quest-paywall", true);
 
   const items = [
     {
@@ -35,6 +39,9 @@ export default function CategoryPageLayout({
 
   return (
     <>
+      {isQuestPaywallShowing && (
+        <QuestPaywall onComplete={() => setIsQuestPaywallShowing(false)} />
+      )}
       {children}
       <div className="quest__bottom-buttons-wrapper">
         <Tumbler items={items} onClick={handleClick} activeIndex={index} />
