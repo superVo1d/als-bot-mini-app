@@ -1,4 +1,4 @@
-import { FC, useState } from "react";
+import { FC, useEffect, useState } from "react";
 import { Text } from "@/components/Text";
 import { Button } from "@/components/Button";
 
@@ -14,6 +14,12 @@ export interface IQuestPaywall {
 export const QuestPaywall: FC<IQuestPaywall> = ({ onComplete }) => {
   const [stage, setStage] = useState(0);
   const { prizes } = useAuth();
+
+  useEffect(() => {
+    return () => {
+      if (stage === 0) onComplete();
+    };
+  }, []);
 
   return (
     <div className="quest-paywall page clearfix">
