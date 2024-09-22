@@ -122,7 +122,7 @@ export const AuthProvider: FC<{ children: ReactNode }> = ({ children }) => {
     null
   );
   const [isOnboardingCompleted, setOnboardingCompleted] =
-    useState<boolean>(false);
+    usePersistentState<boolean>("als_29_quest-onboarding", false);
 
   useEffect(() => {
     const savedToken = localStorage.getItem("token");
