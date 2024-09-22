@@ -21,6 +21,20 @@ $font-path: "../fonts/ALS_Hauss Next";
 }
 
 @font-face {
+  font-family: "ALS Hauss Next";
+  src: url("#{$font-path}/ALS_Hauss Next_Medium_1.01.otf");
+  font-style: normal;
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: "ALS Hauss Next";
+  src: url("#{$font-path}/ALS_Hauss Next_Bold_1.01.otf");
+  font-style: normal;
+  font-weight: 600;
+}
+
+@font-face {
   font-family: "ALS Hauss Next Wide";
   src: url("#{$font-path}/ALS_Hauss Next_Wide Hairline_1.01.otf")
     format("opentype");

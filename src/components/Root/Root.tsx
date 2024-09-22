@@ -71,12 +71,11 @@ function App(props: PropsWithChildren) {
       bb?.hide();
       setShowBackButton(false);
     } else if (pathname === "/map") {
+      bb?.show();
       setShowBackButton(false);
     } else {
       bb?.show();
-      if (pathname !== "/map") {
-        setShowBackButton(true);
-      }
+      setShowBackButton(true);
     }
     if (bb) {
       bb.on("click", () => router.back());
