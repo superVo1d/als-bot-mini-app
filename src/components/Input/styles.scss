@@ -23,6 +23,7 @@
   }
 
   input {
+    -moz-appearance: textfield;
     all: unset;
     font-family: var(--als-bot-font-wide);
     font-weight: 900;
@@ -41,6 +42,12 @@
       opacity: 0.4;
       position: relative;
       top: -0.5rem;
+    }
+
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
     }
   }
 
