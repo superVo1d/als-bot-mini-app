@@ -30,8 +30,10 @@ export const QuestPaywall: FC<IQuestPaywall> = ({ onClose }) => {
                 name="quest-paywall"
                 length={2}
                 setValue={() => {
-                  setStage(1);
-                  completeOnboarding();
+                  setTimeout(() => {
+                    setStage(1);
+                    completeOnboarding();
+                  }, 800);
                 }}
               />
               <Text

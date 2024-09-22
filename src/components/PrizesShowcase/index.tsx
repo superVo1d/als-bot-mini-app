@@ -12,14 +12,15 @@ const PrizesShowcase: FC = () => {
 
   return (
     <div className="prizes-showcase">
-      <div className="prizes-showcase__container" />
-      {level > 0 && (
-        <Text
-          className="prizes-showcase__level"
-          text={level.toString() + " уровень"}
-          textSize="caption"
-        />
-      )}
+      <div className="prizes-showcase__container">
+        {level > 0 && (
+          <Text
+            className="prizes-showcase__level"
+            text={level.toString() + " уровень"}
+            textSize="caption"
+          />
+        )}
+      </div>
       <div className="caption" dangerouslySetInnerHTML={{ __html: caption }} />
     </div>
   );

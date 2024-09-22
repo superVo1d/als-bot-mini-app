@@ -34,10 +34,10 @@ const Input: FC<IInput> = ({
     if (value === "") {
       (document.getElementById(`${name}-0`) as HTMLInputElement).focus();
     }
-  }, [value, length]);
+  }, [value, length, name]);
 
   const handleChange = (value: string, index: number) => {
-    if (!/^\d*$/.test(value)) return;
+    if (!/^(\d{1})?$/.test(value)) return;
 
     const newPin = [...pin];
     newPin[index] = value;

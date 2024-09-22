@@ -8,11 +8,14 @@
     align-items: center;
     border-radius: 1rem;
     background: rgba(255, 255, 255, 0.3);
-    position: relative;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
     bottom: 2.8rem;
   }
 
   &__container {
+    position: relative;
     height: 30rem;
   }
 }
