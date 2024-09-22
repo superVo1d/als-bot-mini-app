@@ -58,7 +58,7 @@ export const QuestPaywall: FC<IQuestPaywall> = ({ onClose }) => {
               />
             </div>
             <div className="quest-paywall__buttons-wrapper">
-              <Button onClick={onClose}>
+              <Button onClick={onClose} href="/quest">
                 <Text text="Ещё задания" />
               </Button>
             </div>
