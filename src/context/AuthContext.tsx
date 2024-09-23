@@ -38,7 +38,6 @@ const questData: IQuestData = [
   {
     questId: 0,
     title: "29",
-    completed: true,
   },
   {
     questId: 1,
@@ -53,12 +52,8 @@ const questData: IQuestData = [
     title: "Найди «Мылус»",
   },
   {
-    questId: 4,
-    title: "Попробый злоебучий соус",
-  },
-  {
     questId: 5,
-    title: "Попробый злоебучий соус",
+    title: "Попробуй злоебучий соус",
   },
   {
     questId: 6,
@@ -79,6 +74,14 @@ const questData: IQuestData = [
   {
     questId: 10,
     title: "Человек в&nbsp;мерче",
+  },
+  {
+    questId: 11,
+    title: "Знак с&nbsp;которым все",
+  },
+  {
+    questId: 11,
+    title: "Знак с&nbsp;которым все",
   },
   {
     questId: 11,
@@ -145,7 +148,7 @@ export const AuthProvider: FC<{ children: ReactNode }> = ({ children }) => {
       const newData = questData.map((item) => {
         return {
           ...item,
-          completed: completedQuests?.includes(item.questId),
+          completed: item.completed || completedQuests?.includes(item.questId),
         };
       });
       setQuestsData(newData);
@@ -171,7 +174,9 @@ export const AuthProvider: FC<{ children: ReactNode }> = ({ children }) => {
   const level = useMemo(() => {
     if (!questProgress) return 0;
 
-    if (questProgress >= 13) {
+    console.log(questProgress);
+
+    if (questProgress > 12) {
       return 4;
     } else if (questProgress > 8) {
       return 3;
@@ -189,15 +194,15 @@ export const AuthProvider: FC<{ children: ReactNode }> = ({ children }) => {
 
     switch (level) {
       case 0:
-        return [questProgress - 1, 1];
+        return [questProgress, 2];
       case 1:
-        return [questProgress - 1 - 1, 4];
+        return [questProgress - 2, 3];
       case 2:
-        return [questProgress - 1 - 1 - 4, 4];
+        return [questProgress - 5, 4];
       case 3:
-        return [questProgress - 1 - 1 - 4 - 4, 4];
+        return [questProgress - 9, 4];
       case 4:
-        return [questProgress - 1 - 1 - 4 - 4 - 4, 1];
+        return [questProgress - 13, 1];
     }
   }, [questProgress, level]);
 

@@ -41,6 +41,15 @@ export const authService = {
         {
           quest_id: 0,
         },
+        {
+          quest_id: 2,
+        },
+        {
+          quest_id: 3,
+        },
+        {
+          quest_id: 10,
+        },
       ];
     }
     const response = await fetch(`${apiUrl}/quest`);
