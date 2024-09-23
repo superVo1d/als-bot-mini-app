@@ -27,20 +27,18 @@ export interface IQuestDataItem {
   questId: number;
   title: string;
   code?: string;
+  completed?: boolean;
 }
 
-export interface IQuestDataWithStatus extends IQuestDataItem {
-  completed: boolean;
-}
-
-export type IQuestData = IQuestDataWithStatus[];
+export type IQuestData = IQuestDataItem[];
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
-const questData: IQuestDataItem[] = [
+const questData: IQuestData = [
   {
     questId: 0,
     title: "29",
+    completed: true,
   },
   {
     questId: 1,

@@ -16,7 +16,7 @@ export default function CategoryPageLayout({
 }) {
   const pathname = usePathname();
   const router = useRouter();
-  const { isOnboardingCompleted } = useAuth();
+  const { isOnboardingCompleted, questProgress = 0 } = useAuth();
   const [index, setIndex] = useState<number>(pathname === "/quest" ? 0 : 1);
   const [isQuestPaywallShowing, setIsQuestPaywallShowing] = useState<boolean>(
     !isOnboardingCompleted
@@ -42,9 +42,10 @@ export default function CategoryPageLayout({
 
   return (
     <>
-      {isQuestPaywallShowing && (
-        <QuestPaywall onClose={() => setIsQuestPaywallShowing(false)} />
-      )}
+      {isQuestPaywallShowing ||
+        (questProgress > 0 && (
+          <QuestPaywall onClose={() => setIsQuestPaywallShowing(false)} />
+        ))}
       {children}
       <div className="quest__bottom-buttons-wrapper">
         <Tumbler items={items} onClick={handleClick} activeIndex={index} />

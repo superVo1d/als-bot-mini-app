@@ -1,12 +1,6 @@
 "use client";
 
-import {
-  createContext,
-  type PropsWithChildren,
-  useEffect,
-  useMemo,
-  useState,
-} from "react";
+import { type PropsWithChildren, useEffect, useState } from "react";
 import {
   SDKProvider,
   useLaunchParams,
@@ -19,7 +13,6 @@ import {
   useBackButton,
   useSwipeBehavior,
 } from "@telegram-apps/sdk-react";
-import { TonConnectUIProvider } from "@tonconnect/ui-react";
 import { AppRoot } from "@telegram-apps/telegram-ui";
 
 import { ErrorBoundary } from "@/components/ErrorBoundary";
@@ -135,9 +128,6 @@ function RootInner({ children }: PropsWithChildren) {
   }
 
   const debug = useLaunchParams().startParam === "debug";
-  const manifestUrl = useMemo(() => {
-    return new URL("tonconnect-manifest.json", window.location.href).toString();
-  }, []);
 
   // Enable debug mode to see all the methods sent and events received.
   useEffect(() => {
@@ -147,13 +137,11 @@ function RootInner({ children }: PropsWithChildren) {
   }, [debug]);
 
   return (
-    <TonConnectUIProvider manifestUrl={manifestUrl}>
-      <SDKProvider acceptCustomStyles debug={debug}>
-        <AuthProvider>
-          <App>{children}</App>
-        </AuthProvider>
-      </SDKProvider>
-    </TonConnectUIProvider>
+    <SDKProvider acceptCustomStyles debug={debug}>
+      <AuthProvider>
+        <App>{children}</App>
+      </AuthProvider>
+    </SDKProvider>
   );
 }
 

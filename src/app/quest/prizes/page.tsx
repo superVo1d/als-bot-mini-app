@@ -5,7 +5,7 @@ import { totalQuestLevels, useAuth } from "@/context/AuthContext";
 
 import "./styles.scss";
 import { Coupon } from "@/components/Coupon";
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useMemo, useState } from "react";
 import { NavigationTabs } from "@/components/NavigationTabs";
 
 export default function PrizesPage() {
@@ -47,7 +47,7 @@ export default function PrizesPage() {
             <Coupon
               isActive={level >= prize.requiredLevel}
               prize={prize}
-              key={index}
+              key={`${activeLevel}_${index}`}
             />
           ))}
         </div>
