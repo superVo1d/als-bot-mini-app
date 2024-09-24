@@ -8,6 +8,7 @@ import { useLangContext } from "@/context/LangContext";
 import { Button } from "@/components/Button";
 import { classNames } from "@telegram-apps/sdk";
 import { SupplierCard } from "@/components/SupplierCard";
+import { IMetricaEventTypes, sendMetrikaEvent } from "@/helpers/metrika";
 
 export default function CategoryPage() {
   const { supplier: params } = useParams();
@@ -76,6 +77,15 @@ export default function CategoryPage() {
     [currentSubcategory, suppliers]
   );
 
+  const sendMetrics = (goal: IMetricaEventTypes, name: string) => {
+    sendMetrikaEvent({
+      goal,
+      params: {
+        name,
+      },
+    });
+  };
+
   return (
     <div
       className={classNames("suppliers__content", {
@@ -106,6 +116,12 @@ export default function CategoryPage() {
                 <Button
                   href={currentCategory + "/" + subcategoryName}
                   style="clear"
+                  onClick={() =>
+                    sendMetrics(
+                      IMetricaEventTypes.OPEN_SUBCATEGORY,
+                      subcategoryName
+                    )
+                  }
                 >
                   <Text title={langData[subcategoryName]} titleSize="h2" />
                 </Button>
@@ -122,6 +138,9 @@ export default function CategoryPage() {
                 <Button
                   href={currentSubcategory + "/" + supplier.key}
                   style="clear"
+                  onClick={() =>
+                    sendMetrics(IMetricaEventTypes.OPEN_SUPPLIER, supplier.name)
+                  }
                 >
                   <Text title={supplier.name} titleSize="h4" />
                 </Button>

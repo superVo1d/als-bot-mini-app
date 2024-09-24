@@ -23,6 +23,7 @@ import { SupplierCard } from "../SupplierCard";
 import { Button } from "../Button";
 import { Text } from "../Text";
 import { servicesCategory, servicesList } from "@/helpers/servicesCategories";
+import { IMetricaEventTypes, sendMetrikaEvent } from "@/helpers/metrika";
 
 const Map: FC = () => {
   const { width } = useWindowSize();
@@ -136,6 +137,11 @@ const Map: FC = () => {
       supplier: undefined,
     });
     transformWrapperRef.current?.resetTransform();
+
+    sendMetrikaEvent({
+      goal: IMetricaEventTypes.OPEN_CATEGORY,
+      params: { name },
+    });
   };
 
   const handleClickSubcategory = (index: number) => {
@@ -143,6 +149,11 @@ const Map: FC = () => {
 
     setParams({
       subcategory: currentSubcategories[index].path,
+    });
+
+    sendMetrikaEvent({
+      goal: IMetricaEventTypes.OPEN_SUBCATEGORY,
+      params: { name: currentSubcategories[index].name },
     });
   };
 
@@ -157,6 +168,11 @@ const Map: FC = () => {
 
     setParams({
       supplier: selectedSupplier.path,
+    });
+
+    sendMetrikaEvent({
+      goal: IMetricaEventTypes.OPEN_SUPPLIER,
+      params: { name: selectedSupplier.name },
     });
   };
 
@@ -204,7 +220,7 @@ const Map: FC = () => {
   );
 
   const backButtonLabel = useMemo(() => {
-    if (currentSupplier && subcategory) {
+    if (subcategory) {
       return langData[subcategory];
     }
   }, [currentSubcategories, currentSupplier, currentSuppliers, subcategory]);

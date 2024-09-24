@@ -1,6 +1,6 @@
 "use client";
 
-import { type PropsWithChildren, useEffect, useState } from "react";
+import { type PropsWithChildren, Suspense, useEffect, useState } from "react";
 import {
   SDKProvider,
   useLaunchParams,
@@ -27,6 +27,7 @@ import { LangProvider } from "@/context/LangContext";
 import { AuthProvider, useAuth } from "@/context/AuthContext";
 import { Button } from "../Button";
 import HomeIcon from "@/assets/media/home.svg";
+import { YMInitializer } from "react-yandex-metrika";
 
 function App(props: PropsWithChildren) {
   const lp = useLaunchParams(true);
@@ -114,6 +115,18 @@ function App(props: PropsWithChildren) {
               <HomeIcon />
             </Button>
           )}
+          <Suspense>
+            <YMInitializer
+              accounts={[98438740]}
+              options={{
+                defer: true,
+                clickmap: true,
+                trackLinks: true,
+                accurateTrackBounce: true,
+                webvisor: true,
+              }}
+            />
+          </Suspense>
         </AppRoot>
       </DataProvider>
     </LangProvider>

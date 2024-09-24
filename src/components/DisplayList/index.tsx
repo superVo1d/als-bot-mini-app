@@ -17,7 +17,7 @@ const DisplayList: FC<IDisplayItems> = ({ items, onClick }) => {
         {items.map((item, index) => (
           <li key={index}>
             <Button style="secondary" onClick={() => onClick && onClick(index)}>
-              {item.name}
+              <span dangerouslySetInnerHTML={{ __html: item.name }} />
             </Button>
           </li>
         ))}

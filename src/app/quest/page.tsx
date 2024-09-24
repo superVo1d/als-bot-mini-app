@@ -10,6 +10,7 @@ import { Input } from "@/components/Input";
 import { useState } from "react";
 import { authService } from "@/services/auth";
 import { PrizesShowcase } from "@/components/PrizesShowcase";
+import { IMetricaEventTypes, sendMetrikaEvent } from "@/helpers/metrika";
 
 export default function QuestPage() {
   const { questsData, completeQuest } = useAuth();
@@ -41,6 +42,12 @@ export default function QuestPage() {
         setCode("");
         setError(false);
         setErrorText(undefined);
+        sendMetrikaEvent({
+          goal: IMetricaEventTypes.COMPLETE_QUEST,
+          params: {
+            quest_id: result.quest_id,
+          },
+        });
       });
     } else {
       setCode(value);
