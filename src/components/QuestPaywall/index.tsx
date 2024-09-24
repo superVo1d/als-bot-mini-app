@@ -13,7 +13,7 @@ export interface IQuestPaywall {
 
 export const QuestPaywall: FC<IQuestPaywall> = ({ onClose }) => {
   const [stage, setStage] = useState(0);
-  const { prizes, completeOnboarding } = useAuth();
+  const { prizes, completeOnboarding, completeQuest } = useAuth();
 
   return (
     <div className="quest-paywall page clearfix">
@@ -29,9 +29,10 @@ export const QuestPaywall: FC<IQuestPaywall> = ({ onClose }) => {
               <Input
                 name="quest-paywall"
                 length={2}
-                setValue={() => {
+                setValue={(value) => {
                   setTimeout(() => {
                     setStage(1);
+                    completeQuest(0, value);
                     completeOnboarding();
                   }, 800);
                 }}

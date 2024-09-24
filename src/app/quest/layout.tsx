@@ -42,10 +42,9 @@ export default function CategoryPageLayout({
 
   return (
     <>
-      {isQuestPaywallShowing ||
-        (questProgress > 0 && (
-          <QuestPaywall onClose={() => setIsQuestPaywallShowing(false)} />
-        ))}
+      {isQuestPaywallShowing && (
+        <QuestPaywall onClose={() => setIsQuestPaywallShowing(false)} />
+      )}
       {children}
       <div className="quest__bottom-buttons-wrapper">
         <Tumbler items={items} onClick={handleClick} activeIndex={index} />

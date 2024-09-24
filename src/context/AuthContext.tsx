@@ -174,8 +174,6 @@ export const AuthProvider: FC<{ children: ReactNode }> = ({ children }) => {
   const level = useMemo(() => {
     if (!questProgress) return 0;
 
-    console.log(questProgress);
-
     if (questProgress > 12) {
       return 4;
     } else if (questProgress > 8) {
