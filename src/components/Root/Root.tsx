@@ -115,18 +115,6 @@ function App(props: PropsWithChildren) {
               <HomeIcon />
             </Button>
           )}
-          <Suspense>
-            <YMInitializer
-              accounts={[98438740]}
-              options={{
-                defer: true,
-                clickmap: true,
-                trackLinks: true,
-                accurateTrackBounce: true,
-                webvisor: true,
-              }}
-            />
-          </Suspense>
         </AppRoot>
       </DataProvider>
     </LangProvider>
@@ -166,6 +154,18 @@ export function Root(props: PropsWithChildren) {
   return didMount ? (
     <ErrorBoundary fallback={ErrorPage}>
       <RootInner {...props} />
+      <Suspense>
+        <YMInitializer
+          accounts={[98438740]}
+          options={{
+            defer: true,
+            clickmap: true,
+            trackLinks: true,
+            accurateTrackBounce: true,
+            webvisor: true,
+          }}
+        />
+      </Suspense>
     </ErrorBoundary>
   ) : (
     <div className="root__loading">Loading</div>
