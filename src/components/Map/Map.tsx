@@ -1,9 +1,18 @@
 "use client";
 
-import React, { FC, useEffect, useMemo, useRef, useState } from "react";
+import React, {
+  CSSProperties,
+  FC,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+} from "react";
 
 import SixthFloor from "@/assets/media/6.svg";
 import SeventhFloor from "@/assets/media/7.svg";
+import SixthFloorBack from "@/assets/media/6.png";
+import SeventhFloorBack from "@/assets/media/7.png";
 import { useWindowSize } from "@/hooks/useWindowSize";
 import { useMapControl } from "@/hooks/useMapControl";
 
@@ -38,6 +47,7 @@ const Map: FC = () => {
   const [params, setParams] = useSearchState();
   const { category, subcategory, supplier, level } = params;
   const [selectedFloor, setSelectedFloor] = useState(6);
+  const [mapStyle, setMapStyle] = useState<CSSProperties>({});
 
   useEffect(() => {
     if (level) {
@@ -49,6 +59,12 @@ const Map: FC = () => {
   }, [level]);
 
   const onMapSelect = (name: string) => {
+    if (servicesList.includes(name)) {
+      setParams({
+        category: servicesCategory,
+      });
+    }
+
     if (!suppliers) return;
 
     const selectedSupplier = suppliers[name];
@@ -202,6 +218,8 @@ const Map: FC = () => {
       <SixthFloor style={style} />
     );
 
+  const floorBack = selectedFloor === 7 ? SeventhFloorBack : SixthFloorBack;
+
   const isSubcategoriesShowing = useMemo(
     () => currentSubcategories && !currentSuppliers && !currentSupplier,
     [currentSubcategories, currentSupplier]
@@ -264,6 +282,23 @@ const Map: FC = () => {
     return newTabIndex === -1 ? 0 : newTabIndex;
   }, [category]);
 
+  const scaleMap = () => {
+    const scale = (window.innerWidth - 20) / 4000;
+
+    setMapStyle({
+      transform: `scale3d(${scale}, ${scale}, 1) translateY(-50%)`,
+      transformOrigin: "0% 0%",
+    });
+  };
+
+  useEffect(() => {
+    scaleMap();
+
+    window.addEventListener("resize", scaleMap);
+
+    return () => window.removeEventListener("resize", scaleMap);
+  }, []);
+
   return (
     <div className="page map">
       <div className="map__wrapper" onClick={handleClickMap}>
@@ -274,7 +309,10 @@ const Map: FC = () => {
           ref={transformWrapperRef}
         >
           <TransformComponent>
-            <div ref={mapRef}>{floor}</div>
+            <div className="map__container">
+              <div ref={mapRef}>{floor}</div>
+              <img src={floorBack.src} alt="" style={mapStyle} />
+            </div>
           </TransformComponent>
         </TransformWrapper>
       </div>

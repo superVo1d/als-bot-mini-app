@@ -5,7 +5,7 @@ import "./styles.scss";
 export interface TextProps {
   text?: string;
   textSize?: "caption";
-  titleSize?: "h2" | "h3" | "h4";
+  titleSize?: "h1" | "h2" | "h3" | "h4";
   title?: string;
   className?: string;
   children?: ReactNode;

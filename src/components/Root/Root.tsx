@@ -1,6 +1,6 @@
 "use client";
 
-import { type PropsWithChildren, Suspense, useEffect, useState } from "react";
+import { type PropsWithChildren, useEffect, useState } from "react";
 import {
   SDKProvider,
   useLaunchParams,
@@ -27,7 +27,6 @@ import { LangProvider } from "@/context/LangContext";
 import { AuthProvider, useAuth } from "@/context/AuthContext";
 import { Button } from "../Button";
 import HomeIcon from "@/assets/media/home.svg";
-import { YMInitializer } from "react-yandex-metrika";
 
 function App(props: PropsWithChildren) {
   const lp = useLaunchParams(true);
@@ -152,21 +151,11 @@ export function Root(props: PropsWithChildren) {
   const didMount = useDidMount();
 
   return didMount ? (
-    <ErrorBoundary fallback={ErrorPage}>
-      <RootInner {...props} />
-      <Suspense>
-        <YMInitializer
-          accounts={[98438740]}
-          options={{
-            defer: true,
-            clickmap: true,
-            trackLinks: true,
-            accurateTrackBounce: true,
-            webvisor: true,
-          }}
-        />
-      </Suspense>
-    </ErrorBoundary>
+    <>
+      <ErrorBoundary fallback={ErrorPage}>
+        <RootInner {...props} />
+      </ErrorBoundary>
+    </>
   ) : (
     <div className="root__loading">Loading</div>
   );

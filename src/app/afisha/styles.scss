@@ -1,4 +1,48 @@
 .afisha {
+  $selector: &;
+
   background-color: #f40000;
   padding: 1.7rem 2.6rem;
+  height: 100%;
+
+  &__title {
+    margin-bottom: 3.2rem;
+  }
+
+  &__item-title {
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: currentColor;
+    line-height: 100%;
+    letter-spacing: -0.1rem;
+  }
+
+  &__item {
+    margin-top: 1.5rem;
+    position: relative;
+
+    img {
+      aspect-ratio: 1;
+      border-radius: 1rem;
+      overflow: hidden;
+      display: block;
+      width: 100%;
+      margin-top: 0.9rem;
+    }
+
+    &::after {
+      content: "";
+      display: block;
+      height: 1px;
+      width: 100%;
+      opacity: 0.3;
+      background: #fff;
+      margin-top: 0.9rem;
+    }
+
+    &_no-image {
+      #{$selector}__item-title > div {
+        text-transform: uppercase;
+      }
+    }
+  }
 }

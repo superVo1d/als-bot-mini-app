@@ -42,4 +42,22 @@
     margin-left: 2rem;
     margin-right: 2rem;
   }
+
+  &__container {
+    position: relative;
+
+    svg {
+      opacity: 0;
+    }
+
+    img {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 4000px;
+      height: 2084px;
+      will-change: transform;
+      pointer-events: none;
+    }
+  }
 }

@@ -13,6 +13,10 @@
       margin-top: 0.2rem;
     }
 
+    &_h1 {
+      @include mixins.font(typography.$font-h1);
+    }
+
     &_h2 {
       @include mixins.font(typography.$font-h2);
     }

@@ -1,12 +1,69 @@
 "use client";
 
+import { useEffect, useMemo, useState } from "react";
 import "./styles.scss";
 import { Text } from "@/components/Text";
+import { IScheduleData } from "../api/schedule/route";
+import { useLangContext } from "@/context/LangContext";
+import { time } from "console";
+import { useDataContext } from "@/context/DataContext";
+import { classNames } from "@telegram-apps/sdk";
 
 export default function AfishaPage() {
+  const [data, setData] = useState<IScheduleData | null>(null);
+  const { suppliers } = useDataContext();
+
+  const fetchData = async () => {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/schedule`);
+    const dataParsed = await res.json();
+    setData(dataParsed);
+  };
+
+  useEffect(() => {
+    fetchData();
+    const interval = setInterval(fetchData, 60000);
+    return () => clearInterval(interval);
+  }, []);
+
+  const itemsPrapared = useMemo(() => {
+    if (!suppliers) return;
+
+    return data?.map((item) => {
+      const supplier = suppliers[item.name];
+
+      return {
+        time: item.time,
+        name: supplier?.name || item.name,
+        image: supplier?.image,
+      };
+    });
+  }, [data, suppliers]);
+
   return (
     <div className="afisha page clearfix">
-      <Text title="Афиша" titleSize="h2" />
+      <Text className="afisha__title" title="Афиша" titleSize="h2" />
+      {itemsPrapared?.map((item, index) => (
+        <div
+          className={classNames("afisha__item", {
+            "afisha__item_no-image": !item.image,
+          })}
+          key={index}
+        >
+          <div>
+            <Text
+              className="afisha__item__time-title"
+              title={item.time}
+              titleSize="h2"
+            />
+          </div>
+          <Text
+            className="afisha__item-title"
+            title={item.name}
+            titleSize={item.image ? "h2" : "h1"}
+          />
+          {item.image && <img src={item.image} alt="" loading="lazy" />}
+        </div>
+      ))}
     </div>
   );
 }
