@@ -29,7 +29,7 @@
       margin-top: 0.9rem;
     }
 
-    &::after {
+    &:not(:last-child)::after {
       content: "";
       display: block;
       height: 1px;
