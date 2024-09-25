@@ -13,7 +13,7 @@ export function ErrorPage({
   }, [error]);
 
   return (
-    <div>
+    <div style={{ color: "#000" }}>
       <h2>An unhandled error occurred!</h2>
       <blockquote>
         <code>{error.message}</code>
