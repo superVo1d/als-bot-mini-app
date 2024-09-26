@@ -1,21 +1,74 @@
 .prizes-showcase {
+  $selector: &;
+
   text-align: center;
+  margin-bottom: 2.6rem;
+  margin-top: 1.4rem;
 
   &__level {
     display: inline-flex;
     padding: 0.9rem 0.8rem;
     justify-content: center;
     align-items: center;
-    border-radius: 1rem;
-    background: rgba(255, 255, 255, 0.3);
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    bottom: 2.8rem;
+    border-radius: 1.8rem;
+    background: #3c3c3c;
+    margin-bottom: 2.6rem;
+    position: relative;
+    z-index: 2;
+
+    &::after {
+      content: "";
+      display: block;
+      border-top: 0.2rem dashed #3c3c3c;
+      position: absolute;
+      left: 50%;
+      width: 70vw;
+      z-index: -1;
+    }
   }
 
   &__container {
     position: relative;
-    height: 30rem;
+    margin-left: -2rem;
+    width: calc(100% + 4rem);
+  }
+
+  &__slide-image {
+    padding: 0 2.6rem;
+    margin: 1.55rem auto;
+    margin-bottom: 2.6rem;
+    position: relative;
+
+    &::after {
+      content: "";
+      display: block;
+      width: 100%;
+      padding-bottom: 0.83%;
+    }
+  }
+
+  &__slide {
+    img {
+      height: 100%;
+      display: block;
+      width: 100%;
+      object-fit: contain;
+    }
+
+    &:not(#{$selector}__slide_active) {
+      img {
+        filter: opacity(0.3);
+      }
+    }
+  }
+
+  .swiper-slide {
+    width: 75%;
+
+    &:last-child {
+      #{$selector}__level::after {
+        content: none;
+      }
+    }
   }
 }

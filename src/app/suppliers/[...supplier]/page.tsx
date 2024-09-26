@@ -50,14 +50,14 @@ export default function CategoryPage() {
       });
     }
 
-    if (currentSupplier) {
-      if (!suppliers?.[currentSupplier]) return result;
-      result.push({
-        name: suppliers[currentSupplier].name,
-        href:
-          currentCategory + "/" + currentSubcategory + "/" + currentSupplier,
-      });
-    }
+    // if (currentSupplier) {
+    //   if (!suppliers?.[currentSupplier]) return result;
+    //   result.push({
+    //     name: suppliers[currentSupplier].name,
+    //     href:
+    //       currentCategory + "/" + currentSubcategory + "/" + currentSupplier,
+    //   });
+    // }
 
     return result;
   }, [params, categories, langData]);

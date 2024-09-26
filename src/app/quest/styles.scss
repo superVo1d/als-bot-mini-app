@@ -33,24 +33,27 @@
       }
     }
 
+    &:not(.completed) {
+      > div > div:nth-child(2) {
+        opacity: 0.6;
+      }
+    }
+
     &.completed {
-      background: #2aff91;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      background: #25c275;
       color: #000;
 
-      > div {
-        display: flex;
-        gap: 0.5rem;
-        justify-content: space-between;
-
-        &::after {
-          content: "";
-          display: block;
-          background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="25" height="18" viewBox="0 0 25 18" fill="none"><path d="M2 8.875L8.41789 15.2929C8.80842 15.6834 9.44158 15.6834 9.83211 15.2929L23.125 2" stroke="%231E1E1E" stroke-width="3" stroke-linecap="round"/></svg>')
-            no-repeat center;
-          height: 2rem;
-          width: 2.5rem;
-          background-size: contain;
-        }
+      &::after {
+        content: "";
+        display: block;
+        background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="25" height="18" viewBox="0 0 25 18" fill="none"><path d="M2 8.875L8.41789 15.2929C8.80842 15.6834 9.44158 15.6834 9.83211 15.2929L23.125 2" stroke="%231E1E1E" stroke-width="3" stroke-linecap="round"/></svg>')
+          no-repeat center;
+        height: 2rem;
+        width: 2.5rem;
+        background-size: contain;
       }
     }
   }

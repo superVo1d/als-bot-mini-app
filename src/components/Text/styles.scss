@@ -37,6 +37,8 @@
   &__paragraph {
     &_caption {
       @include mixins.font(typography.$font-caption);
+
+      font-family: var(--als-bot-font-regular);
     }
   }
 }

@@ -53,7 +53,7 @@ export default function AfishaPage() {
             <Text
               className="afisha__item__time-title"
               title={item.time}
-              titleSize="h2"
+              titleSize="h3"
             />
           </div>
           <Text

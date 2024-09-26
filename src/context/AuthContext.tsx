@@ -28,6 +28,7 @@ export interface IQuestDataItem {
   title: string;
   code?: string;
   completed?: boolean;
+  caption?: string;
 }
 
 export type IQuestData = IQuestDataItem[];
@@ -45,47 +46,55 @@ const questData: IQuestData = [
   },
   {
     questId: 2,
-    title: "Выложи и&nbsp;отметь студию",
+    title: "Фотка в&nbsp;зеркале Воус",
   },
   {
     questId: 3,
-    title: "Найди «Мылус»",
+    title: "Найди мыло &laquo;Мылус&raquo;",
+  },
+  {
+    questId: 4,
+    title: "Попробуй злоебучий соус",
+    caption: "А где закуски?",
   },
   {
     questId: 5,
-    title: "Попробуй злоебучий соус",
+    title: "Плакат &laquo;ХУЙ&raquo;",
+    caption: "У&nbsp;нас не&nbsp;матерятся",
   },
   {
     questId: 6,
-    title: "Картина Николая Иронова",
+    title: "Скотчус",
+    caption: "Скамейка",
   },
   {
     questId: 7,
-    title: 'Плакат <span class="cross">«ХУЙ»</span>',
+    title: "Картина Николая Иронова",
   },
   {
     questId: 8,
-    title: "Найди рельсус",
+    title: "Не&nbsp;наклейки а&nbsp;говно",
   },
   {
     questId: 9,
-    title: "Самый честный стикерпак",
+    title: "Рельсус",
   },
   {
     questId: 10,
-    title: "Человек в&nbsp;мерче",
+    title: "Самый честный стикерпак",
+    caption: "Где-то приклеен",
   },
   {
     questId: 11,
-    title: "Знак с&nbsp;которым все",
+    title: "Знак рядом с&nbsp;которым все фотографируются",
   },
   {
-    questId: 11,
-    title: "Знак с&nbsp;которым все",
+    questId: 12,
+    title: "Штора с&nbsp;котиками",
   },
   {
-    questId: 11,
-    title: "Знак с&nbsp;которым все",
+    questId: 12,
+    title: "Абажур с&nbsp;паттерном",
   },
 ];
 

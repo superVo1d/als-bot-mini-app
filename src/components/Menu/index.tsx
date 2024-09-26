@@ -59,6 +59,7 @@ export const Menu: FC = () => {
         onClick={() => onClick(IMetricaEventTypes.OPEN_MAP)}
       >
         <Text title="Карта" />
+        <img src={`${process.env.NEXT_PUBLIC_BASE_URL}/map.jpg`} alt="" />
       </Button>
       <Button
         href="/faq"

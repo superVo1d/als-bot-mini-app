@@ -79,7 +79,7 @@ export default function QuestPage() {
             })}
             key={index}
           >
-            <Text title={item.title} />
+            <Text title={item.title} text={item.caption} textSize="caption" />
           </Button>
         ))}
       </div>
