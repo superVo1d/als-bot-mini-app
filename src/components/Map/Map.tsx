@@ -13,7 +13,6 @@ import SixthFloor from "@/assets/media/6.svg";
 import SeventhFloor from "@/assets/media/7.svg";
 import SixthFloorBack from "@/assets/media/6.png";
 import SeventhFloorBack from "@/assets/media/7.png";
-import { useWindowSize } from "@/hooks/useWindowSize";
 import { useMapControl } from "@/hooks/useMapControl";
 
 import {

@@ -1,3 +1,5 @@
+import { useDataContext } from "@/context/DataContext";
+import { servicesList } from "@/helpers/servicesCategories";
 import { useEffect } from "react";
 import { ReactZoomPanPinchRef } from "react-zoom-pan-pinch";
 
@@ -6,8 +8,13 @@ export const useMapControl = (
   mapRef: React.RefObject<HTMLDivElement>,
   onClick?: (name: string) => void
 ) => {
+  const { suppliers } = useDataContext();
+
   const zoomToTarget = (name: string, floor = 6) => {
-    const el = document.getElementById(`${floor}_svg__${name}`);
+    console.log("zoomToTarget");
+    const el = document.querySelector(
+      `#studio_${floor} #${name}`
+    ) as HTMLElement;
 
     if (!el) return false;
 
@@ -17,13 +24,37 @@ export const useMapControl = (
   };
 
   const handleClick = (e: MouseEvent) => {
-    const target = e.target as HTMLElement;
+    let target = e.target as HTMLElement;
 
-    if (!e.target) return;
+    if (!e.target || !suppliers) return;
 
-    const targetId = target.id.split("__")[1];
-    if (target.id && targetId && targetId !== "background") {
-      const el = document.getElementById(target.id);
+    let targetId = undefined;
+
+    const ids: string[] = [];
+
+    // Traverse up the DOM, collecting IDs of the clicked element and its parent elements
+    while (target) {
+      if (target.tagName.toLowerCase() === "svg") {
+        break;
+      }
+      if (target.id) {
+        ids.push(target.id.replace(/_\d/g, ""));
+      }
+      target = target.parentElement as HTMLElement; // Move to the parent element
+    }
+
+    ids.forEach((id) => {
+      if (Object.keys(suppliers).concat(servicesList).includes(id)) {
+        targetId = id;
+      }
+    });
+
+    console.log(targetId);
+
+    if (targetId) {
+      const el = document.getElementById(targetId);
+
+      console.log(el);
 
       if (!el) return;
 

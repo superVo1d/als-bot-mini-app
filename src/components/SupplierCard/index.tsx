@@ -59,9 +59,9 @@ const SupplierCard: FC<ISupplierCard> = ({ supplier, className }) => {
 
   return (
     <div className={classNames(className, "supplier-card")}>
-      <div className="supplier-card__image">
+      {/* <div className="supplier-card__image">
         <img loading="lazy" src={image} alt={name} />
-      </div>
+      </div> */}
       <div className="supplier-card__text">
         <Text
           title={name}
