@@ -4,19 +4,15 @@ import { useEffect, useMemo, useState } from "react";
 import "./styles.scss";
 import { Text } from "@/components/Text";
 import { IScheduleData } from "../api/schedule/route";
-import { useLangContext } from "@/context/LangContext";
-import { time } from "console";
 import { useDataContext } from "@/context/DataContext";
 import { classNames } from "@telegram-apps/sdk";
 
 export default function AfishaPage() {
   const [data, setData] = useState<IScheduleData | null>(null);
-  const { suppliers } = useDataContext();
+  const { suppliers, fetchAfishaData } = useDataContext();
 
   const fetchData = async () => {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/schedule`);
-    const dataParsed = await res.json();
-    setData(dataParsed);
+    fetchAfishaData().then((newData) => setData(newData));
   };
 
   useEffect(() => {
@@ -67,3 +63,7 @@ export default function AfishaPage() {
     </div>
   );
 }
+function fetchAfishaData() {
+  throw new Error("Function not implemented.");
+}
+

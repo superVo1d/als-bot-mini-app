@@ -14,10 +14,10 @@ export default function ServicesPage() {
       <Text title="Удобства" className="services__text" titleSize="h2" />
       <div className="services__buttons-container">
         <Button href={"/map?category=services&supplier=wc&level=6"}>
-          <Text text="Туалет на&nbsp;6м" />
+          <Text text="Туалет на&nbsp;6-м" />
         </Button>
         <Button href={"/map?category=services&supplier=wc&level=7"}>
-          <Text text="Туалет на&nbsp;7м" />
+          <Text text="Туалет на&nbsp;7-м" />
         </Button>
         <Button href={"/map?category=services&supplier=kurilki"}>
           <Text text="Курилки" />

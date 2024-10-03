@@ -33,9 +33,11 @@ import { Button } from "../Button";
 import { Text } from "../Text";
 import { servicesCategory, servicesList } from "@/helpers/servicesCategories";
 import { IMetricaEventTypes, sendMetrikaEvent } from "@/helpers/metrika";
+import { useScrollTo } from "@/hooks/useScrollTo";
 
 const Map: FC = () => {
-  const { width } = useWindowSize();
+  const [width, setWidth] = useState(1);
+  const mapWrapperRef = useRef<HTMLDivElement | null>(null);
   const transformWrapperRef = useRef<ReactZoomPanPinchRef | null>(null);
 
   const mapRef = useRef<HTMLDivElement | null>(null);
@@ -43,6 +45,7 @@ const Map: FC = () => {
   const { suppliers, categories, getSubcategories, getSuppliers } =
     useDataContext();
   const { langData } = useLangContext();
+  const { scrollTo } = useScrollTo();
 
   const [params, setParams] = useSearchState();
   const { category, subcategory, supplier, level } = params;
@@ -76,6 +79,8 @@ const Map: FC = () => {
       subcategory: selectedSupplier.subcategory || "",
       supplier: selectedSupplier.key,
     });
+
+    scrollTo({ id: "navigation" });
   };
 
   useEffect(() => {
@@ -135,6 +140,7 @@ const Map: FC = () => {
   const toggleFloor = () => {
     setSelectedFloor((prev) => (prev === 7 ? 6 : 7));
     transformWrapperRef.current?.resetTransform();
+    scrollTo();
   };
 
   const handleClickMap = (event: React.MouseEvent<HTMLElement>) => {
@@ -158,6 +164,8 @@ const Map: FC = () => {
       goal: IMetricaEventTypes.OPEN_CATEGORY,
       params: { name },
     });
+
+    scrollTo({ id: "navigation" });
   };
 
   const handleClickSubcategory = (index: number) => {
@@ -171,6 +179,8 @@ const Map: FC = () => {
       goal: IMetricaEventTypes.OPEN_SUBCATEGORY,
       params: { name: currentSubcategories[index].name },
     });
+
+    scrollTo({ id: "navigation" });
   };
 
   const handleClickSupplier = (index: number) => {
@@ -190,6 +200,8 @@ const Map: FC = () => {
       goal: IMetricaEventTypes.OPEN_SUPPLIER,
       params: { name: selectedSupplier.name },
     });
+
+    scrollTo();
   };
 
   useEffect(() => {
@@ -204,10 +216,23 @@ const Map: FC = () => {
         100
       );
     }
-  }, [supplier]);
+  }, [supplier, width, mapWrapperRef]);
+
+  useEffect(() => {
+    const recalculateWidth = () => {
+      if (!mapWrapperRef.current) return;
+      setWidth(mapWrapperRef.current.getBoundingClientRect().width);
+    };
+
+    recalculateWidth();
+
+    window.addEventListener("resize", recalculateWidth);
+
+    return () => window.removeEventListener("resize", recalculateWidth);
+  }, [width, mapWrapperRef]);
 
   const style = useMemo(
-    () => ({ width: width - 20, height: isLarge ? width : "auto" }),
+    () => ({ width: `${width}px`, height: "auto" }),
     [width, isLarge]
   );
 
@@ -233,7 +258,10 @@ const Map: FC = () => {
   );
 
   const isBackButtonShowing = useMemo(
-    () => subcategory && (currentSuppliers || currentSupplier),
+    () =>
+      subcategory &&
+      (currentSuppliers || currentSupplier) &&
+      category !== servicesCategory,
     [currentSupplier, currentSuppliers]
   );
 
@@ -283,10 +311,12 @@ const Map: FC = () => {
   }, [category]);
 
   const scaleMap = () => {
-    const scale = (window.innerWidth - 20) / 4000;
+    if (!mapWrapperRef.current) return;
+
+    const scale = width / 4000;
 
     setMapStyle({
-      transform: `scale3d(${scale}, ${scale}, 1) translateY(-50%)`,
+      transform: `scale3d(${scale}, ${scale}, 1)`,
       transformOrigin: "0% 0%",
     });
   };
@@ -297,11 +327,15 @@ const Map: FC = () => {
     window.addEventListener("resize", scaleMap);
 
     return () => window.removeEventListener("resize", scaleMap);
-  }, []);
+  }, [width, mapWrapperRef]);
 
   return (
     <div className="page map">
-      <div className="map__wrapper" onClick={handleClickMap}>
+      <div
+        ref={mapWrapperRef}
+        className="map__wrapper"
+        onClick={handleClickMap}
+      >
         <TransformWrapper
           initialScale={1}
           initialPositionX={1}
@@ -316,11 +350,14 @@ const Map: FC = () => {
           </TransformComponent>
         </TransformWrapper>
       </div>
-      <NavigationTabs
-        onClick={handleClickCategory}
-        items={tabs}
-        activeTabIndex={categoryTabIndex}
-      />
+      <div id="navigation">
+        <NavigationTabs
+          onClick={handleClickCategory}
+          items={tabs}
+          activeTabIndex={categoryTabIndex}
+        />
+      </div>
+
       {isBackButtonShowing && (
         <Button
           onClick={handleClickBack}

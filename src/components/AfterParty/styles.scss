@@ -1,0 +1,51 @@
+.after-party {
+  background: transparent;
+  height: 100%;
+  text-align: center;
+  overflow: scroll;
+  z-index: 1;
+
+  > div {
+    padding: 2.7rem;
+    position: relative;
+  }
+
+  &__content {
+    position: relative;
+    z-index: 1;
+  }
+
+  &__content-top {
+    margin-top: 4.2rem;
+  }
+
+  &__content-bottom {
+    margin-top: 5.9rem;
+  }
+
+  &__text {
+    max-width: 35rem;
+    margin: 0 auto;
+  }
+
+  &__button-wrapper {
+    .text {
+      max-width: 22.8rem;
+      margin: 0 auto;
+    }
+
+    .button {
+      margin-top: 2.7rem;
+      color: #ff0000;
+    }
+  }
+
+  &__background {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+  }
+}

@@ -3,4 +3,23 @@
   height: 100%;
   display: flex;
   flex-direction: column;
+
+  &__party-over {
+    margin: 0 1.5rem;
+
+    .text {
+      max-width: 22.8rem;
+      margin: 0 auto;
+
+      > div {
+        font-weight: 700;
+        font-family: var(--als-bot-font-wide);
+      }
+    }
+
+    .button {
+      margin-top: 2.7rem;
+      color: #ff0000;
+    }
+  }
 }

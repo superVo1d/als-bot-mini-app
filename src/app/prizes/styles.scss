@@ -1,0 +1,17 @@
+.prizes {
+  background: #1e1e1e;
+  height: 100%;
+  padding: 2.5rem 0;
+  padding-bottom: 11.5rem;
+
+  &__title {
+    text-align: center;
+    margin-bottom: 2.8rem;
+  }
+
+  &__container {
+    display: grid;
+    gap: 1.4rem;
+    margin: 0 3.4rem;
+  }
+}

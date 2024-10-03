@@ -4,8 +4,6 @@ const apiUrl = process.env.NEXT_PUBLIC_API_URL;
 
 const isDev = process.env.NODE_ENV === "development";
 
-const res = { success: true, quest_id: 1 };
-
 export type ISubmitQuestData =
   | {
       success: true;

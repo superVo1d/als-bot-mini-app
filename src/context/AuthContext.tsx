@@ -20,6 +20,7 @@ interface AuthContextType {
   prizes: IPrizeItem[];
   nextLevelProgress: number[];
   isOnboardingCompleted: boolean;
+  isPartyOver: boolean;
   completeOnboarding: () => void;
 }
 
@@ -115,6 +116,21 @@ const prizes: IPrizeItem[] = [
     code: "narayone-10",
     requiredLevel: 1,
   },
+  {
+    name: "narayone-15",
+    code: "bdayals29n",
+    requiredLevel: 1,
+  },
+  {
+    name: "magazinus-15",
+    code: "bdayals29r",
+    requiredLevel: 1,
+  },
+  {
+    name: "zhurnalus-15",
+    code: "BDAYALS29R",
+    requiredLevel: 1,
+  },
 ];
 
 export const totalQuestLevels = 4;
@@ -133,6 +149,7 @@ export const AuthProvider: FC<{ children: ReactNode }> = ({ children }) => {
   );
   const [isOnboardingCompleted, setOnboardingCompleted] =
     usePersistentState<boolean>("als_29_quest-onboarding", false);
+  const [isPartyOver, setIsPartyOver] = useState(false);
 
   useEffect(() => {
     const savedToken = localStorage.getItem("token");
@@ -213,6 +230,24 @@ export const AuthProvider: FC<{ children: ReactNode }> = ({ children }) => {
     }
   }, [questProgress, level]);
 
+  useEffect(() => {
+    const checkPartyStatus = () => {
+      const now = new Date();
+      const month = now.getMonth();
+      const day = now.getDate();
+      const year = now.getFullYear();
+      const hour = now.getHours();
+
+      setIsPartyOver(year >= 2024 && month >= 9 && day >= 5 && hour >= 8);
+    };
+
+    checkPartyStatus();
+
+    const interval = setInterval(checkPartyStatus, 60000);
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <AuthContext.Provider
       value={{
@@ -226,6 +261,7 @@ export const AuthProvider: FC<{ children: ReactNode }> = ({ children }) => {
         nextLevelProgress,
         isOnboardingCompleted,
         completeOnboarding: () => setOnboardingCompleted(true),
+        isPartyOver,
       }}
     >
       {children}

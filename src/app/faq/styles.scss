@@ -8,8 +8,17 @@
     margin-bottom: 3rem;
   }
 
-  &__button {
-    margin-top: 1.8rem;
-    margin-bottom: 2.8rem;
+  &__container {
+    display: grid;
+    gap: 1.1rem;
+  }
+
+  &__text {
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+
+    .red {
+      background: #f40000;
+    }
   }
 }

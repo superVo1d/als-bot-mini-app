@@ -1,3 +1,4 @@
+import { IScheduleData } from "@/app/api/schedule/route";
 import React, {
   createContext,
   useContext,
@@ -27,6 +28,7 @@ export interface IDataContextProps {
   categories?: string[];
   getSubcategories: (categoryName: string) => string[] | void;
   getSuppliers: (subcategoryName: string) => ISupplierWithKey[] | void;
+  fetchAfishaData: () => Promise<IScheduleData>;
 }
 
 const DataContext = createContext<IDataContextProps | undefined>(undefined);
@@ -106,9 +108,27 @@ export const DataProvider = ({ children }: { children: ReactNode }) => {
     [suppliers]
   );
 
+  const fetchAfishaData = async (): Promise<IScheduleData> => {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/schedule`);
+    const dataParsed = await res.json();
+
+    if (dataParsed.error) {
+      return [];
+    }
+
+    return dataParsed;
+  };
+
   return (
     <DataContext.Provider
-      value={{ suppliers, loading, categories, getSubcategories, getSuppliers }}
+      value={{
+        suppliers,
+        loading,
+        categories,
+        getSubcategories,
+        getSuppliers,
+        fetchAfishaData,
+      }}
     >
       {children}
     </DataContext.Provider>
