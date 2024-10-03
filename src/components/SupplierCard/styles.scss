@@ -19,9 +19,17 @@
     margin-top: 1.8rem;
 
     &-button {
-      display: inline-flex;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      display: inline-block;
       height: 5.6rem;
       width: fit-content;
+
+      svg {
+        height: 100%;
+        width: 100%;
+      }
 
       &_phone,
       &_link {

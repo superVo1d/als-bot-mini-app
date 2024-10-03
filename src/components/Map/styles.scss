@@ -50,16 +50,16 @@
     position: relative;
 
     svg {
-      margin-top: 25%;
+      margin-top: 22.5%;
       opacity: 0;
     }
 
     img {
       position: absolute;
-      top: 25%;
+      top: 22.5%;
       left: 0;
-      width: 4000px;
-      height: 2084px;
+      width: calc(2 * 1920px);
+      height: calc(2 * 1153px);
       will-change: transform;
       pointer-events: none;
     }

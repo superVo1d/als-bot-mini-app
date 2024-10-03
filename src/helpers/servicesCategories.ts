@@ -1,5 +1,3 @@
-import { ISupplierWithKey } from "@/context/DataContext";
-
 export const servicesCategory = "services";
 
-export const servicesList = ["wc", "kurilki", "garderob", "vip"];
+export const servicesList = ["wc", "garderob", "vip"];

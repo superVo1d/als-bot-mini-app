@@ -11,7 +11,6 @@ export const useMapControl = (
   const { suppliers } = useDataContext();
 
   const zoomToTarget = (name: string, floor = 6) => {
-    console.log("zoomToTarget");
     const el = document.querySelector(
       `#studio_${floor} #${name}`
     ) as HTMLElement;
@@ -32,7 +31,6 @@ export const useMapControl = (
 
     const ids: string[] = [];
 
-    // Traverse up the DOM, collecting IDs of the clicked element and its parent elements
     while (target) {
       if (target.tagName.toLowerCase() === "svg") {
         break;
@@ -40,7 +38,7 @@ export const useMapControl = (
       if (target.id) {
         ids.push(target.id.replace(/_\d/g, ""));
       }
-      target = target.parentElement as HTMLElement; // Move to the parent element
+      target = target.parentElement as HTMLElement;
     }
 
     ids.forEach((id) => {
@@ -53,8 +51,6 @@ export const useMapControl = (
 
     if (targetId) {
       const el = document.getElementById(targetId);
-
-      console.log(el);
 
       if (!el) return;
 

@@ -25,8 +25,6 @@ export const sendMetrikaEvent = ({
   params?: { [key: string]: any };
 }) => {
   try {
-    ym(event, goal, params);
-  } catch (e) {
-    console.error(e);
-  }
+    ym(event, [goal], params);
+  } catch (e) {}
 };

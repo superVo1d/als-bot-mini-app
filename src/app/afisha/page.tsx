@@ -6,6 +6,7 @@ import { Text } from "@/components/Text";
 import { IScheduleData } from "../api/schedule/route";
 import { useDataContext } from "@/context/DataContext";
 import { classNames } from "@telegram-apps/sdk";
+import { Button } from "@/components/Button";
 
 export default function AfishaPage() {
   const [data, setData] = useState<IScheduleData | null>(null);
@@ -24,26 +25,33 @@ export default function AfishaPage() {
   const itemsPrapared = useMemo(() => {
     if (!suppliers) return;
 
-    return data?.map((item) => {
-      const supplier = suppliers[item.name];
+    return data
+      ?.filter((item) => {
+        return suppliers[item.name] || item.name === "Тема режет торт";
+      })
+      .map((item) => {
+        const supplier = suppliers[item.name];
 
-      return {
-        time: item.time,
-        name: supplier?.name || item.name,
-        image: supplier?.image,
-      };
-    });
+        return {
+          key: supplier ? item.name : undefined,
+          time: item.time,
+          name: supplier?.name || item.name,
+          image: supplier?.image,
+        };
+      });
   }, [data, suppliers]);
 
   return (
     <div className="afisha page clearfix">
       <Text className="afisha__title" title="Афиша" titleSize="h2" />
       {itemsPrapared?.map((item, index) => (
-        <div
+        <Button
+          href={item.key ? "/afisha/" + item.key : undefined}
           className={classNames("afisha__item", {
             "afisha__item_no-image": !item.image,
           })}
           key={index}
+          style="clear"
         >
           <div>
             <Text
@@ -57,13 +65,9 @@ export default function AfishaPage() {
             title={item.name}
             titleSize={item.image ? "h2" : "h1"}
           />
-          {item.image && <img src={item.image} alt="" loading="lazy" />}
-        </div>
+          {/* {item.image && <img src={item.image} alt="" loading="lazy" />} */}
+        </Button>
       ))}
     </div>
   );
 }
-function fetchAfishaData() {
-  throw new Error("Function not implemented.");
-}
-

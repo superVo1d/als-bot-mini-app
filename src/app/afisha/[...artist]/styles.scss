@@ -1,0 +1,11 @@
+.afisha {
+  $selector: &;
+
+  background-color: #f40000;
+  padding: 1.7rem 2.6rem;
+  height: 100%;
+
+  .button {
+    width: fit-content;
+  }
+}

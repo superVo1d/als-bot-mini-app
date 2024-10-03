@@ -151,7 +151,9 @@ export default function CategoryPage() {
       )}
       {isSupplierShowing && (
         <div className="suppliers__card">
-          {supplerPreapred && <SupplierCard supplier={supplerPreapred} />}
+          {supplerPreapred && (
+            <SupplierCard supplier={supplerPreapred} showImage />
+          )}
         </div>
       )}
     </div>

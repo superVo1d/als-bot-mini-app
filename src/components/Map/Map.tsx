@@ -47,7 +47,7 @@ const Map: FC = () => {
   const { scrollTo } = useScrollTo();
 
   const [params, setParams] = useSearchState();
-  const { category, subcategory, supplier, level } = params;
+  const { category = "edanapitki", subcategory, supplier, level } = params;
   const [selectedFloor, setSelectedFloor] = useState(6);
   const [mapStyle, setMapStyle] = useState<CSSProperties>({});
 
@@ -81,14 +81,6 @@ const Map: FC = () => {
 
     scrollTo({ id: "navigation" });
   };
-
-  useEffect(() => {
-    if (!category) {
-      setParams({
-        category: "edanapitki",
-      });
-    }
-  }, []);
 
   const { zoomToTarget } = useMapControl(
     transformWrapperRef,
@@ -312,7 +304,7 @@ const Map: FC = () => {
   const scaleMap = () => {
     if (!mapWrapperRef.current) return;
 
-    const scale = width / 4000;
+    const scale = width / 3840;
 
     setMapStyle({
       transform: `scale3d(${scale}, ${scale}, 1)`,
@@ -322,10 +314,6 @@ const Map: FC = () => {
 
   useEffect(() => {
     scaleMap();
-
-    window.addEventListener("resize", scaleMap);
-
-    return () => window.removeEventListener("resize", scaleMap);
   }, [width, mapWrapperRef]);
 
   return (
@@ -375,7 +363,7 @@ const Map: FC = () => {
       {isSuppliersShowing && currentSuppliers && (
         <DisplayList items={currentSuppliers} onClick={handleClickSupplier} />
       )}
-      {currentSupplier && (
+      {currentSupplier && category !== servicesCategory && (
         <SupplierCard
           className="map__supplier-card"
           supplier={currentSupplier}
