@@ -18,7 +18,7 @@ export const Menu: FC = () => {
           style="clear"
           onClick={() => onClick(IMetricaEventTypes.OPEN_AFISHA)}
         >
-          <Text title="Афиша" text="Главные собтия" textSize="caption" />
+          <Text title="Афиша" text="Главные события" textSize="caption" />
         </Button>
         <Button
           className="menu__item"
@@ -58,7 +58,7 @@ export const Menu: FC = () => {
         style="clear"
         onClick={() => onClick(IMetricaEventTypes.OPEN_MAP)}
       >
-        <Text title="Карта" />
+        <Text title="Схема" />
         <video
           src={`${process.env.NEXT_PUBLIC_BASE_URL}/map.mp4`}
           muted

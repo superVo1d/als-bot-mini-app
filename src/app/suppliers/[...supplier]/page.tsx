@@ -97,11 +97,7 @@ export default function CategoryPage() {
           <Button
             key={index}
             className="suppliers__breadcrumbs-item"
-            href={
-              index !== breadcrumbs.length - 1
-                ? "/suppliers/" + item.href
-                : undefined
-            }
+            href={"/suppliers/" + item.href}
             style="clear"
           >
             <Text title={item.name} titleSize="h2" />

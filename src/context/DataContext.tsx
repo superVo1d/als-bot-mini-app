@@ -53,6 +53,7 @@ export const DataProvider = ({ children }: { children: ReactNode }) => {
           dataWithKeys[key] = {
             key,
             ...value,
+            image: `${process.env.NEXT_PUBLIC_BASE_URL}/logos/${key}.png`,
           };
         });
         setSuppliers(dataWithKeys);
@@ -87,6 +88,12 @@ export const DataProvider = ({ children }: { children: ReactNode }) => {
               (item) => item.category === categoryName && !!item.subcategory
             )
             .map((item) => item.subcategory)
+            .sort((a, b) => {
+              if (!(a && b)) return 0;
+              if (a === "bezalkogolniye_napitki") return 1;
+              if (b === "bezalkogolniye_napitki") return -1;
+              return a.localeCompare(b);
+            })
         )
       ) as string[] | void;
     },

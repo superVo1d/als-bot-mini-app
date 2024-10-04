@@ -1,7 +1,9 @@
 .supplier-card {
+  $selector: &;
+
   margin-bottom: 11.5rem;
 
-  &__image {
+  #{$selector}__image {
     aspect-ratio: 1 / 1;
     border-radius: 1rem;
     overflow: hidden;
@@ -13,7 +15,7 @@
     }
   }
 
-  &__social {
+  #{$selector}__social {
     display: flex;
     flex-wrap: wrap;
     margin-top: 1.8rem;
@@ -24,6 +26,7 @@
       overflow: hidden;
       display: inline-block;
       height: 5.6rem;
+      min-width: 5.6rem;
       width: fit-content;
 
       svg {
@@ -33,7 +36,7 @@
 
       &_phone,
       &_link {
-        background: #007aff;
+        background: #007aff !important;
         border-radius: 2.8rem;
         padding: 1.8rem;
       }

@@ -10,6 +10,7 @@ import InstagramIcon from "@/assets/media/instagram.svg";
 import VKIcon from "@/assets/media/vk.svg";
 import { classNames } from "@telegram-apps/sdk";
 
+const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 export interface ISupplierCard {
   supplier: ISupplierWithKey;
   className?: string;
@@ -29,7 +30,11 @@ const SupplierCard: FC<ISupplierCard> = ({
         return `tel:${item}`;
       }
 
-      return `https://${item}`;
+      if (emailRegex.test(item)) {
+        return `mailto:${item}`;
+      }
+
+      return item.startsWith("http") ? item : `https://${item}`;
     },
     [social]
   );
@@ -100,6 +105,7 @@ const SupplierCard: FC<ISupplierCard> = ({
                 key={index}
                 style="clear"
                 href={getHref(item)}
+                target="_blank"
                 className={classNames(
                   "supplier-card__social-button",
                   `supplier-card__social-button_${getType(item)}`

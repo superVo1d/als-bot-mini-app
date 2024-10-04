@@ -16,10 +16,45 @@
     letter-spacing: -0.1rem;
   }
 
+  &__item-time {
+    > div {
+      display: inline-block;
+      margin-right: 0.6rem;
+    }
+  }
+
+  &__item-label {
+    border: 1px solid #fff;
+    display: inline-block;
+    padding: 0.85rem 0.8rem 0.95rem 0.8rem;
+    border-radius: 1rem;
+    vertical-align: super;
+  }
+
+  &__button.button {
+    background: #007aff;
+    border-radius: 3.2rem;
+    color: #fff;
+    padding: 0.85rem 1.5rem;
+    position: absolute;
+    bottom: 1.8rem;
+    right: 0.8rem;
+    left: auto;
+    width: fit-content !important;
+
+    * {
+      font-weight: 500;
+    }
+  }
+
   &__item {
     display: block !important;
     margin-top: 1.5rem;
     position: relative;
+
+    &_past {
+      opacity: 0.6;
+    }
 
     img {
       aspect-ratio: 1;

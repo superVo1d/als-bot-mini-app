@@ -18,7 +18,8 @@ export const Onboarding: FC<OnboardingProps> = ({ onComplete }) => {
         </div>
         <Text
           className="onboarding__text"
-          text="<p>Двадцать девятая туса в Студии Артемия Лебедева.</p><p>Где и что находится, как потусить на максимум, выпивка, хрючево.</p>"
+          text={`<p>Двадцать девятая туса в&nbsp;Студии Артемия Лебедева.</p>
+<p>Где что находится и&nbsp;как потусить по&nbsp;максимуму, чем угощают и&nbsp;какие напитки есть в&nbsp;баре.</p>`}
         />
         <Button className="onboarding__button" onClick={onComplete}>
           Начать вечеринку
