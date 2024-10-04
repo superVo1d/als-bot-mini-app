@@ -13,7 +13,7 @@ export default function PrizesPage() {
     <div className="page prizes">
       <Text
         className="prizes__title"
-        title="Ты залутал скидку!"
+        title="А&nbsp;вот и&nbsp;скидочки!"
         titleSize="h3"
       />
       <div className="prizes__container">

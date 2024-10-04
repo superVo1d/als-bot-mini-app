@@ -30,27 +30,32 @@ export const useMapControl = (
     let targetId = undefined;
 
     const ids: string[] = [];
+    const orgiginalIds: string[] = [];
 
     while (target) {
       if (target.tagName.toLowerCase() === "svg") {
         break;
       }
       if (target.id) {
-        ids.push(target.id.replace(/_\d/g, ""));
+        ids.push(target.id.replace(/_.*/, ""));
+        orgiginalIds.push(target.id);
       }
       target = target.parentElement as HTMLElement;
     }
 
-    ids.forEach((id) => {
+    let idIndex;
+
+    ids.forEach((id, index) => {
       if (Object.keys(suppliers).concat(servicesList).includes(id)) {
         targetId = id;
+        idIndex = index;
       }
     });
 
-    console.log(targetId);
+    console.log(idIndex && orgiginalIds[idIndex], targetId);
 
-    if (targetId) {
-      const el = document.getElementById(targetId);
+    if ((idIndex || idIndex === 0) && targetId) {
+      const el = document.getElementById(orgiginalIds[idIndex]);
 
       if (!el) return;
 

@@ -15,7 +15,7 @@ export const AfterParty: FC<AfterPartyProps> = ({ onComplete }) => {
           <Text title="Вечеринка была топ и&nbsp;ты тоже!" titleSize="h2" />
           <div className="after-party__content-top">
             <Text title="Фото- и&nbsp;видеоотчеты появятся" />
-            <Text title="20 октября" titleSize="h2" />
+            <Text title="11 октября" titleSize="h2" />
           </div>
           <div className="after-party__content-bottom">
             <Text

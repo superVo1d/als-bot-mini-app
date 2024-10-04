@@ -60,7 +60,7 @@ export default function FAQPage() {
         </Button>
         <Button className="faq__text">
           <Text
-            text={`Если почуствовал себя плохо обратись к&nbsp;студийцам`}
+            text={`Если почувствовал себя плохо обратись к&nbsp;студийцам`}
           />
         </Button>
         {/* <Button className="faq__text">

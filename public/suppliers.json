@@ -207,19 +207,11 @@
     "category": "fun",
     "subcategory": "zona_krasoty"
   },
-  "zhar-ptitsa": {
-    "name": "Жар-птица ",
-    "image": "https://artlebedev.ru/svalka/als-29-bot-suppliers-photo/zhar-ptitsa.png",
-    "description": "Настоящее тридевятое царство паров: грандиозный комплекс площадью 4000&nbsp;м&sup2; на&nbsp;Нижней Масловке и&nbsp;загородный банный курорт в&nbsp;тридцати минутах по&nbsp;Новой Риге.\n",
-    "social": "jarpticabani.ru\r\ninstagram.com/jar.ptica.newriga\r\nvk.com/jar.ptica.bani\r\nt.me/jarptica_bani",
-    "category": "fun",
-    "subcategory": "zona_krasoty"
-  },
   "gamma-help": {
     "name": "Гамма хелп",
     "image": "https://artlebedev.ru/svalka/als-29-bot-suppliers-photo/gamma-help.png",
     "description": "Моднейшая скорая помощь в&nbsp;мире, да&nbsp;что уж&nbsp;в&nbsp;мире&nbsp;&mdash; в&nbsp;Петербурге.\n",
-    "social": "gamma.help8 ",
+    "social": "https://gamma.help",
     "category": "fun",
     "subcategory": "zona_krasoty"
   },
@@ -324,22 +316,6 @@
     "image": "https://artlebedev.ru/svalka/als-29-bot-suppliers-photo/soju-sibsa.png",
     "description": "Бар с&nbsp;яркой линейкой фруктовых вкусов соджу. Устраивают перформанс по&nbsp;приготовлению коктейлей.\n",
     "social": "asg.ru/production/sibsa",
-    "category": "alcohol",
-    "subcategory": "nastoyki"
-  },
-  "si-witch": {
-    "name": "Си уитч",
-    "image": "https://artlebedev.ru/svalka/als-29-bot-suppliers-photo/si-witch.png",
-    "description": "Уникальный виски из&nbsp;выдержанных солодовых и&nbsp;зерновых дистиллятов, произведенных в&nbsp;Шотландии по&nbsp;классической технологии двойной дистилляции.\n",
-    "social": "asg.ru/production/sea-witch",
-    "category": "alcohol",
-    "subcategory": "nastoyki"
-  },
-  "husky": {
-    "name": "Хаски",
-    "image": "https://artlebedev.ru/svalka/als-29-bot-suppliers-photo/husky.png",
-    "description": "ри&nbsp;производстве водки используется технология обработки холодом: чем ниже температура, тем чище финальный напиток. А&nbsp;широкая линейка позволяет экспериментировать со&nbsp;вкусами и&nbsp;форматами потребления.\n",
-    "social": "asg.ru/production/haski",
     "category": "alcohol",
     "subcategory": "nastoyki"
   },
@@ -471,14 +447,6 @@
     "category": "edanapitki",
     "subcategory": "potyazhelee"
   },
-  "cheese-it-bakery": {
-    "name": "Чиз ит бейкери",
-    "image": "https://artlebedev.ru/svalka/als-29-bot-suppliers-photo/cheese-it-bakery.png",
-    "description": "Семейная кондитерская. Миссия&nbsp;&mdash; создание ярких тортов и&nbsp;десертов с&nbsp;индивидуальным подходом, качественным исполнением и&nbsp;невероятным вкусом.\n",
-    "social": "cheeseit.ru",
-    "category": "edanapitki",
-    "subcategory": "sladkoye"
-  },
   "safonovo-podvorye-bolshakovyh": {
     "name": "Сафоново подворье Большаковых",
     "image": "https://artlebedev.ru/svalka/als-29-bot-suppliers-photo/safonovo-podvorye-bolshakovyh.png",
@@ -566,5 +534,13 @@
     "social": "vk.me/neonshowspb\ninstagram.com/neon.show\nneon-show.ru\n",
     "category": null,
     "subcategory": null
+  },
+  "zhar-ptica": {
+    "name": "Жар-птица",
+    "image": "https://artlebedev.ru/svalka/als-29-bot-suppliers-photo/glitter-things-beauty.png",
+    "description": "Настоящее тридевятое царство паров: грандиозный комплекс площадью 4000&nbsp;м&sup2; на&nbsp;Нижней Масловке и&nbsp;загородный банный курорт в&nbsp;тридцати минутах по&nbsp;Новой Риге.",
+    "social": "https://www.instagram.com/jar.ptica.newriga/\nhttps://vk.com/jar.ptica.bani\nhttps://t.me/jarptica_bani\n",
+    "category": "fun",
+    "subcategory": "zona_krasoty"
   }
 }
