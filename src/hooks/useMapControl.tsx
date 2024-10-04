@@ -52,8 +52,6 @@ export const useMapControl = (
       }
     });
 
-    console.log(idIndex && orgiginalIds[idIndex], targetId);
-
     if ((idIndex || idIndex === 0) && targetId) {
       const el = document.getElementById(orgiginalIds[idIndex]);
 
