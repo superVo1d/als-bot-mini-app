@@ -118,12 +118,12 @@ const prizes: IPrizeItem[] = [
   },
   {
     name: "narayone-15",
-    code: "bdayals29n",
+    code: "BDAYALS29N",
     requiredLevel: 1,
   },
   {
     name: "magazinus-15",
-    code: "bdayals29r",
+    code: "BDAYALS29R",
     requiredLevel: 1,
   },
   {
@@ -233,12 +233,9 @@ export const AuthProvider: FC<{ children: ReactNode }> = ({ children }) => {
   useEffect(() => {
     const checkPartyStatus = () => {
       const now = new Date();
-      const month = now.getMonth();
-      const day = now.getDate();
-      const year = now.getFullYear();
-      const hour = now.getHours();
+      const partyEndDate = new Date(2024, 9, 5, 10, 0, 0);
 
-      setIsPartyOver(year >= 2024 && month >= 9 && day >= 5 && hour >= 8);
+      setIsPartyOver(now.getTime() >= partyEndDate.getTime());
     };
 
     checkPartyStatus();
