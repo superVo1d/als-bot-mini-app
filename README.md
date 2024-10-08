@@ -1,3 +1,9 @@
+# <img src="https://github.com/superVo1d/als-28-bot-frontend/blob/main/src/assets/media/favicons/favicon.ico" width="24" height="24" /> Telegram Mini App for Studio Party Navigation
+
+Check out the bot: [https://www.artlebedev.ru/news/2023/party/](https://t.me/ALS29_bot)
+
+The bot offers navigation, FAQs, an interactive schedule, and a map for the event.
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
